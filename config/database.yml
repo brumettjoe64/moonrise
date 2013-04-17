@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   host: localhost
-  database: app_development
+  database: moonrise_development
   pool: 5 
   timeout: 5000
 
@@ -16,13 +16,13 @@ development:
 test:
   adapter: postgresql
   host: localhost
-  database: app_test
+  database: moonrise_test
   pool: 5 
   timeout: 5000
 
 production:
   adapter: postgresql
   host: localhost
-  database: app_production
+  database: moonrise_production
   pool: 5 
   timeout: 5000
