@@ -1,0 +1,9 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home {
+  ul{ list-style-type:none; margin:0; padding:0; overflow:hidden; }
+  li{ float:left; padding:10px }
+  //a{ display:block; width:150px; background-color:#B3AABB; color:#000; text-decoration:none; }
+}

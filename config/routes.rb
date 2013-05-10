@@ -1,9 +1,11 @@
 Moonrise::Application.routes.draw do
+  get "home/index"
+
   devise_for :users
 
   resources :guests
 
-  root :to => "home#index"
+  root :to => "home#index", as: "home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

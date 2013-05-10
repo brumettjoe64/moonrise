@@ -7,7 +7,7 @@ class Guest < ActiveRecord::Base
   VALID_STATUSES = [:new_guest, :registered_guest, :going, :not_going]
   
   validate :check_status
-  validate :check_invitee 
+  validate :check_invitee   
 
   def initials
     if firstname and lastname

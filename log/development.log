@@ -22603,3 +22603,1937 @@ Served asset /application.css - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 18:40:08 -0700
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests/24/edit" for 127.0.0.1 at 2013-05-09 18:52:55 -0700
+Processing by GuestsController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1[0m  [["id", "24"]]
+  Rendered guests/_form.html.erb (9.8ms)
+  Rendered guests/edit.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 18:52:55 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 18:52:55 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 18:52:55 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 18:52:55 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 18:52:55 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 18:52:55 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started PUT "/guests/24" for 127.0.0.1 at 2013-05-09 18:53:02 -0700
+Processing by GuestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M5MKJBfeXrUhSBUc56/Xrwr+h+ueDsv8RsydVYXvY9Y=", "guest"=>{"firstname"=>"Kelly", "lastname"=>"Duong", "email"=>"kelly.t.duong@gmail.com", "addrst"=>"", "addrcity"=>"SD", "addrstate"=>"CA", "sitekey"=>"minime", "status"=>"new_guest", "invitee_id"=>""}, "commit"=>"Update Guest", "id"=>"24"}
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1  [["id", "24"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE "guests" SET "sitekey" = 'minime', "updated_at" = '2013-05-10 01:53:02.253302' WHERE "guests"."id" = 24
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/guests
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 18:53:02 -0700
+Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" 
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6[0m
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 24
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  Rendered guests/index.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 46ms (Views: 34.4ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:02 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:02 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:02 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:02 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:02 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:02 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/guests/24" for 127.0.0.1 at 2013-05-09 18:53:08 -0700
+Processing by GuestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"M5MKJBfeXrUhSBUc56/Xrwr+h+ueDsv8RsydVYXvY9Y=", "id"=>"24"}
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1  [["id", "24"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mGuest Load (0.8ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 24
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 25[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "guests" WHERE "guests"."id" = $1  [["id", 25]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "guests" WHERE "guests"."id" = $1[0m  [["id", 24]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/guests
+Completed 302 Found in 17ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 18:53:08 -0700
+Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" [0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21
+  Rendered guests/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 40ms (Views: 30.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:08 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:08 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:08 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:08 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:08 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:08 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests/new" for 127.0.0.1 at 2013-05-09 18:53:10 -0700
+Processing by GuestsController#new as HTML
+  Rendered guests/_form.html.erb (9.0ms)
+  Rendered guests/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 22ms (Views: 21.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:10 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:10 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:10 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:10 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:10 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:10 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/guests" for 127.0.0.1 at 2013-05-09 18:53:27 -0700
+Processing by GuestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M5MKJBfeXrUhSBUc56/Xrwr+h+ueDsv8RsydVYXvY9Y=", "guest"=>{"firstname"=>"Kelly", "lastname"=>"Duong", "email"=>"kelly.t.duong@gmail.com", "addrst"=>"", "addrcity"=>"San Diego", "addrstate"=>"CA", "sitekey"=>"minime", "status"=>"new_guest", "invitee_id"=>""}, "commit"=>"Create Guest"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "guests" ("addrcity", "addrst", "addrstate", "addrzip", "created_at", "email", "firstname", "invitee_id", "lastname", "sitekey", "status", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"  [["addrcity", "San Diego"], ["addrst", ""], ["addrstate", "CA"], ["addrzip", nil], ["created_at", Fri, 10 May 2013 01:53:27 UTC +00:00], ["email", "kelly.t.duong@gmail.com"], ["firstname", "Kelly"], ["invitee_id", nil], ["lastname", "Duong"], ["sitekey", "minime"], ["status", "new_guest"], ["updated_at", Fri, 10 May 2013 01:53:27 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/guests
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 18:53:27 -0700
+Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" 
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'[0m
+  [1m[35mGuest Load (0.3ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35mGuest Load (0.7ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1
+  [1m[36mGuest Load (0.7ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mGuest Load (0.7ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26
+  Rendered guests/index.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 43ms (Views: 32.4ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:27 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:27 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:27 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:27 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:27 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:27 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/guests/new?invitee_id=26" for 127.0.0.1 at 2013-05-09 18:53:30 -0700
+Processing by GuestsController#new as HTML
+  Parameters: {"invitee_id"=>"26"}
+  Rendered guests/_form.html.erb (9.6ms)
+  Rendered guests/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:30 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:30 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:30 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:30 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:30 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:30 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 18:53:36 -0700
+Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" [0m
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'[0m
+  [1m[35mGuest Load (0.3ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26[0m
+  Rendered guests/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 44ms (Views: 32.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:36 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:37 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:37 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:37 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:37 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:37 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 18:53:57 -0700
+Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.7ms)[0m  SELECT "guests".* FROM "guests" 
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'[0m
+  [1m[35mGuest Load (0.3ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26
+  Rendered guests/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 43ms (Views: 32.3ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:57 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:57 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 18:53:57 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:57 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:57 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:57 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 18:53:57 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests/new?invitee_id=3" for 127.0.0.1 at 2013-05-09 18:55:08 -0700
+Processing by GuestsController#new as HTML
+  Parameters: {"invitee_id"=>"3"}
+  Rendered guests/_form.html.erb (8.7ms)
+  Rendered guests/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 18:55:08 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 18:55:08 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 18:55:08 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 18:55:08 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 18:55:08 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 18:55:08 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 18:55:12 -0700
+Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" [0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26[0m
+  Rendered guests/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 42ms (Views: 31.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 18:55:12 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 18:55:12 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 18:55:12 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 18:55:12 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 18:55:12 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/home" for 127.0.0.1 at 2013-05-09 19:01:55 -0700
+
+ActionController::RoutingError (No route matches [GET] "/home"):
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Kenny/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2013-05-09 19:02:09 -0700
+
+ActionController::RoutingError (No route matches [GET] "/homes"):
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Kenny/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2013-05-09 19:02:36 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Compiled home.css  (2ms)  (pid 5730)
+Compiled application.css  (17ms)  (pid 5730)
+Compiled home.js  (236ms)  (pid 5730)
+Compiled application.js  (266ms)  (pid 5730)
+Completed 200 OK in 467ms (Views: 466.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:02:37 -0700
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:02:37 -0700
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:02:37 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:02:37 -0700
+Served asset /home.js - 200 OK (2ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:02:37 -0700
+Served asset /guests.js - 200 OK (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:02:37 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:02:37 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:02:37 -0700
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-05-09 19:03:31 -0700
+Served asset /rails.png - 200 OK (2ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-05-09 19:03:44 -0700
+
+SyntaxError (/Users/Kenny/Dev/Rails/moonrise/config/routes.rb:8: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  root :to => "home#index", as "home"
+                                ^):
+  activesupport (3.2.12) lib/active_support/dependencies.rb:245:in `load'
+  activesupport (3.2.12) lib/active_support/dependencies.rb:245:in `block in load'
+  activesupport (3.2.12) lib/active_support/dependencies.rb:236:in `load_dependency'
+  activesupport (3.2.12) lib/active_support/dependencies.rb:245:in `load'
+  railties (3.2.12) lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+  railties (3.2.12) lib/rails/application/routes_reloader.rb:40:in `each'
+  railties (3.2.12) lib/rails/application/routes_reloader.rb:40:in `load_paths'
+  railties (3.2.12) lib/rails/application/routes_reloader.rb:16:in `reload!'
+  railties (3.2.12) lib/rails/application/routes_reloader.rb:26:in `block in updater'
+  activesupport (3.2.12) lib/active_support/file_update_checker.rb:78:in `call'
+  activesupport (3.2.12) lib/active_support/file_update_checker.rb:78:in `execute'
+  activesupport (3.2.12) lib/active_support/file_update_checker.rb:86:in `execute_if_updated'
+  railties (3.2.12) lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
+  railties (3.2.12) lib/rails/application/finisher.rb:68:in `block (2 levels) in <module:Finisher>'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:451:in `_run__1415796235561992525__prepare__438735481349867891__callbacks'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:385:in `_run_prepare_callbacks'
+  activesupport (3.2.12) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.12) lib/action_dispatch/middleware/reloader.rb:74:in `prepare!'
+  actionpack (3.2.12) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Kenny/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /Users/Kenny/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /Users/Kenny/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.6ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-05-09 19:03:45 -0700
+Served asset /rails.png - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:05:08 -0700
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Kenny/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:06:08 -0700
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Kenny/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:06:12 -0700
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Kenny/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 19:06:17 -0700
+
+ActionController::RoutingError (No route matches [GET] "/guests"):
+  actionpack (3.2.12) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.12) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.12) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.12) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.12) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.12) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.12) lib/rails/engine.rb:479:in `call'
+  railties (3.2.12) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.12) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Kenny/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Kenny/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.5ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 19:07:04 -0700
+Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" 
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35mGuest Load (0.7ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21[0m
+  [1m[35mGuest Load (0.9ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26
+  Rendered guests/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 135ms (Views: 94.6ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:05 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:05 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:05 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:05 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:05 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:05 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:05 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:05 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:05 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:07:10 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:10 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:10 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:10 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:10 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:10 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:10 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:10 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:10 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:10 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 19:07:14 -0700
+Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" [0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26[0m
+  Rendered guests/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 44ms (Views: 33.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:14 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:14 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:14 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:07:14 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:14 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:14 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:14 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:14 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:07:14 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:09:34 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:09:34 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:09:34 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:09:34 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:09:34 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:09:34 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:09:34 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:09:34 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:09:34 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:09:34 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:10:23 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:10:23 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:10:23 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:10:23 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:10:23 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:10:23 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:10:23 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:10:23 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:10:23 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:10:23 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 19:10:24 -0700
+Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.7ms)[0m  SELECT "guests".* FROM "guests" 
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'[0m
+  [1m[35mGuest Load (0.9ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6[0m
+  [1m[35mGuest Load (0.8ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26
+  Rendered guests/index.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 47ms (Views: 34.7ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:10:25 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:10:25 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:10:25 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:10:25 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:10:25 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:10:25 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:10:25 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:10:25 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:14:09 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Compiled guests.css  (7ms)  (pid 5730)
+Compiled home.css  (9ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 73ms (Views: 73.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:09 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:09 -0700
+Served asset /guests.css - 200 OK (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:09 -0700
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:09 -0700
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:09 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:09 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:09 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:09 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:09 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:14:20 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Compiled home.css  (7ms)  (pid 5730)
+Compiled application.css  (2ms)  (pid 5730)
+Completed 200 OK in 46ms (Views: 45.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:20 -0700
+Served asset /application.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:20 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:20 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:20 -0700
+Served asset /home.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:20 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:20 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:20 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:21 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:21 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:14:25 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Compiled home.css  (7ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:25 -0700
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:25 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:25 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:25 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:25 -0700
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:25 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:25 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:25 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:25 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:14:34 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Compiled home.css  (8ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 114ms (Views: 113.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:34 -0700
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:34 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:34 -0700
+Served asset /home.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:34 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:34 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:34 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:34 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:34 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:34 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:14:49 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Compiled home.css  (9ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 52ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:49 -0700
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:49 -0700
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:49 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:49 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:49 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:49 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:49 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:49 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:49 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:14:53 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Compiled home.css  (8ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:53 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:53 -0700
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:53 -0700
+Served asset /home.css - 200 OK (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:14:53 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:53 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:53 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:53 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:53 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:14:53 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:15:36 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Compiled home.css  (10ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 120ms (Views: 119.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:15:36 -0700
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:15:36 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:15:36 -0700
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:15:36 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:15:36 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:15:36 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:15:36 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:15:36 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:15:36 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:15:37 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 16ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:15:37 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:15:37 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:15:37 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:15:37 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:15:37 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:15:37 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:15:37 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:15:37 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:15:37 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 19:16:59 -0700
+Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" [0m
+  [1m[35mGuest Load (0.7ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'[0m
+  [1m[35mGuest Load (0.3ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26[0m
+  Rendered guests/index.html.erb within layouts/application (28.0ms)
+Compiled home.css  (9ms)  (pid 5730)
+Compiled application.css  (4ms)  (pid 5730)
+Completed 200 OK in 83ms (Views: 71.9ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:16:59 -0700
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:16:59 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:16:59 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:16:59 -0700
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:16:59 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:16:59 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:16:59 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:16:59 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:16:59 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:17:04 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:17:04 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:17:04 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:17:04 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:17:04 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:17:04 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:17:04 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:17:04 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:17:04 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:17:04 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:18:36 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Compiled home.css  (10ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 47ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:18:36 -0700
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:18:36 -0700
+Served asset /home.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:18:36 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:18:36 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:18:36 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:18:36 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:18:36 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:18:36 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:18:36 -0700
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:19:30 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Compiled home.css  (9ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 53ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:19:30 -0700
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:19:30 -0700
+Served asset /home.css - 200 OK (2ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:19:30 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:19:30 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:19:30 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:19:30 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:19:30 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:19:30 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:19:30 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 19:21:07 -0700
+Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" 
+  [1m[36mGuest Load (0.8ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5[0m
+  [1m[35mGuest Load (0.7ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26
+  Rendered guests/index.html.erb within layouts/application (28.3ms)
+Compiled home.css  (8ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 83ms (Views: 71.9ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:21:07 -0700
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:21:07 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:21:07 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:21:07 -0700
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:21:07 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:21:07 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:21:07 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:21:07 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:21:07 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 19:21:41 -0700
+Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.7ms)[0m  [1mSELECT "guests".* FROM "guests" [0m
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'
+  [1m[36mGuest Load (0.3ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1[0m
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26[0m
+  Rendered guests/index.html.erb within layouts/application (29.5ms)
+Compiled home.css  (3ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 151ms (Views: 138.7ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:21:41 -0700
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:21:41 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:21:41 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:21:41 -0700
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:21:41 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:21:41 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:21:41 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:21:41 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:21:41 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:22:50 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Compiled home.css  (9ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 54ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:22:50 -0700
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:22:50 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:22:50 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:22:50 -0700
+Served asset /home.css - 200 OK (9ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:22:50 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:22:50 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:22:50 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:22:50 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:22:50 -0700
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:23:02 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:02 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:02 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:02 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:02 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:02 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:02 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:02 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:02 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:02 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:23:13 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:13 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:13 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:13 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:13 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:14 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:14 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:14 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:14 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:14 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-09 19:23:37 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Compiled home.css  (72ms)  (pid 5730)
+Compiled application.css  (3ms)  (pid 5730)
+Completed 200 OK in 116ms (Views: 116.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:37 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:37 -0700
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:37 -0700
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:37 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:37 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:23:37 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:37 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:37 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:23:37 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 19:24:23 -0700
+Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" 
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26
+  Rendered guests/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 45ms (Views: 34.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:24:24 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:24:24 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:24:24 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-09 19:24:24 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:24:24 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:24:24 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:24:24 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:24:24 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-09 19:24:27 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-09 19:25:13 -0700
+Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" [0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'[0m
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 3[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 5
+  [1m[36mGuest Load (0.5ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1[0m
+  [1m[35mGuest Load (0.7ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 6
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mGuest Load (0.4ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 21
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 26[0m
+  Rendered guests/index.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 44ms (Views: 33.7ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-09 19:25:13 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-09 19:25:13 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-09 19:25:13 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-09 19:25:13 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-09 19:25:13 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-09 19:25:13 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-09 19:25:13 -0700
+Served asset /application.js - 304 Not Modified (0ms)
