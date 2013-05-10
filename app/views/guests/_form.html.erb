@@ -18,12 +18,37 @@
   <div class="field">
     <%= f.label :lastname %><br />
     <%= f.text_field :lastname %>
-  </div>
+  </div>  
   <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+  <div class="field">
+    <%= f.label "Address" %><br />
+    <%= f.text_field :addrst %>
+  </div>
+  <div class="field">
+    <%= f.label "City" %><br />
+    <%= f.text_field :addrcity %>
+  </div>
+  <div class="field">
+    <%= f.label "State" %><br />
+    <%= f.text_field :addrstate %>
+  </div>
+  <div class="field">
+    <%= f.label "Site Key" %><br />
+    <%= f.text_field :sitekey %>
+  </div>
+  <div class="field">
+    <%= f.label "Status" %><br />
+    <%= f.select(:status, Guest::VALID_STATUSES) %>
+  </div>
+  <div class="hfield">
+    <%= f.hidden_field(:invitee_id, value: (params[:invitee_id] || @guest.invitee_id)) %>
+  </div>
+
   <div class="actions">
+    <%=  %>
     <%= f.submit %>
   </div>
 <% end %>

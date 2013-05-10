@@ -3,6 +3,11 @@ class GuestsController < ApplicationController
   # GET /guests.json
   def index
     @guests = Guest.all
+    @invitees = Guest.where(invitee_id: nil)
+    @registered = Guest.where(status: :registered_guest)
+    @gos = Guest.where(status: :going)    
+    @nos = Guest.where(status: :not_going)    
+    @maybes = Guest.where(status: :new_guest) + @registered
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +30,6 @@ class GuestsController < ApplicationController
   # GET /guests/new.json
   def new
     @guest = Guest.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @guest }
@@ -40,11 +44,12 @@ class GuestsController < ApplicationController
   # POST /guests
   # POST /guests.json
   def create
+    
     @guest = Guest.new(params[:guest])
-
+    
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to @guest, notice: 'Guest was successfully created.' }
+        format.html { redirect_to guests_path, notice: 'Guest was successfully created.' }
         format.json { render json: @guest, status: :created, location: @guest }
       else
         format.html { render action: "new" }
@@ -60,7 +65,7 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       if @guest.update_attributes(params[:guest])
-        format.html { redirect_to @guest, notice: 'Guest was successfully updated.' }
+        format.html { redirect_to guests_path, notice: 'Guest was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
