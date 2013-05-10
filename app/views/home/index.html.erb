@@ -1,3 +1,18 @@
+<h1> Admin Home Page Links </h1>
 <ul class="home">
 <li><%= link_to 'Manage Guests', guests_path %> </li>
+<li><%= link_to 'RSVP', home_path %> </li>
+<li><%= link_to 'Profile', edit_guest_path(1) %> </li>
+</ul>
+
+
+<h1> Invitee Home Page Links </h1>
+<ul class="home">
+<li><%= link_to 'RSVP', home_path %> </li>
+<li><%= link_to 'Profile', edit_guest_path(1) %> </li>
+</ul>
+
+<h1> Plus One Home Page Links </h1>
+<ul class="home">
+<li><%= link_to 'Profile', edit_guest_path(1) %> </li>
 </ul>
