@@ -1,8 +1,8 @@
-<h1> Guest stats </h1>
+<h1>Guest stats</h1>
 <table>
   <tr>
-    <td> Total Invitees </td>
-    <td> <%= @guests.count %> </td>
+    <td>Total Invitees</td>
+    <td><%= @guests.count %></td>
   </tr>
 
   <tr>
@@ -44,23 +44,23 @@
     <th></th>
   </tr>
 
-<% @invitees.each do |invitee| %>
-  <%  invitee.party.each do |guest| %>
-  <tr class="<%= :plusone if guest.plusone? %>">
-    <td><%= guest.firstname %></td>
-    <td><%= guest.lastname %></td>
-    <td><%= guest.email %></td>
-    <td><%= guest.status %></td>
-    <td><%= guest.sitekey %></td>
-    <td><%= guest.invitee.initials %></td>
-    <td><%= link_to '+', new_guest_path(invitee_id: guest) if guest.invitee? %></td>
-    <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
-    <td><%= link_to 'X', guest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <% @invitees.each do |invitee| %>
+    <% invitee.party.each do |guest| %>
+      <tr class="<%= "plusone" if guest.plusone? %>">
+        <td><%= guest.firstname %></td>
+        <td><%= guest.lastname %></td>
+        <td><%= guest.email %></td>
+        <td><%= guest.status %></td>
+        <td><%= guest.sitekey %></td>
+        <td><%= guest.invitee.initials %></td>
+        <td><%= link_to('+', new_guest_path(invitee_id: guest)) if guest.invitee? %></td>
+        <td><%= link_to('Edit', edit_guest_path(guest)) %></td>
+        <td><%= link_to('X', guest, method: :delete, confirm: 'Are you sure?') %></td>
+      </tr>
+    <% end %>
   <% end %>
-<% end %>
 </table>
 
-<br />
+<br>
 
 <%= link_to 'New Invitee', new_guest_path %>
