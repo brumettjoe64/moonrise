@@ -76122,3 +76122,634 @@ Served asset /sessions.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-19 22:31:18 -0700
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Processing by HomeController#index as HTML
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Compiled sessions.css  (22ms)  (pid 16095)
+Compiled application.css  (63ms)  (pid 16095)
+Completed 200 OK in 204ms (Views: 203.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Served asset /guests.css - 200 OK (16ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Served asset /application.css - 200 OK (13ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Served asset /sessions.css - 200 OK (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Served asset /guests.js - 200 OK (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Served asset /home.js - 200 OK (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Served asset /sessions.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-20 08:22:45 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/front.jpg" for 127.0.0.1 at 2013-05-20 08:22:46 -0700
+Served asset /front.jpg - 200 OK (0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (0.8ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1[0m
+  [1m[35mGuest Load (0.7ms)[0m  SELECT "guests".* FROM "guests" ORDER BY id
+  [1m[36mGuest Load (0.9ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."status" = 'new_guest'[0m
+  [1m[35mGuest Load (0.7ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."invitee_id" IS NULL[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'registered_guest'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'going'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "guests" WHERE "guests"."status" = 'not_going'
+  [1m[36mGuest Load (0.4ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" IS NULL ORDER BY id[0m
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1 ORDER BY id
+  [1m[36mGuest Load (0.6ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 41 ORDER BY id[0m
+  Rendered guests/index.html.erb within layouts/application (18.1ms)
+Compiled sessions.css  (9ms)  (pid 16095)
+Compiled application.css  (3ms)  (pid 16095)
+Completed 200 OK in 119ms (Views: 79.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Served asset /application.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Served asset /guests.css - 304 Not Modified (63ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Served asset /sessions.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:35 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-20 08:26:40 -0700
+Processing by HomeController#index as HTML
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:41 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:41 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:41 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:41 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:41 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:41 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:41 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:41 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:41 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:41 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:41 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"M5MKJBfeXrUhSBUc56/Xrwr+h+ueDsv8RsydVYXvY9Y="}
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 12ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/front.jpg" for 127.0.0.1 at 2013-05-20 08:26:43 -0700
+Served asset /front.jpg - 200 OK (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-05-20 08:27:05 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:05 -0700
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:06 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:06 -0700
+Served asset /sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:06 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:06 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:06 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:06 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:06 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:06 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:06 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:06 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/front.jpg" for 127.0.0.1 at 2013-05-20 08:27:06 -0700
+Served asset /front.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Compiled sessions.css  (11ms)  (pid 16095)
+Compiled application.css  (6ms)  (pid 16095)
+Completed 200 OK in 70ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /application.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /sessions.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/front.jpg" for 127.0.0.1 at 2013-05-20 08:27:25 -0700
+Served asset /front.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-05-20 08:27:30 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Compiled sessions.css  (14ms)  (pid 16095)
+Compiled application.css  (4ms)  (pid 16095)
+Completed 200 OK in 75ms (Views: 74.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /sessions.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/front.jpg" for 127.0.0.1 at 2013-05-20 08:27:31 -0700
+Served asset /front.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 15ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Served asset /guests.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:51 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X3vOfJ/sjhFPRFOuTjYDkSLxMm3J7aUU8wRCcO72l2U=", "login"=>"keduong@gmail.com", "commit"=>"Login"}
+  [1m[36mGuest Load (0.9ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."email" = 'keduong@gmail.com' LIMIT 1[0m
+  [1m[35mGuest Load (0.6ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."sitekey" = 'keduong@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/login_admin?login=keduong%40gmail.com
+Completed 302 Found in 12ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/login_admin?login=keduong%40gmail.com" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Processing by SessionsController#new_admin as HTML
+  Parameters: {"login"=>"keduong@gmail.com"}
+  Rendered sessions/new_admin.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-20 08:27:59 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/login_admin" for 127.0.0.1 at 2013-05-20 08:28:08 -0700
+Processing by SessionsController#create_admin as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X3vOfJ/sjhFPRFOuTjYDkSLxMm3J7aUU8wRCcO72l2U=", "password"=>"[FILTERED]", "commit"=>"Login", "login"=>"keduong@gmail.com"}
+Login is ...keduong@gmail.com
+  [1m[36mGuest Load (2.2ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."email" = 'keduong@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 412ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Processing by HomeController#index as HTML
+  [1m[35mGuest Load (0.5ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:09 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/guests/modify" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Processing by GuestsController#edit_info as HTML
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.8ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."invitee_id" = 1 ORDER BY id[0m
+  Rendered guests/edit_info.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 17.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Served asset /guests.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Served asset /guests.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-20 08:28:11 -0700
+Served asset /application.js - 304 Not Modified (0ms)
