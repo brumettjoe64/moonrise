@@ -1,6 +1,13 @@
 TODO
 
-- seeds.rb populate with initial model data
-- order guest list
-- start putting together guest page home
+- do not allow to go any further until invitee email is saved
 
+
+
+- home page based on user type
+
+---------------
+LONG-TERM
+
+- account mailer
+- seeds.rb update for admin accounts

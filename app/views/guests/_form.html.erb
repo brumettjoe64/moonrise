@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstname %><br />
+    <%= f.label "First Name" %><br />
     <%= f.text_field :firstname %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br />
+    <%= f.label "Last Name" %><br />
     <%= f.text_field :lastname %>
   </div>  
   <div class="field">
@@ -36,6 +36,10 @@
     <%= f.text_field :addrstate %>
   </div>
   <div class="field">
+    <%= f.label "Zip" %><br />
+    <%= f.text_field :addrzip %>
+  </div>
+  <div class="field">
     <%= f.label "Site Key" %><br />
     <%= f.text_field :sitekey %>
   </div>
@@ -43,12 +47,19 @@
     <%= f.label "Status" %><br />
     <%= f.select(:status, Guest::VALID_STATUSES) %>
   </div>
+  <div class="field">
+    <%= f.label "Admin Access" %><br />
+    <%= f.check_box(:admin) %>
+  </div>
+  <div class="field">
+    <%= label_tag "Change Admin Password" %><br />
+    <%= password_field_tag(:password) %>
+  </div>
   <div class="hfield">
     <%= f.hidden_field(:invitee_id, value: (params[:invitee_id] || @guest.invitee_id)) %>
   </div>
 
   <div class="actions">
-    <%=  %>
     <%= f.submit %>
   </div>
 <% end %>

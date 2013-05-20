@@ -47,8 +47,8 @@
   <% @invitees.each do |invitee| %>
     <% invitee.party.each do |guest| %>
       <tr class="<%= "plusone" if guest.plusone? %>">
-        <td><%= guest.firstname %></td>
-        <td><%= guest.lastname %></td>
+        <td class="<%= "admin" if guest.admin %>"><%= guest.firstname %></td>
+        <td class="<%= "admin" if guest.admin %>"><%= guest.lastname %></td>
         <td><%= guest.email %></td>
         <td><%= guest.status %></td>
         <td><%= guest.sitekey %></td>

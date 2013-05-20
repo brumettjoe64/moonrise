@@ -1,0 +1,12 @@
+<h1>Admin Password Form</form></h1>
+  <div class="login_admin_form">
+  <%= form_tag('/login_admin', method: 'post') do %>
+    <div class="password_field">
+      <%= password_field_tag(:password, nil, placeholder: 'enter password ...') %>
+      <%= submit_tag("Login", id: "login_button") %>
+    </div>
+    <div class="hfield">
+      <%= hidden_field_tag(:login, params[:login])  %>
+    </div>
+  <div>
+  <% end %>

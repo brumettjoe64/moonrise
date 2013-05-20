@@ -1,9 +1,29 @@
 Moonrise::Application.routes.draw do
-  get "home/index"
 
-  devise_for :users
+  resources :guests do
+    collection do
+      get 'modify' => :edit_info, as: 'modify_party'
+      put 'modify' => :update_info
+    end
+  end
+#  controller :guests do
+#    get 'guests/modify' => :edit_info, as: 'modify_party'
+#    put 'guests/modify' => :update_info
+#  end
 
-  resources :guests
+
+
+  #controller :guests do
+  #  get 'edit_guests' => :edit_guests
+  #end
+
+  controller :sessions do
+    get 'login_admin' => :new_admin
+    post 'login_admin' => :create_admin
+    get 'login' => :new
+    post 'login' => :create 
+    delete 'logout' => :destroy, as: 'logout'
+  end
 
   root :to => "home#index", as: "home"
 

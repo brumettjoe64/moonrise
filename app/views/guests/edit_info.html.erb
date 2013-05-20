@@ -1,0 +1,34 @@
+<h1>Guest Information</h1>
+
+<%= form_tag '/guests/modify', method: 'put' do %>
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+  
+    <% @party.each do |party_member| %>
+      <tr class="<%= "plusone" if party_member.plusone? %>">
+        <td><%= text_field_tag 'firstnames[]', party_member.firstname, :size => 25 %></td>
+        <td><%= text_field_tag 'lastnames[]',  party_member.lastname,  :size => 25 %></td>
+        <td><%= text_field_tag '[emails[]',    party_member.email,     :size => 25 %></td>      
+      </tr>
+    <% end %> 
+
+  </table>
+  <%= submit_tag("Save Changes", id: "modify_button") %>
+<% end %>
+
+<% @party.each do |party_member| %>
+  <% if party_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(party_member.errors.count, "error") %> prohibited <%=party_member.firstname%> from being saved:</h2>
+      <ul>
+      <% party_member.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>

@@ -1,18 +1,15 @@
-<h1> Admin Home Page Links </h1>
-<ul class="home">
+<h1> User Actions </h1>
+<ul class="user_actions">
+<li><%= link_to @guest.firstname, modify_party_path %></li>
+<li><%= link_to 'Log out', logout_path, method: :delete %></li>
+</ul>
+
+<h1> Navigation </h1>
+<ul class="navigation">
+<li><%= link_to 'RSVP', home_path %></li>
+</ul>
+
+<h1> Admin Only </h1>
+<ul class="admin_actions">
 <li><%= link_to 'Manage Guests', guests_path %> </li>
-<li><%= link_to 'RSVP', home_path %> </li>
-<li><%= link_to 'Profile', edit_guest_path(1) %> </li>
-</ul>
-
-
-<h1> Invitee Home Page Links </h1>
-<ul class="home">
-<li><%= link_to 'RSVP', home_path %> </li>
-<li><%= link_to 'Profile', edit_guest_path(1) %> </li>
-</ul>
-
-<h1> Plus One Home Page Links </h1>
-<ul class="home">
-<li><%= link_to 'Profile', edit_guest_path(1) %> </li>
 </ul>

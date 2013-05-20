@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507182322) do
+ActiveRecord::Schema.define(:version => 20130514151513) do
 
   create_table "guests", :force => true do |t|
     t.string   "firstname"
     t.string   "lastname"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "addrst"
     t.string   "addrcity"
     t.string   "addrstate"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20130507182322) do
     t.string   "status"
     t.string   "sitekey"
     t.integer  "invitee_id"
+    t.boolean  "admin",           :default => false
+    t.string   "password_digest"
   end
 
   create_table "users", :force => true do |t|
