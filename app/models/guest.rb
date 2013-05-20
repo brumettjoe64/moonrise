@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class Guest < ActiveRecord::Base
   include BCrypt
 
