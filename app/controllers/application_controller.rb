@@ -5,13 +5,13 @@ class ApplicationController < ActionController::Base
   protected
     def authorize
       unless Guest.find_by_id(session[:guest_id])
-        redirect_to login_url, notice: "Please log in"
+        redirect_to login_url, alert: "Please log in"
       end
     end
 
     def admin_authorize 
       unless Guest.find_by_id(session[:guest_id]).admin
-        redirect_to home_url, notice: "Action requires admin access"
+        redirect_to home_url, alert: "Action requires admin access"
       end
     end
 

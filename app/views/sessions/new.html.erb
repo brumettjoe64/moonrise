@@ -2,9 +2,20 @@
   
   <div id="login_form">
     <%= form_tag('/login', method: 'post') do %>
-      <%= text_field_tag(:login, nil, placeholder: 'invite key or login', autofocus: 'true') %>
+      <%= text_field_tag(:login, nil, placeholder: 'sign in here', autofocus: 'true') %>
       <%= submit_tag("Login", id: "login_button") %>
     <% end %>
+  </div>
+
+  <p id="alert"><%= alert %></p>
+  <p id="notice"><%= notice %></p>
+  <div id="login_text">
+    <h1>Kenny and Lauren's Wedding</h1>
+    <h3>in</h3>
+    <h2>Mink Meadows, Rhode Island</h2>
+    <h3>on</h3>
+    <h2>July 5th, 2013</h2>
+
   </div>
 
 </div>

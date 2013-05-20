@@ -8,13 +8,40 @@
   width:100%; height:100%;
   background:url("/assets/front.jpg") no-repeat;
   background-size: auto 100%;
+
+  #login_form {
+    float:right;
+    clear:both;
+    margin:10px; 
+  }
+
+  #login_button {
+    display:none;
+  }
+
+  #login_text {
+    font-family:"Cookie";
+    text-align: center;
+    //color: #ffff00; (yellow)
+    color: #ffffff;
+    
+    h1 {
+      font-size:500%;
+      margin-top:10%;
+      padding-top:0;
+      border-top:0;
+    }
+ 
+    h2 {
+      font-size:300%;
+    }
+    h3 {
+      font-size:200%;
+    }
+  }
+
+  #alert,#notice {
+    float:right;
+  }
 }
 
-#login_form {
-  float:right;
-  margin:10px;
-}
-
-#login_button {
-  display:none;
-}

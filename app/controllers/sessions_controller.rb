@@ -16,13 +16,13 @@ class SessionsController < ApplicationController
       end
     elsif guest_by_sitekey
       if guest_by_sitekey.registered?
-        redirect_to login_url, alert: "Please use your registered email to login"
+        redirect_to login_url, alert: "use your registered email"
       else
         session[:guest_id] = guest_by_sitekey
         redirect_to modify_party_guests_url
       end
     else 
-      redirect_to login_url, alert: "Invalid login"
+      redirect_to login_url, alert: "invalid login"
     end
   end
 
@@ -33,13 +33,13 @@ class SessionsController < ApplicationController
       session[:guest_id] = guest.id
       redirect_to home_url
     else
-      redirect_to login_admin_url(login: params[:login]), alert:"Wrong Password"
+      redirect_to login_admin_url(login: params[:login]), alert:"wrong password"
     end
   end
 
   def destroy
     session[:guest_id] = nil
-    redirect_to login_url, alert: "Logged out"
+    redirect_to login_url, notice: "logged out"
   end
 
 
