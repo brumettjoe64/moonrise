@@ -104,7 +104,7 @@ class Guest < ActiveRecord::Base
   end
 
   def check_password
-    if self.admin and self.password_digest.nil?
+    if self.admin? and self.password_digest.nil?
       errors.add(:password, " required for admins") 
     end
   end
