@@ -1,0 +1,22 @@
+<h1>RSVP</h1>
+
+<%= form_tag '/guests/rsvp', method: 'put' do %>
+  <ul>
+    <% @party.each do |pm| %>       
+      <li><%= pm.display_name %> </li >
+        </br>
+      <ul>
+        <li> Attendance </li>
+        <li><%= radio_button_tag "rsvp[#{pm.id}]", :going, checked=(pm.rsvp=="going")%> <%=label_tag 'Going'%></li>        <li><%= radio_button_tag "rsvp[#{pm.id}]", :not_going, checked=(pm.rsvp=="not_going")%> <%=label_tag 'Not Going'%></li>
+        <li><%= radio_button_tag "rsvp[#{pm.id}]", :no_reply, checked=(pm.rsvp=="no_reply") %> <%=label_tag 'No Reply'%> </li>
+        </br>
+        <li> Comments (food allergies, preferences, etc.) </li>
+        <li><%= text_area_tag "rsvp_info[#{pm.id}]", pm.rsvp_info%></li>  
+        </br>
+      </ul>
+
+    <% end %> 
+
+  </ul>
+  <%= submit_tag("RSVP", id: "modify_button") %>
+<% end %>

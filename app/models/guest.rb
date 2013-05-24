@@ -5,18 +5,20 @@ class Guest < ActiveRecord::Base
 
   has_many :plusones, :class_name => "Guest", :foreign_key => "invitee_id", :dependent => :destroy
   belongs_to :invitee, :class_name => "Guest"
+  has_and_belongs_to_many :groups, autosave: true
 
-  attr_accessible :sitekey, :status, :email, :firstname, :lastname, :addrst, :addrcity, :addrstate, :addrzip, :invitee_id, :admin
+  attr_accessible :sitekey, :email, :firstname, :lastname, :invitee_id, :admin, :account_flag, :rsvp, :rsvp_info 
 
   validates_uniqueness_of :email, :allow_blank => true, :allow_nil => true  
   validates_uniqueness_of :sitekey, :allow_blank => true, :allow_nil => true
   
-  validate :check_status
+  validate :check_rsvp
   validate :check_invitee
   validate :check_password
   validate :check_invitee_email   
 
-  VALID_STATUSES = [:new_guest, :registered_guest, :going, :not_going]
+  VALID_RSVPS = [:no_reply, :going, :not_going]
+  VALID_INFOS = [:no_cow, :no_pig, :no_lobster, :no_shellfish]
 
   # Password encoding for admins
   def password
@@ -42,6 +44,16 @@ class Guest < ActiveRecord::Base
     end      
   end
 
+  def display_name
+    if firstname and lastname
+      "#{firstname} #{lastname}".titleize
+    elsif self.invitee?
+      "Invitee"
+    else
+      "Plus One"
+    end
+  end
+
   def initials
     if firstname and lastname
       firstname.first+lastname.first
@@ -56,6 +68,10 @@ class Guest < ActiveRecord::Base
     else
       self
     end
+  end
+
+  def self.all_by_name
+    Guest.find(:all, order: "firstname")
   end
 
   def party
@@ -75,13 +91,13 @@ class Guest < ActiveRecord::Base
   end
   
   def registered?
-    self.status != "new_guest" 
+    self.account_flag 
   end
 
 
 
   def check_invitee_email
-    if self.invitee? and self.status == "registered_guest" and self.email.blank?
+    if self.invitee? and self.account_flag and self.email.blank?
       errors.add(:email, "is required for head invitee")
     end
   end
@@ -99,8 +115,8 @@ class Guest < ActiveRecord::Base
     end 
   end
 
-  def check_status
-    errors.add(:status, "is not a valid status") unless VALID_STATUSES.include?(status.to_sym)
+  def check_rsvp
+    errors.add(:rsvp, "#{self.rsvp} is not a valid rsvp status") unless VALID_RSVPS.include?(self.rsvp.to_sym)
   end
 
   def check_password

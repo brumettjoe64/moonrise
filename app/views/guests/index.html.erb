@@ -33,29 +33,36 @@
 
 <table>
   <tr>
+    <th></th>
+    <th></th>
+    <th></th>
     <th>Firstname</th>
     <th>Lastname</th>
     <th>Email</th>
-    <th>Status</th>
-    <th>SiteKey</th>
+    <th>Key</th>
+    <th>Login?</th>
+    <th>RSVP</th>
+    <th>Info</th>
     <th>Invitee</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Groups</th>
+
   </tr>
 
   <% @invitees.each do |invitee| %>
     <% invitee.party.each do |guest| %>
       <tr class="<%= "plusone" if guest.plusone? %>">
+        <td><%= link_to('X', guest, method: :delete, confirm: 'Are you sure?') %></td>
+        <td><%= link_to('Edit', edit_guest_path(guest)) %></td>
+        <td><%= link_to('+', new_guest_path(invitee_id: guest)) if guest.invitee? %></td>
         <td class="<%= "admin" if guest.admin %>"><%= guest.firstname %></td>
         <td class="<%= "admin" if guest.admin %>"><%= guest.lastname %></td>
         <td><%= guest.email %></td>
-        <td><%= guest.status %></td>
         <td><%= guest.sitekey %></td>
+        <td><%= guest.account_flag %></td>
+        <td><%= guest.rsvp %></td>
+        <td><%= truncate(guest.rsvp_info, length: 10) %></td>
         <td><%= guest.invitee.initials %></td>
-        <td><%= link_to('+', new_guest_path(invitee_id: guest)) if guest.invitee? %></td>
-        <td><%= link_to('Edit', edit_guest_path(guest)) %></td>
-        <td><%= link_to('X', guest, method: :delete, confirm: 'Are you sure?') %></td>
+        <td><%= guest.groups.map{|x| x.name}.join(", ")%></td>
       </tr>
     <% end %>
   <% end %>

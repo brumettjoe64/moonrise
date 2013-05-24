@@ -1,9 +1,17 @@
 Moonrise::Application.routes.draw do
 
+  resources :groups do
+    member do 
+      put 'add_guest' => :add_guest
+    end
+  end
+
   resources :guests do
     collection do
       get 'modify' => :edit_info, as: 'modify_party'
       put 'modify' => :update_info
+      get 'rsvp'   => :edit_rsvp, as: 'rsvp'
+      put 'rsvp'   => :update_rsvp
     end
   end
 #  controller :guests do

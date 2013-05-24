@@ -1,0 +1,5 @@
+<%= form_tag '/groups/add_guest', method: 'put' do %>
+  <%= text_field_tag :guest, "", :size => 25 %>
+  <%= submit_tag("+", id: "add_guest_button") %>
+<% end %>
+

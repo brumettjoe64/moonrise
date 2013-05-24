@@ -1,8 +1,31 @@
+html {
+  background-color: #ffffff; 
+  background-size: cover;
+  background-repeat: no-repeat;
+//  background-image: url("/assets/bg.jpg");
+//  background-position: center top; 
+//  background-attachement: fixed; 
+}
+
 @font-face {
   font-family: 'Cookie';
   font-style: normal;
   font-weight: 400;
   src: local('Cookie-Regular'), url(http://themes.googleusercontent.com/static/fonts/cookie/v4/CytOAGPO6GUb8gQ4_bMS1OvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), url(http://themes.googleusercontent.com/static/fonts/lobster/v5/NIaFDq6p6eLpSvtV2DTNDQLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Thirsty';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Thirsty-Regular'), url('/assets/ThirstyScriptRegular.woff') format('woff');
 }
 
 body {

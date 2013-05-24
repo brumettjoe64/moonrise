@@ -24,28 +24,12 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label "Address" %><br />
-    <%= f.text_field :addrst %>
-  </div>
-  <div class="field">
-    <%= f.label "City" %><br />
-    <%= f.text_field :addrcity %>
-  </div>
-  <div class="field">
-    <%= f.label "State" %><br />
-    <%= f.text_field :addrstate %>
-  </div>
-  <div class="field">
-    <%= f.label "Zip" %><br />
-    <%= f.text_field :addrzip %>
-  </div>
-  <div class="field">
     <%= f.label "Site Key" %><br />
     <%= f.text_field :sitekey %>
   </div>
   <div class="field">
-    <%= f.label "Status" %><br />
-    <%= f.select(:status, Guest::VALID_STATUSES) %>
+    <%= f.label "RSVP" %><br />
+    <%= f.select(:rsvp, Guest::VALID_RSVPS) %>
   </div>
   <div class="field">
     <%= f.label "Admin Access" %><br />

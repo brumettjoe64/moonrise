@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
   before_filter :admin_authorize
-  skip_before_filter :admin_authorize, only: [:edit_info, :update_info]
+  skip_before_filter :admin_authorize, only: [:edit_info, :update_info, :edit_rsvp, :update_rsvp]
   skip_before_filter :authorize, only: [:edit_info, :update_info]
 
   # GET /guests
@@ -8,10 +8,10 @@ class GuestsController < ApplicationController
   def index
     @guests = Guest.order(:id).all
     @invitees = Guest.order(:id).where(invitee_id: nil)
-    @registered = Guest.where(status: :registered_guest)
-    @gos = Guest.where(status: :going)    
-    @nos = Guest.where(status: :not_going)    
-    @maybes = Guest.where(status: :new_guest) + @registered
+    @registered = Guest.where(account_flag: true)
+    @gos = Guest.where(rsvp: :going)    
+    @nos = Guest.where(rsvp: :not_going)    
+    @maybes = Guest.where(rsvp: :no_reply)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -51,6 +51,13 @@ class GuestsController < ApplicationController
     @party = @guest.party
   end
 
+  # GET /guests/rsvp
+  def edit_rsvp
+    @guest = Guest.find_by_id(session[:guest_id])
+    @party = @guest.party
+  end
+
+
   # POST /guests
   # POST /guests.json
   def create
@@ -83,10 +90,36 @@ class GuestsController < ApplicationController
     end
   end
 
-  # PUT /modify
+  # PUT guests/rsvp
+  def update_rsvp
+    @guest = Guest.find_by_id(session[:guest_id])
+    @party = @guest.party
+
+    successful_save = true
+    
+    @party.each do |pm|
+      unless !successful_save
+        pm.rsvp = params["rsvp"][pm.id.to_s]
+        pm.rsvp_info = params["rsvp_info"][pm.id.to_s]
+        successful_save = pm.save
+      end 
+    end
+
+    respond_to do |format|
+      if successful_save
+        format.html { redirect_to home_path, notice: 'RSVP was successfully modified.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit_info" }
+        format.json { render json: pm.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT guests/modify
   def update_info
     @guest = Guest.find_by_id(session[:guest_id])
-    @guest.status = "registered_guest" unless @guest.registered? 
+    @guest.account_flag = true 
     @party = @guest.party
 
     successful_save = true
@@ -111,7 +144,6 @@ class GuestsController < ApplicationController
       end
     end
   end
-
 
   # DELETE /guests/1
   # DELETE /guests/1.json

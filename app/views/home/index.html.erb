@@ -1,15 +1,16 @@
 <h1> User Actions </h1>
 <ul class="user_actions">
-<li><%= link_to @guest.firstname, modify_party_guests_path %></li>
+<li><%= link_to 'Modify party', modify_party_guests_path %></li>
 <li><%= link_to 'Log out', logout_path, method: :delete %></li>
 </ul>
 
 <h1> Navigation </h1>
 <ul class="navigation">
-<li><%= link_to 'RSVP', home_path %></li>
+<li><%= link_to 'RSVP', rsvp_guests_path %></li>
 </ul>
 
 <h1> Admin Only </h1>
 <ul class="admin_actions">
 <li><%= link_to 'Manage Guests', guests_path %> </li>
+<li><%= link_to 'Manage Groups', groups_path %> </li>
 </ul>
