@@ -5,10 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-#Guest.create( firstname: 'Kenny',
-#              lastname: 'Duong',
-#              email: 'keduong@gmail.com',
-#              sitekey: 'KennyG'),
 
-#:invitee_id
-#            )
+admin1 = Guest.create(firstname: "Kenny", lastname: "Duong", email: "keduong@gmail.com", admin: true, sitekey: "kenny")
+admin1.password = "bananas"
+admin1.save
+
+admin2 = Guest.create(firstname: "Lauren", lastname: "Jones", email: "laurensjones@gmail.com", admin: true, sitekey: "lauren")
+admin2.password = "bananas"
+admin2.save
