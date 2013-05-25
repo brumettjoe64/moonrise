@@ -26,6 +26,7 @@ class GroupsController < ApplicationController
   # GET /groups/new.json
   def new
     @group = Group.new
+    @guests = Guest.all_by_name
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,7 +44,7 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(params[:group])
-
+    @guests = Guest.all_by_name
     respond_to do |format|
       if @group.save
         format.html { redirect_to groups_url, notice: 'Group was successfully created.' }
@@ -60,7 +61,6 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
     @guests = Guest.all_by_name
-
     @guests.each do |guest|
       if params[:member][guest.id.to_s] == "true"
         @group.guests << guest unless @group.guests.include?(guest)
