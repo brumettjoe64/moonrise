@@ -46,7 +46,7 @@ class Guest < ActiveRecord::Base
   end
 
   def display_name
-    if firstname and lastname
+    if !firstname.blank? and !lastname.blank?
       "#{firstname} #{lastname}".titleize
     elsif self.invitee?
       "Invitee"

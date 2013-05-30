@@ -10,9 +10,11 @@
 <li><%= link_to 'Info', details_path %></li>
 </ul>
 
-<h1> Admin Only </h1>
-<ul class="admin_actions">
-<li><%= link_to 'Manage Guests', guests_path %> </li>
-<li><%= link_to 'Manage Groups', groups_path %> </li>
-<li><%= link_to 'Manage Details', admin_details_path %> </li>
-</ul>
+<% if @guest.admin %>
+  <h1> Admin Only </h1>
+  <ul class="admin_actions">
+  <li><%= link_to 'Manage Guests', guests_path %> </li>
+  <li><%= link_to 'Manage Groups', groups_path %> </li>
+  <li><%= link_to 'Manage Details', admin_details_path %> </li>
+  </ul>
+<% end %>
