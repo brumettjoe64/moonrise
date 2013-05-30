@@ -1,0 +1,55 @@
+<%= form_for(@detail) do |f| %>
+  <% if @detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@detail.errors.count, "error") %> prohibited this detail from being saved:</h2>
+
+      <ul>
+      <% @detail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :when %><br />
+    <%= f.datetime_select(:when, :default => { year:2014, month:7, day:4, hour:6, minute:0}) %>
+  </div>
+
+  <table>
+    <tr><th>Name</th><th>Assigned?</th></tr>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%=label_tag group.name, group.name%></td>
+        <td><%=check_box_tag "member[#{group.id}]", true, @detail.groups.include?(group)%></td>
+      </tr>   
+    <% end %>
+  </table>
+
+  </br>
+
+  <table>
+    <tr><th>Name</th><th>Assigned?</th></tr>
+    <% @guests.each do |guest| %>
+      <tr>
+        <td><%=label_tag guest.display_name, guest.display_name%></td>
+        <td><%=check_box_tag "member[#{guest.id}]", true, @detail.guests.include?(guest)%></td>
+      </tr>   
+    <% end %>
+  </table>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+
+
+
+

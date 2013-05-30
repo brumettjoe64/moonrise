@@ -1,0 +1,22 @@
+<h1>Listing details</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Description</th>
+  </tr>
+
+<% @details.each do |detail| %>
+  <tr>
+    <td><%= detail.when.strftime("%a %m/%d/%y") %></td>
+    <td><%= detail.when.strftime("%l:%M%P") %></td>
+    <td><%= detail.description %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Detail', new_detail_path %> </br>
+<%= link_to 'Home', home_path %>

@@ -27,7 +27,6 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
     @guests = Guest.all_by_name
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @group }

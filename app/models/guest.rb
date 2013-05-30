@@ -6,6 +6,7 @@ class Guest < ActiveRecord::Base
   has_many :plusones, :class_name => "Guest", :foreign_key => "invitee_id", :dependent => :destroy
   belongs_to :invitee, :class_name => "Guest"
   has_and_belongs_to_many :groups, autosave: true
+  has_and_belongs_to_many :details, autosave: true
 
   attr_accessible :sitekey, :email, :firstname, :lastname, :invitee_id, :admin, :account_flag, :rsvp, :rsvp_info 
 

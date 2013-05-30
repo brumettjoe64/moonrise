@@ -1,5 +1,12 @@
 Moonrise::Application.routes.draw do
 
+  resources :details do
+    collection do
+      get 'admin_index' => :admin_index, as: 'admin'
+    end
+  end
+
+
   resources :groups do
     member do 
       put 'add_guest' => :add_guest
