@@ -51,7 +51,7 @@ class Guest < ActiveRecord::Base
     elsif self.invitee?
       "Invitee"
     else
-      "Plus One"
+      "#{invitee.firstname}'s Plus One"
     end
   end
 

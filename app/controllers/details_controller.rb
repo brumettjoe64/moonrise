@@ -21,7 +21,7 @@ class DetailsController < ApplicationController
     end
   end
 
-  def admin_index
+  def admin
     @details = Detail.all.sort_by { |detail| detail.when }
     respond_to do |format|
       format.html # index.html.erb
@@ -67,6 +67,20 @@ class DetailsController < ApplicationController
     @groups = Group.all_by_name
     respond_to do |format|
       if @detail.save
+        @guests.each do |guest|
+          if params.has_key?(:guest_assign) and params[:guest_assign][guest.id.to_s] == "true"
+            @detail.guests << guest unless @detail.guests.include?(guest)
+          else
+            @detail.guests.delete (guest) if @detail.guests.include?(guest)
+          end
+        end
+        @groups.each do |group|
+          if params.has_key?(:group_assign) and params[:group_assign][group.id.to_s] == "true"
+            @detail.groups << group unless @detail.groups.include?(group)
+          else
+            @detail.groups.delete (group) if @detail.groups.include?(group)
+          end 
+        end  
         format.html { redirect_to admin_details_path, notice: 'Detail was successfully created.' }
         format.json { render json: @detail, status: :created, location: @detail }
       else
@@ -82,25 +96,22 @@ class DetailsController < ApplicationController
     @detail = Detail.find(params[:id])
     @guests = Guest.all_by_name
     @groups = Group.all_by_name
-
-    @guests.each do |guest|
-      if params[:member][guest.id.to_s] == "true"
-        @detail.guests << guest unless @detail.guests.include?(guest)
-      else
-        @detail.guests.delete (guest) if @detail.guests.include?(guest)
-      end
-    end  
-    @groups.each do |group|
-      if params[:member][group.id.to_s] == "true"
-        @detail.groups << group unless @detail.groups.include?(group)
-      else
-        @detail.groups.delete (group) if @detail.groups.include?(group)
-      end
-    end  
-
-
     respond_to do |format|
       if @detail.update_attributes(params[:detail])
+        @guests.each do |guest|
+          if params.has_key?(:guest_assign) and params[:guest_assign][guest.id.to_s] == "true"
+            @detail.guests << guest unless @detail.guests.include?(guest)
+          else
+            @detail.guests.delete (guest) if @detail.guests.include?(guest)
+          end
+        end
+        @groups.each do |group|
+          if params.has_key?(:group_assign) and params[:group_assign][group.id.to_s] == "true"
+            @detail.groups << group unless @detail.groups.include?(group)
+          else
+            @detail.groups.delete (group) if @detail.groups.include?(group)
+          end 
+        end  
         format.html { redirect_to admin_details_path, notice: 'Detail was successfully updated.' }
         format.json { head :no_content }
       else
@@ -117,7 +128,7 @@ class DetailsController < ApplicationController
     @detail.destroy
 
     respond_to do |format|
-      format.html { redirect_to details_url }
+      format.html { redirect_to admin_details_path }
       format.json { head :no_content }
     end
   end

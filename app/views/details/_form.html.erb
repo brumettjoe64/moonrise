@@ -25,7 +25,7 @@
     <% @groups.each do |group| %>
       <tr>
         <td><%=label_tag group.name, group.name%></td>
-        <td><%=check_box_tag "member[#{group.id}]", true, @detail.groups.include?(group)%></td>
+        <td><%=check_box_tag "group_assign[#{group.id}]", true, @detail.groups.include?(group)%></td>
       </tr>   
     <% end %>
   </table>
@@ -37,7 +37,7 @@
     <% @guests.each do |guest| %>
       <tr>
         <td><%=label_tag guest.display_name, guest.display_name%></td>
-        <td><%=check_box_tag "member[#{guest.id}]", true, @detail.guests.include?(guest)%></td>
+        <td><%=check_box_tag "guest_assign[#{guest.id}]", true, @detail.guests.include?(guest)%></td>
       </tr>   
     <% end %>
   </table>

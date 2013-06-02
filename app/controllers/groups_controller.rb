@@ -15,7 +15,6 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @group }
@@ -45,7 +44,14 @@ class GroupsController < ApplicationController
     @group = Group.new(params[:group])
     @guests = Guest.all_by_name
     respond_to do |format|
-      if @group.save
+      if @group.save 
+        @guests.each do |guest|
+          if params.has_key?(:member) and params[:member][guest.id.to_s] == "true"
+            @group.guests << guest unless @group.guests.include?(guest)
+          else
+            @group.guests.delete (guest) if @group.guests.include?(guest)
+          end
+        end 
         format.html { redirect_to groups_url, notice: 'Group was successfully created.' }
         format.json { render json: @group, status: :created, location: @group }
       else
@@ -60,16 +66,15 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
     @guests = Guest.all_by_name
-    @guests.each do |guest|
-      if params[:member][guest.id.to_s] == "true"
-        @group.guests << guest unless @group.guests.include?(guest)
-      else
-        @group.guests.delete (guest) if @group.guests.include?(guest)
-      end
-    end  
-
     respond_to do |format|
       if @group.update_attributes(params[:group])
+        @guests.each do |guest|   
+          if params.has_key?(:member) and params[:member][guest.id.to_s] == "true"
+            @group.guests << guest unless @group.guests.include?(guest)
+          else
+            @group.guests.delete (guest) if @group.guests.include?(guest)
+          end
+        end  
         format.html { redirect_to groups_url, notice: 'Group was successfully updated.' }
         format.json { head :no_content }
       else
@@ -84,7 +89,6 @@ class GroupsController < ApplicationController
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-
     respond_to do |format|
       format.html { redirect_to groups_url }
       format.json { head :no_content }

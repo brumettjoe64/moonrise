@@ -1,11 +1,17 @@
 class GuestsController < ApplicationController
   before_filter :admin_authorize
-  skip_before_filter :admin_authorize, only: [:edit_info, :update_info, :edit_rsvp, :update_rsvp]
+  skip_before_filter :admin_authorize, only: [:index, :update_info, :edit_rsvp, :update_rsvp]
   skip_before_filter :authorize, only: [:edit_info, :update_info]
 
   # GET /guests
   # GET /guests.json
   def index
+    
+  end
+
+  # GET /guests/admin
+  # GET /guests/admin.json
+  def admin
     @guests = Guest.order(:id).all
     @invitees = Guest.order(:id).where(invitee_id: nil)
     @registered = Guest.where(account_flag: true)

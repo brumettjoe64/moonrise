@@ -2,7 +2,7 @@ Moonrise::Application.routes.draw do
 
   resources :details do
     collection do
-      get 'admin_index' => :admin_index, as: 'admin'
+      get 'admin' => :admin, as: 'admin'
     end
   end
 
@@ -11,10 +11,14 @@ Moonrise::Application.routes.draw do
     member do 
       put 'add_guest' => :add_guest
     end
+    collection do 
+      get 'admin' => :index, as: 'admin' 
+    end
   end
 
   resources :guests do
     collection do
+      get 'admin'  => :admin, as: 'admin'
       get 'modify' => :edit_info, as: 'modify_party'
       put 'modify' => :update_info
       get 'rsvp'   => :edit_rsvp, as: 'rsvp'
