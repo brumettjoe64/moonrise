@@ -1,14 +1,11 @@
 class GuestsController < ApplicationController
   before_filter :admin_authorize
-  skip_before_filter :admin_authorize, only: [:index, :update_info, :edit_rsvp, :update_rsvp]
+  skip_before_filter :admin_authorize, only: [:index, :edit_info, :update_info, :edit_rsvp, :update_rsvp]
   skip_before_filter :authorize, only: [:edit_info, :update_info]
 
   # GET /guests
   # GET /guests.json
-  def index
-    
-  end
-
+  
   # GET /guests/admin
   # GET /guests/admin.json
   def admin
@@ -71,7 +68,7 @@ class GuestsController < ApplicationController
     @guest.password = params[:password]
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to guests_path, notice: 'Guest was successfully created.' }
+        format.html { redirect_to admin_guests_path, notice: 'Guest was successfully created.' }
         format.json { render json: @guest, status: :created, location: @guest }
       else
         format.html { render action: "new" }
@@ -87,7 +84,7 @@ class GuestsController < ApplicationController
     @guest.password = params[:password]
     respond_to do |format|
       if @guest.save and @guest.update_attributes(params[:guest])
-        format.html { redirect_to guests_path, notice: 'Guest was successfully updated.' }
+        format.html { redirect_to admin_guests_path, notice: 'Guest was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

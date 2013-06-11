@@ -55,6 +55,14 @@ class Guest < ActiveRecord::Base
     end
   end
 
+  def login_name
+    if invitee? and party.count > 1
+      firstname + "+"
+    else
+      firstname
+    end
+  end
+
   def initials
     if firstname and lastname
       firstname.first+lastname.first

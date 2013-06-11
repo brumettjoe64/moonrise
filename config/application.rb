@@ -63,5 +63,11 @@ module Moonrise
     config.assets.initialize_on_precompile = false
     #forcing your application to not access the DB or load models when precompiling your assets.
 
+    # add app/assets/fonts to the asset path
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    # Precompile additional assets
+    config.assets.precompile += %w( .svg .eot .woff .ttf .png )
+
   end
 end

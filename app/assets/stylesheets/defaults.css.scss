@@ -1,0 +1,144 @@
+/*----------------------------------------------------------------------------- 
+Moonrise Kingdom Site Defaults Stylesheet 
+version:   1.0 
+date:      06/06/13 
+author:    Kenny Duong 
+email:     keduong@gmail.com 
+-----------------------------------------------------------------------------*/
+
+/* Remove padding and margin from everything */ 
+* { 
+  margin: 0; 
+  border: 0; 
+  padding: 0; 
+}
+
+/* Size html and body containers to full height */
+html,body { width:100%; height:100%; }
+
+/* Classes for floating things */
+.clear { clear:both; } 
+.right { float: right; } 
+.left { float: left; }
+
+/* Links */
+a { text-decoration:none; }
+
+/* Tables */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+td {
+  text-align: left;
+  font-weight: normal;
+}
+
+/* Inputs */
+
+input[type='text'],input[type='password'] {
+  size: 20;
+  margin: 10px;
+  padding: 5px;
+}
+
+input[type='submit'] {
+  font: 1.5em "Ostrich";
+  background: #99b3b7;
+  color: white;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid white
+}
+
+/* Font sizes */
+h1 { font-size: 6.0em; }
+h2 { font-size: 4.0em; }
+h3 { font-size: 3.0em; }
+h4 { font-size: 2.0em; }
+h5 { font-size: 1.8em; }
+p  { font-size: 1.2em; }
+
+/* Body */
+body {
+  font: 68.5%/1.5 'Verdana'; 
+  background-color: #000000; 
+  color: white;     
+  text-align:center;
+
+  #bg { 
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:-1;   
+  }  
+
+  .default_width {
+    width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -52px;
+
+    .header {
+      padding:10px;
+      #title {
+        a {text-shadow: 2px 2px white};
+        a:link { color: #7D6E8B; }
+        a:visited { color: #7D6E8B; }
+        clear:both;
+        font: 6.0em 'Thirsty';
+      }
+      #user_actions {
+        display:inline;
+        a { margin: 5px 5px; border: 1px solid white; padding: 3px 10px; background: #7D6E8B;}
+        a:link { color: white; } a:visited { color: white; }
+        a:hover { color: #7D6E8B; border-color: #7D6E8B; background: white;}
+        font: 1.5em 'Ostrich';
+      }
+    }
+
+    .content {  
+      background: white; background: rgba(255, 255, 255, 0.5); 
+      text-align:left;   
+      img{
+        position:relative;
+        width: 980px;
+        height:auto;
+        border: 10px solid white;
+      }
+    }
+
+    .footer_push {
+      height:52px;
+    }
+
+  }
+
+  .nav {
+    background: white; background: rgba(255, 255, 255, 0.5); 
+    padding: 5px;
+    font: 2em 'Ostrich-Black';
+    li { display:inline; }
+    a{ margin: 0px 20px; padding:5px; }
+    a:link{ color:#7D6E8B; } a:visited{ color:#7D6E8B;} a:hover{ color:white; background:#99b3b7;}
+  }
+
+  .footer { 
+    height:52px;
+    span {font: 2.0em 'LearningCurve';}
+  }
+
+  #alert { color:red; }
+  #notice { color:green; }
+
+}
+
+

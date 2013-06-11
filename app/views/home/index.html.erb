@@ -1,20 +1,22 @@
-<h1> User Actions </h1>
-<ul class="user_actions">
-<li><%= link_to 'Modify party', modify_party_guests_path %></li>
-<li><%= link_to 'Log out', logout_path, method: :delete %></li>
-</ul>
+<div class="wrapper default_width">
+  <%= render "shared/header" %>
+  <%= render "shared/nav" %>
+  <div class="content">
+    <div class="slideshow">
+      <%= image_tag("home-1.jpg") %>
+    </div>
+    <div class="blog_peek">
+      fdf </br>
+      fdf </br>
+      fdf </br>
+    </div>
+    <div class="photos_peek">
+      fdf </br>
+      fdf </br>
+      fdf </br>
+    </div>    
+  </div>
+  <div class="footer_push"> </div>
+</div>  
 
-<h1> Navigation </h1>
-<ul class="navigation">
-<li><%= link_to 'RSVP', rsvp_guests_path %></li>
-<li><%= link_to 'Info', details_path %></li>
-</ul>
-
-<% if @guest.admin %>
-  <h1> Admin Only </h1>
-  <ul class="admin_actions">
-  <li><%= link_to 'Manage Guests', admin_guests_path %> </li>
-  <li><%= link_to 'Manage Groups', admin_groups_path %> </li>
-  <li><%= link_to 'Manage Details', admin_details_path %> </li>
-  </ul>
-<% end %>
+<%= render "shared/footer" %>

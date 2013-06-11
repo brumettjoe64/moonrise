@@ -1,14 +1,14 @@
-<div id="login_container">
-  
+<div id="sessions_wrapper">
+
   <div id="login_form">
     <%= form_tag('/login', method: 'post') do %>
       <%= text_field_tag(:login, nil, placeholder: 'sign in here', autofocus: 'true') %>
       <%= submit_tag("Login", id: "login_button") %>
-    <% end %>
+    <% end %>  
+    <p id="notice"><%= notice %></p>
+    <p id="alert"><%= alert %></p>
   </div>
 
-  <p id="alert"><%= alert %></p>
-  <p id="notice"><%= notice %></p>
   <div id="login_text">
     <h1>Kenny and Lauren's Wedding</h1>
     <h3>in</h3>
