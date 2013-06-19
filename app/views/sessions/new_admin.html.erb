@@ -1,12 +1,42 @@
-<h1>Admin Password Form</form></h1>
-  <div class="login_admin_form">
-  <%= form_tag('/login_admin', method: 'post') do %>
-    <div class="password_field">
-      <%= password_field_tag(:password, nil, placeholder: 'enter password ...') %>
-      <%= submit_tag("Login", id: "login_button") %>
-    </div>
-    <div class="hfield">
-      <%= hidden_field_tag(:login, params[:login])  %>
-    </div>
-  <div>
-  <% end %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moonrise Kingdom</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <% #link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css' %>
+</head>
+<body>
+
+<div class="sessions_wrapper">
+  <div id="login_form">
+    <%= form_tag('/login_admin', method: 'post') do %>
+      <div class="password_field">
+        <%= password_field_tag(:password, nil, placeholder: 'enter password ...', autofocus: true) %>
+        <%= submit_tag("Login", id: "login_button") %>
+      </div>
+      <div class="hfield">
+        <%= hidden_field_tag(:login, params[:login])  %>
+      </div>
+    <% end %>
+    <p id="login_notice"><%= notice %></p>
+    <p id="login_alert"><%= alert %></p>
+  </div>
+  <div id="login_text">
+    <h1 class="login_lrg">Kenny and Lauren's Wedding</h1>
+    <h1 class="login_sm">in</h1>
+    <h1 class="login_med">Wakefield, Rhode Island</h1>
+    <h1 class="login_sm">on</h1>
+    <h1 class="login_med">July 5th, 2014</h1>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+

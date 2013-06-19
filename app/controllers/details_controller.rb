@@ -22,6 +22,7 @@ class DetailsController < ApplicationController
   end
 
   def admin
+    @guest = Guest.find_by_id(session[:guest_id])
     @details = Detail.all.sort_by { |detail| detail.when }
     respond_to do |format|
       format.html # index.html.erb

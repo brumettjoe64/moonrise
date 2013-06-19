@@ -1,5 +1,7 @@
-<h1>Listing details</h1>
+<%= image_tag("holder.jpg", class:"img_top") %>
 
+<h2>Weekend Schedule</h2>
+<p> Here's some paragraph text about the details that are on this page. </p> </br>
 <table>
   <tr>
     <th>Date</th>
@@ -7,16 +9,16 @@
     <th>Description</th>
   </tr>
 
-<% @details.each do |detail| %>
-  <tr>
-    <td><%= detail.when.strftime("%a %m/%d/%y") %></td>
-    <td><%= detail.when.strftime("%l:%M%P") %></td>
-    <td><%= detail.description %></td>
-  </tr>
-<% end %>
+  <% @details.each do |detail| %>
+    <tr>
+      <td><%= detail.when.strftime("%a %m/%d/%y") %></td>
+      <td><%= detail.when.strftime("%l:%M%P") %></td>
+      <td><%= detail.description %></td>
+    </tr>
+  <% end %>
 </table>
+<h2>Where to Stay</h2>
+<p> Here's some paragraph text about the details that are on this page. </p> </br>
+<h2>Things to See</h2>
+<p> Here's some paragraph text about the details that are on this page. </p> </br>
 
-<br />
-
-<%= link_to 'New Detail', new_detail_path %> </br>
-<%= link_to 'Home', home_path %>

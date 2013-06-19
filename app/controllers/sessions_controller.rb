@@ -1,5 +1,13 @@
 class SessionsController < ApplicationController
   skip_before_filter :authorize, only: [:new, :new_admin, :create, :create_admin]
+  def new
+    render :layout => false
+  end
+  def new_admin
+    render :layout => false
+  end
+
+
   def create
     guest_by_email = Guest.find_by_email(params[:login])
     guest_by_sitekey = Guest.find_by_sitekey(params[:login])
@@ -41,6 +49,5 @@ class SessionsController < ApplicationController
     session[:guest_id] = nil
     redirect_to login_url, notice: "logged out"
   end
-
 
 end

@@ -1,9 +1,11 @@
-#sessions_wrapper {
+.sessions_wrapper {
   width:100%; 
   height:100%;
   background: image-url("front-full.jpg") no-repeat;
   background-size: cover;
   
+  input[type='text'],input[type='password'] { width: 150px; margin: 5px; padding: 5px; }
+
   #login_form {
     float:right;
     clear:both;
@@ -12,26 +14,25 @@
     #login_button {
       display:none;
     }
+
+    #login_alert { color:red; position:absolute; top:50px; right:20px; }
+    #login_notice { color:green; position:absolute; top:50px; right:20px; }
+
   }
 
   #login_text {
-    clear: both;
-    padding: 30px;
+    clear:both;
+    margin:0px;
+    padding-top: 40px;
     h1 {
       font-family: "Thirsty";
       color: #99b3b7;   
       text-shadow: 3px 3px white;
-    }
-    h2 {
-      font-family: "Thirsty";
-      color: #99b3b7;   
-      text-shadow: 3px 3px white;
-    }
-    h3{
-      margin: 15px;
-      font-family: "Thirsty";
-      color: #99b3b7;   
-      text-shadow: 2px 2px white;
+      padding-bottom: 10px;
+      &.login_sm  { font-size:20px; };
+      &.login_med { font-size:40px; };
+      &.login_lrg { font-size:60px; };            
+
     }
   }
 }

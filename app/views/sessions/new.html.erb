@@ -1,22 +1,31 @@
-<div id="sessions_wrapper">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moonrise Kingdom</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <% #link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css' %>
+</head>
+<body>
 
+<div class="sessions_wrapper">
   <div id="login_form">
     <%= form_tag('/login', method: 'post') do %>
       <%= text_field_tag(:login, nil, placeholder: 'sign in here', autofocus: 'true') %>
       <%= submit_tag("Login", id: "login_button") %>
     <% end %>  
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %></p>
+    <p id="login_notice"><%= notice %></p>
+    <p id="login_alert"><%= alert %></p>
   </div>
-
   <div id="login_text">
-    <h1>Kenny and Lauren's Wedding</h1>
-    <h3>in</h3>
-    <h2>Wakefield, Rhode Island</h2>
-    <h3>on</h3>
-    <h2>July 5th, 2013</h2>
-
+    <h1 class="login_lrg">Kenny and Lauren's Wedding</h1>
+    <h1 class="login_sm">in</h1>
+    <h1 class="login_med">Wakefield, Rhode Island</h1>
+    <h1 class="login_sm">on</h1>
+    <h1 class="login_med">July 5th, 2014</h1>
   </div>
-
 </div>
 
+</body>
+</html>

@@ -14,54 +14,57 @@ email:     keduong@gmail.com
 }
 
 /* Size html and body containers to full height */
-html,body { width:100%; height:100%; }
+html,body { width:100%; height:100%;  }
 
 /* Classes for floating things */
 .clear { clear:both; } 
 .right { float: right; } 
 .left { float: left; }
+.hcol { width:480px; padding:10px;}
 
-/* Links */
-a { text-decoration:none; }
+/* Links and Buttons*/
+a  { text-decoration:none; }
+a.admin:link    {color:blue; }
+a.admin:visited {color:blue; }
+a.button, input[type='submit'] { 
+  border: 1px solid white; padding: 3px 10px; font: 20px 'Ostrich'; 
+  color: white; background: #7D6E8B;
+}
+a.button:hover, input[type='submit']:hover { 
+  color: #7D6E8B; border-color: #7D6E8B; background: white;
+}
+        
+/* Inputs */
+
 
 /* Tables */
 table {
+  color:white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   border-spacing: 0;
   border-collapse: collapse;
-}
-td {
-  text-align: left;
-  font-weight: normal;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Inputs */
-
-input[type='text'],input[type='password'] {
-  size: 20;
-  margin: 10px;
-  padding: 5px;
+th,td { font:20px 'Ostrich-Black'; padding:5px; background: #7D6E8B; 
+  border-left: 1px solid white; border-right: 1px solid white;
 }
 
-input[type='submit'] {
-  font: 1.5em "Ostrich";
-  background: #99b3b7;
-  color: white;
-  margin: 10px;
-  padding: 5px;
-  border: 1px solid white
-}
+td { font-family: 'Ostrich'; background: #99b3b7;}
+
 
 /* Font sizes */
-h1 { font-size: 6.0em; }
-h2 { font-size: 4.0em; }
-h3 { font-size: 3.0em; }
-h4 { font-size: 2.0em; }
-h5 { font-size: 1.8em; }
-p  { font-size: 1.2em; }
+h1 { font-size: 60px;  }
+h2 { font-size: 40px; color: #99b3b7; font-family:'Thirsty'; text-shadow: 2px 2px white; margin-top: 10px;} 
+h3 { font-size: 30px; }
+h4 { font-size: 20px; }
+p  { font-size: 15px; color:black; font-family:'calligraffiti-webfont' }
 
 /* Body */
 body {
-  font: 68.5%/1.5 'Verdana'; 
+  font: 10px 'Verdana'; 
   background-color: #000000; 
   color: white;     
   text-align:center;
@@ -85,7 +88,7 @@ body {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin-bottom: -52px;
+    margin-bottom: -52px; 
 
     .header {
       padding:10px;
@@ -94,26 +97,28 @@ body {
         a:link { color: #7D6E8B; }
         a:visited { color: #7D6E8B; }
         clear:both;
-        font: 6.0em 'Thirsty';
+        font: 60px 'Thirsty';
       }
       #user_actions {
         display:inline;
-        a { margin: 5px 5px; border: 1px solid white; padding: 3px 10px; background: #7D6E8B;}
-        a:link { color: white; } a:visited { color: white; }
-        a:hover { color: #7D6E8B; border-color: #7D6E8B; background: white;}
-        font: 1.5em 'Ostrich';
       }
     }
 
     .content {  
-      background: white; background: rgba(255, 255, 255, 0.5); 
-      text-align:left;   
-      img{
-        position:relative;
+      background: white; background: rgba(255, 255, 255, 0.4);
+      padding-bottom: 50px;
+      overflow:auto;
+      .img_top{
         width: 980px;
-        height:auto;
+        height: 480px;
         border: 10px solid white;
+        overflow:hidden;
+        img{ width:100%; }
       }
+      .spacer {
+        height:50px;
+    }
+
     }
 
     .footer_push {
@@ -123,9 +128,9 @@ body {
   }
 
   .nav {
-    background: white; background: rgba(255, 255, 255, 0.5); 
+    background: white; background: rgba(255, 255, 255, 0.4); 
     padding: 5px;
-    font: 2em 'Ostrich-Black';
+    font: 20px 'Ostrich-Black';
     li { display:inline; }
     a{ margin: 0px 20px; padding:5px; }
     a:link{ color:#7D6E8B; } a:visited{ color:#7D6E8B;} a:hover{ color:white; background:#99b3b7;}
@@ -133,11 +138,26 @@ body {
 
   .footer { 
     height:52px;
-    span {font: 2.0em 'LearningCurve';}
+    position:relative;
+    span {font: 15px 'calligraffiti-webfont'; position:absolute; bottom:0px; width: 500px; left:50%; margin-left:-250px;};
   }
 
-  #alert { color:red; }
-  #notice { color:green; }
+  .admin_form {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #DDDDDD;
+    border: 5px solid #7D6E8B;
+    font: 15px 'calligraffiti-webfont'; color: black;
+    .field {
+      text-align:left;
+      margin-top: 5px; 
+      margin-bottom: 5px;
+    }
+  }
+
+  #alert { color:red; position:absolute; top:0px; left:50%; width:50%; margin-left:-25% }
+  #notice { color:green; position:absolute; top:0px; left:50%; width:50%; margin-left:-25% }
 
 }
 
