@@ -80,11 +80,15 @@ class Guest < ActiveRecord::Base
   end
 
   def self.all_by_name
-    Guest.find(:all, order: "firstname")
+    Guest.all.sort {|a,b| a.display_name <=> b.display_name}    
   end
 
   def party
-    [self] + self.plusones.order(:id) if invitee? 
+    if invitee?
+      [self] + self.plusones.order(:id) 
+    else
+      [self]
+    end
   end
 
   def invitee?
@@ -103,8 +107,21 @@ class Guest < ActiveRecord::Base
     self.account_flag 
   end
 
-
-
+  def display_status
+    if self.invitee?
+      if self.registered?  
+        self.rsvp
+      else
+        "no_login"
+      end
+    else
+      if self.invitee.registered?
+        self.rsvp
+      else
+        "no_login"
+      end
+    end
+  end
   def check_invitee_email
     if self.invitee? and self.account_flag and self.email.blank?
       errors.add(:email, "is required for head invitee")

@@ -1,39 +1,35 @@
-<%= form_for(@group) do |f| %>
-  <% if @group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+<div class="admin_form">
+  <%= form_for(@group) do |f| %>
+    <% if @group.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</p>
 
-      <ul>
-      <% @group.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-
-  <table>
-    <tr><th>Name</th><th>Member?</th></tr>
-    <% @guests.each do |guest| %>
-      <tr>
-        <td><%=label_tag guest.display_name, guest.display_name%></td>
-        <td><%=check_box_tag "member[#{guest.id}]", true, @group.guests.include?(guest)%></td>
-      </tr>   
+        <ul>
+        <% @group.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
-  </table>
 
-  <div>
+    <div class="field">
+      <%= f.label "Name:" %>
+      <%= f.text_field(:name, class: "lineup") %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Who:" %>
+        <table>
+          <tr><th>Name</th><th>Member?</th></tr>
+          <% @guests.each do |guest| %>
+            <tr>
+              <td><%=label_tag guest.display_name, guest.display_name%></td>
+              <td><%=check_box_tag "member[#{guest.id}]", true, @group.guests.include?(guest)%></td>
+            </tr>   
+          <% end %>
+        </table>
+    </div>
     <%= f.submit %>
-  </div>
-
-<% end %>
-  
-
-
-
-
-
+  <% end %>
+  <%= link_to 'Back', admin_groups_path %>
+</div>

@@ -1,11 +1,13 @@
-<div class="nav">
+<div class="nav ff_nav">
   <ul>
-    <li><%= link_to 'Details', details_path %></li>
-    <li><%= link_to 'Blog', home_path%></li> 
-    <li><%= link_to 'Photos', home_path %><li>
-    <li><%= link_to 'Playlist', home_path %><li>
-    <li><%= link_to 'Registry', home_path %><li>      
-    <li><%= link_to 'RSVP', rsvp_guests_path %></li>
+    <li class="left"><%= link_to Guest.find_by_id(session[:guest_id]).login_name, modify_party_guests_path%></li>
+    <li class="right"><%= link_to 'Logout', logout_path, method: :delete, class:"upper" %></li>
+    <li><%= link_to 'Details', details_path, class:"upper" %></li>
+    <li><%= link_to 'Blog', home_path, class:"upper"%></li> 
+    <li><%= link_to 'Photos', home_path, class:"upper" %><li>
+    <li><%= link_to 'Playlist', home_path, class:"upper" %><li>
+    <li><%= link_to 'Registry', home_path, class:"upper" %><li>      
+    <li><%= link_to 'RSVP', rsvp_guests_path, class:"upper" %></li>
   </ul>
 
 </div>

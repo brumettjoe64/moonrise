@@ -2,7 +2,7 @@
   <%= form_for(@detail) do |f| %>
     <% if @detail.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@detail.errors.count, "error") %> prohibited this detail from being saved:</h2>
+        <p><%= pluralize(@detail.errors.count, "error") %> prohibited this detail from being saved:</p>
 
         <ul>
         <% @detail.errors.full_messages.each do |msg| %>
@@ -14,18 +14,21 @@
 
     <div class="field">
       <%= f.label "What:" %>
-      <%= f.text_field :description %>
+      <%= f.text_field(:description, class: "lineup") %>
     </div>
     <div class="field">
-      <%= f.label "When:" %>
-      <%= f.time_select(:when, :default => { year:2014, month:7, day:4, hour:6, minute:0}) %>
-      <%# f.datetime_select(:when, :default => { year:2014, month:7, day:4, hour:6, minute:0}) %>
+      <%= f.label "Date:" %>
+      <span class="lineup"><%= f.date_select(:when, :default => { year:2014, month:7, day:5}, :order => [:month, :day, :year]) %> </span>
+    </div>
+    <div class="field">
+      <%= f.label "Time:" %>
+      <span class="lineup"><%= f.time_select(:when, :default => { hour:5, minute:0}, minute_step: 15, ampm: true, ignore_date: true) %> </span>
     </div>
 
     <div class="field">
       <%= f.label "Who:" %>
       <table>
-        <tr><th class="first">Group</th><th></th></tr>
+        <tr><th colspan=2>Assigned Groups</th></tr>
         <% @groups.each do |group| %>
           <tr>
             <td><%=label_tag group.name, group.name%></td>
@@ -37,7 +40,7 @@
 
     <div class="field">
       <table>
-        <tr><th class="first">Guest</th><th></th></tr>
+        <tr><th colspan=2>Assigned Guests</th></tr>
         <% @guests.each do |guest| %>
           <tr>
             <td><%=label_tag guest.display_name, guest.display_name%></td>
@@ -48,8 +51,9 @@
     </div>
 
     <%= f.submit %>
-
   <% end %>
+  <%= link_to 'Back', admin_details_path %>
+
 </div>
 
 

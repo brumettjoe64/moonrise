@@ -1,10 +1,13 @@
-<h1>Guest stats</h1>
-<table>
+<div class="guests">
+
+<h2 class="ff_title fc_2">Manage Guests</h2>
+
+<table class="admin_summary">
+  <th colspan=2> Guest Stats </th>
   <tr>
     <td>Total Invitees</td>
     <td><%= @guests.count %></td>
   </tr>
-
   <tr>
     <td> RSVPers </td>
     <td> <%= @invitees.count %> </td>
@@ -13,7 +16,6 @@
     <td> Accounts </td>
     <td> <%= @registered.count %> </td>
   </tr>
-
   <tr>
     <td> Going! </td>
     <td> <%= @gos.count %> </td>
@@ -26,49 +28,34 @@
     <td> Maybe.. </td>
     <td> <%= @maybes.count %> </td>
   </tr>  
-
 </table>
 
-<h1>Listing guests</h1>
-
-<table>
+<table class="admin_summary">
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th>Firstname</th>
-    <th>Lastname</th>
+    <th>Name</th>
     <th>Email</th>
-    <th>Key</th>
-    <th>Login?</th>
-    <th>RSVP</th>
-    <th>Info</th>
-    <th>Invitee</th>
+    <th>Status</th>
     <th>Groups</th>
-
+    <th colspan=3></th>
   </tr>
-
   <% @invitees.each do |invitee| %>
     <% invitee.party.each do |guest| %>
       <tr class="<%= "plusone" if guest.plusone? %>">
-        <td><%= link_to('X', guest, method: :delete, confirm: 'Are you sure?') %></td>
-        <td><%= link_to('Edit', edit_guest_path(guest)) %></td>
-        <td><%= link_to('+', new_guest_path(invitee_id: guest)) if guest.invitee? %></td>
-        <td class="<%= "admin" if guest.admin %>"><%= guest.firstname %></td>
-        <td class="<%= "admin" if guest.admin %>"><%= guest.lastname %></td>
+        <td><%= guest.display_name %></td>
         <td><%= guest.email %></td>
-        <td><%= guest.sitekey %></td>
-        <td><%= guest.account_flag %></td>
-        <td><%= guest.rsvp %></td>
-        <td><%= truncate(guest.rsvp_info, length: 10) %></td>
-        <td><%= guest.invitee.initials %></td>
-        <td><%= guest.groups.map{|x| x.name}.join(", ")%></td>
+        <td><%= guest.display_status %></td>
+        <%#<td><%= truncate(guest.rsvp_info, length: 10) </td>%>
+        <td><%= truncate(guest.groups.map{|x| x.name}.join(", "), length:25)%></td>
+        <td><%= link_to('+1', new_guest_path(invitee_id: guest), class: "admin") if guest.invitee? %></td>
+        <td><%= link_to('Edit', edit_guest_path(guest), class: "admin") %></td>
+        <td><%= link_to('X', guest, method: :delete, confirm: 'Are you sure?', class: "admin") %></td>
       </tr>
     <% end %>
   <% end %>
 </table>
 
-<br>
+</br>
 
-<%= link_to 'New Invitee', new_guest_path %> </br>
-<%= link_to 'Home', home_path %>
+<%= link_to 'New Invitee', new_guest_path, class: "button" %>
+
+</div>

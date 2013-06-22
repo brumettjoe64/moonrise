@@ -12,7 +12,7 @@ Moonrise::Application.routes.draw do
       put 'add_guest' => :add_guest
     end
     collection do 
-      get 'admin' => :index, as: 'admin' 
+      get 'admin' => :admin, as: 'admin' 
     end
   end
 

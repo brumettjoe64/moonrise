@@ -1,7 +1,7 @@
 <div class="details">
-  <h2>Admin Details</h2>
+  <h2 class="ff_title fc_2">Manage Details</h2>
 
-  <table>
+  <table class="admin_summary">
     <tr>
       <th>Description</th>
       <th>Date</th>
@@ -16,8 +16,8 @@
       <td><%= detail.description %></td>
       <td><%= detail.when.strftime("%a %m/%d/%y") %></td>
       <td><%= detail.when.strftime("%l:%M%P") %></td>
-      <td><%= detail.groups.map{|x| x.name}.join(", ") %></td>
-      <td><%= detail.guests.map{|x| x.display_name}.join(", ") %></td>
+      <td><%= truncate(detail.groups.map{|x| x.name}.join(", "),length:20) %></td>
+      <td><%= truncate(detail.guests.map{|x| x.display_name}.join(", "),length:20) %></td>
       <td><%= link_to 'Edit', edit_detail_path(detail), class: "admin" %></td>
       <td><%= link_to 'X', detail, class: "admin", method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>

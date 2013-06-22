@@ -1,9 +1,5 @@
 <div class="header">
-  <ul>
-    <li id="user_actions" class="right"><%= link_to 'LOGOUT', logout_path, method: :delete, class: "button" %></li>
-    <li id="user_actions" class="right"><%= link_to Guest.find_by_id(session[:guest_id]).login_name, modify_party_guests_path, class: "button"%></li>
-  </ul>
-    <h1 id="title"> <%= link_to "Kenny & Lauren's Wedding", home_path%> </h1>
+    <h1 class="clear"><%= link_to "Kenny & Lauren's Wedding", home_path, class:"ff_title fc_1"%></h1>
 </div>
 
 

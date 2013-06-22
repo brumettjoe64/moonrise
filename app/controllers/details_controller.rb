@@ -7,10 +7,10 @@ class DetailsController < ApplicationController
   def index
     @guest = Guest.find_by_id(session[:guest_id])
     @groups = @guest.groups
-
     @details = @guest.details
     @groups.each do |group|
       @details |= group.details
+    
     end
 
     @details = @details.sort_by { |detail| detail.when }

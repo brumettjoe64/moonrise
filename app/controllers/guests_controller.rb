@@ -8,9 +8,11 @@ class GuestsController < ApplicationController
   
   # GET /guests/admin
   # GET /guests/admin.json
+
+
   def admin
-    @guests = Guest.order(:id).all
-    @invitees = Guest.order(:id).where(invitee_id: nil)
+    @guests = Guest.order(:firstname).all
+    @invitees = Guest.order(:firstname).where(invitee_id: nil)
     @registered = Guest.where(account_flag: true)
     @gos = Guest.where(rsvp: :going)    
     @nos = Guest.where(rsvp: :not_going)    
@@ -155,7 +157,7 @@ class GuestsController < ApplicationController
     @guest.destroy
 
     respond_to do |format|
-      format.html { redirect_to guests_url }
+      format.html { redirect_to admin_guests_path }
       format.json { head :no_content }
     end
   end

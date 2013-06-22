@@ -1,49 +1,56 @@
-<%= form_for(@guest) do |f| %>
-  <% if @guest.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@guest.errors.count, "error") %> prohibited this guest from being saved:</h2>
+<div class="admin_form">
+  <%= form_for(@guest) do |f| %>
+    <% if @guest.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(@guest.errors.count, "error") %> prohibited this guest from being saved:</p>
 
-      <ul>
-      <% @guest.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <ul>
+        <% @guest.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
   <div class="field">
-    <%= f.label "First Name" %><br />
-    <%= f.text_field :firstname %>
+    <%= f.label "First Name" %>
+    <%= f.text_field(:firstname, class: "lineup") %>
   </div>
   <div class="field">
-    <%= f.label "Last Name" %><br />
-    <%= f.text_field :lastname %>
+    <%= f.label "Last Name" %>
+    <%= f.text_field(:lastname, class: "lineup") %>
   </div>  
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.label :email %>
+    <%= f.text_field(:email, class: "lineup") %>
   </div>
   <div class="field">
-    <%= f.label "Site Key" %><br />
-    <%= f.text_field :sitekey %>
+    <%= f.label "Site Key" %>
+    <%= f.text_field(:sitekey, class: "lineup") %>
   </div>
   <div class="field">
-    <%= f.label "RSVP" %><br />
-    <%= f.select(:rsvp, Guest::VALID_RSVPS) %>
+    <%= f.label "RSVP" %>
+    <span class="lineup"><%= f.select(:rsvp, Guest::VALID_RSVPS) %> </span>
   </div>
   <div class="field">
-    <%= f.label "Admin Access" %><br />
-    <%= f.check_box(:admin) %>
+    <%= f.label "Info" %>
+    <%= f.text_field(:rsvp_info, class: "lineup") %>
   </div>
   <div class="field">
-    <%= label_tag "Change Admin Password" %><br />
-    <%= password_field_tag(:password) %>
+    <%= f.label "Admin?" %>
+    <%= f.check_box(:admin, class: "lineup") %>
+  </div>
+  <div class="field">
+    <%= label_tag "Password" %>
+    <span class="lineup"><%= password_field_tag(:password) %> </span>
   </div>
   <div class="hfield">
     <%= f.hidden_field(:invitee_id, value: (params[:invitee_id] || @guest.invitee_id)) %>
   </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
+  <%= link_to 'Back', admin_guests_path %>
+
+</div>

@@ -1,11 +1,4 @@
 div.details {
-  div.admin_form{
-    input[type='text'] { 
-      width: 350px; margin-left: 2px; padding: 2px; 
-    }
-    table {
-      margin-left:40px;
-      th.first { min-width:120px; } 
-    }
-  }
+  tr{border:1px solid white;}
+  table.admin_summary{width:800px;}
 }

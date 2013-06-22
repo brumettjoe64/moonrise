@@ -1,25 +1,28 @@
-<h1>Listing groups</h1>
+<div class="groups">
+  <h2 class="ff_title fc_2">Manage Groups</h2>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Edit</th>
-    <th>Del</th>
-  </tr>
+  <table class="admin_summary">
+    <tr>
+      <th>Group</th>
+      <th>Member</th>
+      <th colspan=2></th>
+    </tr>
 
-<% @groups.each do |group| %>
-  <tr>
-    <td><%= group.name %></td>
-    <td><%= link_to 'Edit', edit_group_path(group) %></td>
-    <td><%= link_to 'X', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <% group.guests.order(:firstname).each do |guest| %>
-    <tr class="group_member"><td><%=guest.display_name%></td><td></td><td></td></tr>
-  <% end %>
-<% end %>
-</table>
+    <% @groups.each do |group| %>
+      <tr>
+        <td rowspan="<%=group.guests.count%>"> <%= group.name %></td>
+        <% @guests=group.guests.order(:firstname) %>
+        <% @guest1=@guests.shift %>        
+        <td> <%= @guest1.display_name if @guest1%></td> 
+        <td rowspan="<%=group.guests.count%>"><%= link_to 'Edit', edit_group_path(group) %></td>
+        <td rowspan="<%=group.guests.count%>"><%= link_to 'X', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% @guests.each do |guest| %>
+        <tr><td><%=guest.display_name%></td></tr>
+      <% end %>
+    <% end %>
+  </table>
+  </br>
+  <%= link_to 'New Group', new_group_path, class: "button" %>
 
-<br />
-
-<%= link_to 'New Group', new_group_path %> </br>
-<%= link_to 'Home', home_path %>
+</div>

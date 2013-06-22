@@ -1,34 +1,27 @@
-<h1>Guest Information</h1>
+<div class="guests">
 
-<%= form_tag '/guests/modify', method: 'put' do %>
-  <table>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-    </tr>
-  
-    <% @party.each do |party_member| %>
-      <tr class="<%= "plusone" if party_member.plusone? %>">
-        <td><%= text_field_tag 'firstnames[]', party_member.firstname, :size => 25 %></td>
-        <td><%= text_field_tag 'lastnames[]',  party_member.lastname,  :size => 25 %></td>
-        <td><%= text_field_tag '[emails[]',    party_member.email,     :size => 25 %></td>      
-      </tr>
-    <% end %> 
+  <h2 class="ff_title fc_2">Guest Information</h2>
+  <div class="form">
+  <%= form_tag '/guests/modify', method: 'put' do %>
+    <% @party.each do |party_member| %>     
+      <span class="written"><%= "What's your name?" if party_member == @guest%> </span>
+      <div class="field">
+        <%= label_tag "First Name:" %>
+        <%= text_field_tag 'firstnames[]', party_member.firstname, class: "lineup" %>
+      </div>
+      <div class="field">
+        <%= label_tag "Last Name:" %>
+        <%= text_field_tag 'lastnames[]', party_member.lastname, class: "lineup"  %>
+      </div>
+      <div class="field">
+        <%= label_tag "Email:" %>
+        <%= text_field_tag 'emails[]', party_member.email, class: "lineup"  %>
+      </div>
+      </br>
+      <span class="written"><%= "Are you bringing anyone?" if party_member.party.count > 1 %> </span>
 
-  </table>
-  <%= submit_tag("Save Changes", id: "modify_button") %>
-<% end %>
-
-<% @party.each do |party_member| %>
-  <% if party_member.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(party_member.errors.count, "error") %> prohibited <%=party_member.firstname%> from being saved:</h2>
-      <ul>
-      <% party_member.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+    <% end %>
+    <%= submit_tag("Save Changes", id: "modify_button") %>
   <% end %>
-<% end %>
+
+</div>

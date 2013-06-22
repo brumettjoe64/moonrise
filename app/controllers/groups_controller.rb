@@ -3,8 +3,8 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
 
-  def index
-    @groups = Group.all
+  def admin
+    @groups = Group.order(:name).all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @groups }
@@ -90,7 +90,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @group.destroy
     respond_to do |format|
-      format.html { redirect_to groups_url }
+      format.html { redirect_to admin_groups_path }
       format.json { head :no_content }
     end
   end
