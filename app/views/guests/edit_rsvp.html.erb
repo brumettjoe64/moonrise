@@ -20,6 +20,11 @@
         <%= radio_button_tag "rsvp[#{pm.id}]", :no_reply, checked=(pm.rsvp=="no_reply") %> 
         <%=label_tag 'No Reply'%>
       </div>
+      <div class="field">
+        <%= text_field_tag "rsvp_info[#{pm.id}]", pm.rsvp_info%>
+        <%=label_tag 'Comments'%>
+      </div>
+
       </br>
     <% end %>
     <%= submit_tag("RSVP", id: "modify_button") %>

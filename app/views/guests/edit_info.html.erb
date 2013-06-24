@@ -3,8 +3,14 @@
   <h2 class="ff_title fc_2">Guest Information</h2>
   <div class="form">
   <%= form_tag '/guests/modify', method: 'put' do %>
+    <% if @guest.errors.any? %>
+      <div id="error_explanation">
+        <p> Email address is required for head invitee</p></br>
+      </div>
+    <% end %>
+
     <% @party.each do |party_member| %>     
-      <span class="written"><%= "What's your name?" if party_member == @guest%> </span>
+      <span class="written"><%= "Your Info" if party_member == @guest%> </span>
       <div class="field">
         <%= label_tag "First Name:" %>
         <%= text_field_tag 'firstnames[]', party_member.firstname, class: "lineup" %>
@@ -15,11 +21,10 @@
       </div>
       <div class="field">
         <%= label_tag "Email:" %>
-        <%= text_field_tag 'emails[]', party_member.email, class: "lineup"  %>
+        <%= text_field_tag 'emails[]', party_member.email, placeholder: 'gives this guest access to the site', class: "lineup"  %>
       </div>
       </br>
-      <span class="written"><%= "Are you bringing anyone?" if party_member.party.count > 1 %> </span>
-
+      <span class="written"><%= "Guest Info" if party_member.party.count > 1 %> </span>
     <% end %>
     <%= submit_tag("Save Changes", id: "modify_button") %>
   <% end %>
