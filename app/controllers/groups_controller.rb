@@ -52,7 +52,7 @@ class GroupsController < ApplicationController
             @group.guests.delete (guest) if @group.guests.include?(guest)
           end
         end 
-        format.html { redirect_to groups_url, notice: 'Group was successfully created.' }
+        format.html { redirect_to admin_groups_path, notice: 'Group was successfully created.' }
         format.json { render json: @group, status: :created, location: @group }
       else
         format.html { render action: "new" }
@@ -75,7 +75,7 @@ class GroupsController < ApplicationController
             @group.guests.delete (guest) if @group.guests.include?(guest)
           end
         end  
-        format.html { redirect_to groups_url, notice: 'Group was successfully updated.' }
+        format.html { redirect_to admin_groups_path, notice: 'Group was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
