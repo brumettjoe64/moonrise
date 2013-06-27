@@ -31,7 +31,7 @@ html,body { width:100%; height:100%;  }
 /* Fonts */
 .ff_title           { font-family: 'Thirsty'; }
 .ff_nav             { font-family: 'Pathway Gothic One'}
-.ff_read,p,td,th    { font-family: 'Crafty Girls'}
+.ff_read,p,td,th    { font-family: 'MyriadPro'}
 .ff_cursive         { font-family: 'Cedarville Cursive'}
 /* Font colors */
 .fc_1, a:link.fc_1, a:visited.fc_1 {color: #7D6E8B;}
@@ -46,7 +46,7 @@ h4 { font-size: 20px; }
 td { font-size: 20px; }
 th { font-size: 20px; }
 li { font-size: 20px; }
-p  { font-size: 14px; text-align:justify;}
+p  { font-size: 16px; text-align:justify;}
 
 /* Links, List, and Buttons*/
 a  { text-decoration:none; }
@@ -150,7 +150,7 @@ body {
     }
 
     .written {
-      font: 24px 'Special Elite'; color: black;
+      font: 24px 'Crafty Girls'; color: black;
     }
 
     .note {
@@ -168,13 +168,19 @@ body {
     }
   }
 
+  .admin {
+
+    td { font: 15px 'MyriadPro'; }
+
+  }
+
   .admin_form {
     width: 450px;
     margin: 0 auto;
     padding: 20px;
     background: #DDDDDD;
     border: 5px solid #7D6E8B;
-    font: 15px 'Crafty Girls'; color: black;
+    font: 15px 'MyriadPro'; color: black;
 
     .field {
       margin-top: 5px; margin-bottom: 5px;
@@ -184,11 +190,14 @@ body {
     }
 
     label,textarea,input[type='text'],input[type='password'],select {
-       font: 15px 'Crafty Girls'; color: black;
+       font: 15px 'MyriadPro'; color: black;
        display: inline-block;
        padding: 2px; 
        margin: 2px 0; 
     }
+
+    td { font: 15px 'MyriadPro'; }
+
     input[type='text'],input[type='password'], textarea, table { 
       width: 270px;  
     }
