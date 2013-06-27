@@ -169,9 +169,7 @@ body {
   }
 
   .admin {
-
     td { font: 15px 'MyriadPro'; }
-
   }
 
   .admin_form {
@@ -205,5 +203,5 @@ body {
 
   #alert { color:red; position:absolute; top:0px; left:50%; width:50%; margin-left:-25% }
   #notice { color:green; position:absolute; top:0px; left:50%; width:50%; margin-left:-25% }
-  #error_explanation {text-align:left; color:red; p {color:red;} ul {list-style-type:none; text-indent:10px;}}
+  #error_explanation {text-align:left; color:red; p {color:red;} ul {list-style-type:none; text-indent:10px;} li {font-size:15px;}}
 }

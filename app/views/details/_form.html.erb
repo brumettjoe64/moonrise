@@ -3,7 +3,6 @@
     <% if @detail.errors.any? %>
       <div id="error_explanation">
         <p><%= pluralize(@detail.errors.count, "error") %> prohibited this detail from being saved:</p>
-
         <ul>
         <% @detail.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
