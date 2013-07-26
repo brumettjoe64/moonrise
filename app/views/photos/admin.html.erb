@@ -1,0 +1,32 @@
+<div class="photos admin">
+  <h2 class="ff_title fc_2">Manage Photos</h2>
+
+  <table class="admin_summary">
+    <tr>
+      <th>Image</th>
+      <th>Caption</th>
+      <th>Uploader</th>
+      <th>Tag</th>
+      <th>Created</th>
+      <th>Edited</th>      
+
+      <th colspan=2></th>
+    </tr>
+
+  <% @photos.each do |photo| %>
+    <tr>
+      <td> <div class="thumb"> <%= image_tag(photo.pic.url(:thumb) || "holder100x100.jpg") %> </div> </td>
+      <td><%= truncate(photo.caption,length:50) %></td>
+      <td><%= photo.guest.display_name if photo.guest %></td>
+      <td><%= photo.tag %></td>
+      <td><%= photo.created_at.strftime("%m/%d/%y %l:%M%P") %></td>
+      <td><%= photo.updated_at.strftime("%m/%d/%y %l:%M%P") %></td>
+      <td><%= link_to 'Edit', edit_photo_path(photo), class: "admin" %></td>
+      <td><%= link_to 'X', photo, class: "admin", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  </br>
+  <%= link_to 'New Photo', new_photo_path, class: "button"%>
+</div>

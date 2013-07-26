@@ -9,6 +9,18 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+    font-family: 'Thirsty Rough';
+    src: url('thirstyroughregularthree-webfont.eot');
+    src: url('thirstyroughregularthree-webfont.eot?#iefix') format('embedded-opentype'),
+         url('thirstyroughregularthree-webfont.woff') format('woff'),
+         url('thirstyroughregularthree-webfont.ttf') format('truetype'),
+         url('thirstyroughregularthree-webfont.svg#thirsty_roughregular_three') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @font-face {
   font-family: 'MyriadPro';
   src:font-url('MPro.eot');
@@ -18,4 +30,11 @@
       font-url('MPro.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
 }

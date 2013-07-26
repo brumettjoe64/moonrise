@@ -1,0 +1,32 @@
+<div class="blogs admin">
+  <h2 class="ff_title fc_2">Manage Blogs</h2>
+
+  <table class="admin_summary">
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>Content</th>
+      <th>Author</th>
+      <th>Created</th>
+      <th>Edited</th>      
+
+      <th colspan=2></th>
+    </tr>
+
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td><%= blog.title %></td>
+      <td> <div class="thumb"> <%= image_tag(blog.pic.url(:thumb) || "holder100x100.jpg") %> </td>
+      <td><%= truncate(blog.body,length:30) %></td>
+      <td><%= blog.guest.firstname %></td>
+      <td><%= blog.created_at.strftime("%m/%d/%y %l:%M%P") %></td>
+      <td><%= blog.updated_at.strftime("%m/%d/%y %l:%M%P") %></td>
+      <td><%= link_to 'Edit', edit_blog_path(blog), class: "admin" %></td>
+      <td><%= link_to 'X', blog, class: "admin", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  </br>
+  <%= link_to 'New Blog', new_blog_path, class: "button"%>
+</div>

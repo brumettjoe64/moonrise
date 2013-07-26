@@ -4,6 +4,7 @@ class Guest < ActiveRecord::Base
   include BCrypt
 
   has_many :plusones, :class_name => "Guest", :foreign_key => "invitee_id", :dependent => :destroy
+  has_many :blogs, :dependent => :destroy
   belongs_to :invitee, :class_name => "Guest"
   has_and_belongs_to_many :groups, autosave: true
   has_and_belongs_to_many :details, autosave: true

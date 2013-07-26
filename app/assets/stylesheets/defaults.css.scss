@@ -23,30 +23,31 @@ html,body { width:100%; height:100%;  }
 .upper { text-transform: uppercase; font-weight:1000;}
 .lefta { position:absolute; left:0;}
 
-.default_width { width:1000px; margin-left:auto; margin-right:auto; }
+.default_width { width:800px; margin-left:auto; margin-right:auto; }
 .full_width {width:100%;}
-.hcol_lt { width:425px; padding: 10px 25px 10px 50px; float:left; }
-.hcol_rt { width:425px; padding: 10px 50px 10px 25px; float:right; }
+.hcol_lt { width:385px; padding: 10px 5px 10px 10px; float:left; }
+.hcol_rt { width:385px; padding: 10px 10px 10px 5px; float:right; }
 
 /* Fonts */
-.ff_title           { font-family: 'Thirsty'; }
+.ff_title           { font-family: 'Thirsty Rough'; }
 .ff_nav             { font-family: 'Pathway Gothic One'}
 .ff_read,p,td,th    { font-family: 'MyriadPro'}
 .ff_cursive         { font-family: 'Cedarville Cursive'}
+
 /* Font colors */
 .fc_1, a:link.fc_1, a:visited.fc_1 {color: #7D6E8B;}
 .fc_2, a:link.fc_2, a:visited.fc_2 {color: #99B3B7;}
 .fc_3, a:link.fc_3, a:visited.fc_3 {color: white;}
 
 /* Font sizes */
-h1 { font-size: 60px; text-shadow: 2px 2px white; }
-h2 { font-size: 40px; text-shadow: 2px 2px white; } 
-h3 { font-size: 30px; text-shadow: 2px 2px white; }
-h4 { font-size: 20px; }
-td { font-size: 20px; }
-th { font-size: 20px; }
-li { font-size: 20px; }
-p  { font-size: 16px; text-align:justify;}
+h1 { font-size: 60px; font-weight:normal; text-shadow: 0 1px #fffaec} // text-shadow: 3px 0px #99B3B7; }
+h2 { font-size: 40px; font-weight:normal; } 
+h3 { font-size: 30px; font-weight:normal; } //text-shadow: 2px 2px white; }
+h4 { font-size: 20px; font-weight:normal; }
+td { font-size: 20px;  }
+th { font-size: 20px;  }
+li { font-size: 20px;  }
+p  { font-size: 16px; text-align:justify; }
 
 /* Links, List, and Buttons*/
 a  { text-decoration:none; }
@@ -62,6 +63,7 @@ a.button, input[type='submit'] {
 a.button:hover, input[type='submit']:hover { 
   color: #7D6E8B; border-color: #7D6E8B; background: white;
 }
+
 
 
 /* Tables */
@@ -81,7 +83,7 @@ th,td {
   border-left: 1px solid white; border-right: 1px solid white;
 }
 
-td { font: 15px 'Crafty Girls'; text-align:left; background: #99b3b7;}
+td { font: 15px 'Pathway Gothic One'; text-align:left; background: #99b3b7;}
 
 /* Body */
 
@@ -89,7 +91,6 @@ body {
   background-color: white; 
   color: black;     
   text-align:center;
-
   h2 { margin-top:20px;}
 
   #bg { 
@@ -101,10 +102,12 @@ body {
     z-index:-1;   
   }  
 
-  .wrapper { min-height: 100%; height: auto !important; height: 100%; margin-bottom: -60px; }
+  .wrapper { min-height: 100%; height: auto !important; height: 100%; margin-bottom: -60px;
+             box-shadow:  0px 3px 14px rgba(0, 0, 0, 0.3)}
+            // box-shadow: 0px 5px 10px 5px #7D6E8B;}
   .header { padding:10px; }
   .nav {
-    background: white; background: rgba(255, 255, 255, 0.7);  
+    background: white; background: rgba(255, 255, 255, 0.5); 
     padding: 5px 0px;
     li { display:inline;}
     a { margin: 0; padding:5px 20px;}
@@ -113,20 +116,21 @@ body {
   }
 
   .content {  
-    background: white; background: rgba(255, 255, 255, 0.4);
+    background: white; background: rgba(255, 255, 255, 0.5);
     padding-bottom: 50px;
     overflow:auto;
+
     .img_top{
-      width: 1000px;
-      overflow:hidden;
-    }
-    .img_sq{
-      width:  415px;
-      border: 5px solid white;
-      overflow:hidden;
+      width: 800px;
+      height: 400px;
     }
 
     .spacer { height:50px; }
+    .thumb { width:100px; height:100px; background: black ; position:relative;
+      img {
+        position:absolute;
+        margin: auto; top:0; right:0; bottom:0; left:0; 
+      }}
   }
 
   .footer_push { height:60px; }
@@ -136,7 +140,7 @@ body {
   }
 
   .form {
-    width: 450px;
+    width: 500px;
     margin: 0 auto;
     padding: 20px;
     background: #DDDDDD;
@@ -150,7 +154,7 @@ body {
     }
 
     .written {
-      font: 24px 'Crafty Girls'; color: black;
+      font: 24px 'Pathway Gothic One'; color: black;
     }
 
     .note {
@@ -158,7 +162,7 @@ body {
     }
 
     label,input[type='text']{
-       font: 15px 'Crafty Girls'; color: black;
+       font: 15px 'Myriad Pro'; color: black;
        display: inline-block;
        padding: 2px; 
        margin: 2px 0; 
@@ -169,7 +173,7 @@ body {
   }
 
   .admin {
-    td { font: 15px 'MyriadPro'; }
+    td,th { font: 15px 'MyriadPro'; }
   }
 
   .admin_form {
@@ -199,9 +203,13 @@ body {
     input[type='text'],input[type='password'], textarea, table { 
       width: 270px;  
     }
+
+    textarea, .textarea_spacer {
+      height:180px;
+    }
   }
 
-  #alert { color:red; position:absolute; top:0px; left:50%; width:50%; margin-left:-25% }
-  #notice { color:green; position:absolute; top:0px; left:50%; width:50%; margin-left:-25% }
+  #alert { color:red; position:absolute; top:0px; left:50%; width:50%; margin-left:-25%; text-align:center }
+  #notice { color:green; position:absolute; top:0px; left:50%; width:50%; margin-left:-25%; text-align:center }
   #error_explanation {text-align:left; color:red; p {color:red;} ul {list-style-type:none; text-indent:10px;} li {font-size:15px;}}
 }

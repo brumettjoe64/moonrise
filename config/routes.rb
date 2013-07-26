@@ -1,11 +1,22 @@
 Moonrise::Application.routes.draw do
 
+  resources :photos do
+    collection do
+      get 'admin'  => :admin, as: 'admin'
+    end
+  end
+
+  resources :blogs do
+    collection do
+      get 'admin'  => :admin, as: 'admin'
+    end
+  end
+
   resources :details do
     collection do
       get 'admin' => :admin, as: 'admin'
     end
   end
-
 
   resources :groups do
     member do 
@@ -30,8 +41,6 @@ Moonrise::Application.routes.draw do
 #    put 'guests/modify' => :update_info
 #  end
 
-
-
   #controller :guests do
   #  get 'edit_guests' => :edit_guests
   #end
@@ -46,6 +55,7 @@ Moonrise::Application.routes.draw do
 
   root :to => "home#index", as: "home"
 
+  match 'rhodeisland' => "ri#index", as: "ri"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

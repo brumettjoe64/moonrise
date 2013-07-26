@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  caption: MyString
+  guest_id: 1
+  tag: MyString
+
+two:
+  caption: MyString
+  guest_id: 1
+  tag: MyString

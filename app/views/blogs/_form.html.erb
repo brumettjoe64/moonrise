@@ -1,0 +1,45 @@
+<div class="admin_form">
+  <%= form_for(@blog) do |f| %>
+    <% if @blog.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</p>
+        <ul>
+        <% @blog.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label "Title:" %>
+      <%= f.text_field(:title, class: "lineup") %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Image:" %>
+      <%= f.file_field(:pic, class: "lineup") %>
+    </div>
+    <div class="field">
+      <%= f.label "Body:" %>
+      <%= f.text_area(:body, class: "lineup") %>
+      <div class="textarea_spacer"> </div>
+    </div>
+
+    <div class="hfield">
+      <%= f.hidden_field(:guest_id, value: @guest_id) %>
+    </div>
+
+    <%= f.submit %>
+  <% end %>
+  <%= link_to 'Back', admin_blogs_path %>
+
+</div>
+
+
+
+
+
+
+
+

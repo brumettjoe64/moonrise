@@ -1,0 +1,2 @@
+module RiHelper
+end

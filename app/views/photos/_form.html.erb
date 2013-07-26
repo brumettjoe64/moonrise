@@ -1,0 +1,35 @@
+<div class="form">
+  <%= form_for(@photo) do |f| %>
+    <% if @photo.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(@photo.errors.count, "error") %> prohibited this blog from being saved:</p>
+        <ul>
+        <% @photo.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= image_tag(@photo.pic.url(:medium)) %>
+    
+    <div class="field">
+      <%= f.label "Image:" %>
+      <%= f.file_field(:pic, class: "lineup") %>
+    </div>
+    <div class="field">
+      <%= f.label "Caption:" %>
+      <%= f.text_field(:caption, class: "lineup") %>
+    </div>
+    <div class="field">
+      <%= f.label "Tag:" %>
+      <%= f.text_field(:tag, class: "lineup") %>
+    </div>
+    <div class="hfield">
+      <%= f.hidden_field(:guest_id, value: @guest_id) %>
+    </div>
+
+    <%= f.submit %>
+  <% end %>
+  <%= link_to 'Back', photos_path %>
+</div>

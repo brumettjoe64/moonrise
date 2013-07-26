@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529234148) do
+ActiveRecord::Schema.define(:version => 20130726014955) do
+
+  create_table "blogs", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "guest_id"
+    t.string   "pic_file_name"
+    t.string   "pic_content_type"
+    t.integer  "pic_file_size"
+    t.datetime "pic_updated_at"
+  end
 
   create_table "details", :force => true do |t|
     t.string   "description"
@@ -60,6 +72,18 @@ ActiveRecord::Schema.define(:version => 20130529234148) do
     t.string   "password_digest"
     t.boolean  "account_flag",    :default => false
     t.string   "rsvp_info"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "caption"
+    t.integer  "guest_id"
+    t.string   "tag"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "pic_file_name"
+    t.string   "pic_content_type"
+    t.integer  "pic_file_size"
+    t.datetime "pic_updated_at"
   end
 
 end

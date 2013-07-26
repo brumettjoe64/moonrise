@@ -1,0 +1,2 @@
+class RiController < ApplicationController
+end

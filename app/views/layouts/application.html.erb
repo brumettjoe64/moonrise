@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Moonrise Kingdom</title>
+  <title>Mink Meadow</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Crafty+Girls|Cedarville+Cursive|Architects+Daughter|Special+Elite|Pathway+Gothic+One' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
-  <%= image_tag("bg-edgepurple.jpg", id: "bg") %> 
-  <div class="wrapper default_width">
+  <%= image_tag("bg-sail.jpg", id: "bg") %> 
     <%= render "shared/header" %>
+  <div class="wrapper default_width">
+    
     <%= render "shared/nav" %>
     <p id="notice"><%= notice %></p>
     <p id="alert"><%= alert %></p>
@@ -18,8 +20,8 @@
       <%= yield %>
       <div class="spacer"> </div>
     </div>
-    <div class="footer_push"> </div>
   </div>  
+    <div class="footer_push"> </div>
   <%= render "shared/footer" %>
 
 </body>

@@ -1,0 +1,14 @@
+<div class="blogs">
+  <%= image_tag("splash-blog.jpg", class:"img_top") %>
+  <h2 class="ff_title fc_2"> ~ Our Wedding Photo Blog ~ </h2>
+  <div class="hcol_lt">
+    <% @blogs_left.each do |blog| %>
+      <%= render :partial => 'show', :locals => {:blog => blog} %>
+    <% end %>
+  </div>
+  <div class="hcol_rt">
+    <% @blogs_right.each do |blog| %>
+      <%= render :partial => 'show', :locals => {:blog => blog} %>
+    <% end %>
+  </div>
+</div>
