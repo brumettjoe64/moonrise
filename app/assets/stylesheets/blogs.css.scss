@@ -9,13 +9,23 @@ div.blogs {
   //box-shadow: 0px 0px 5px 2px rgba(#99B3B7, .4);
   box-shadow: 0px 1px 4px rgba(0, 0, 0, .4);
   
-
-    img {
+  .image_wrapper{
+      position:relative;
       width: 365px;
+      
+    &:after {
+      content: '';
+      border: rgba(255,255,255,.10) 1px solid;
+      position:absolute;
+      top:1px; left:1px;
+      bottom: 1px; right:1px;
     }
-    img:after {
-      border: 1px solid red;
+    img {
+      display: block;
+      width:100%;
     }
+
+  }
   
   .blog_title {text-align:left; }
   .blog_date {float:right; }
