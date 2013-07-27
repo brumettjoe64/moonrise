@@ -3,8 +3,12 @@
   
   <div class="hcol_lt blogs">
     <h2 class="ff_title fc_2"> ~ Recent Blogs ~ </h2>
-    <%= render :partial => 'blogs/show', :locals => {:blog => Blog.get_blogs_by_date.first} %>
-    <%= render :partial => 'blogs/show', :locals => {:blog => Blog.get_blogs_by_date.second} %>
+    <% Blog.get_blogs_by_date.first.try do |blog| %>
+      <%= render :partial => 'blogs/show', :locals => {:blog => blog} %>
+    <% end %>
+    <% Blog.get_blogs_by_date.second.try do |blog| %>   
+      <%= render :partial => 'blogs/show', :locals => {:blog => blog} %>
+    <% end %>
     <%= link_to 'read more...', blogs_path, class: "ff_read right"%>
   </div>
 
