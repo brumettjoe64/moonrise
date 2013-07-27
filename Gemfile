@@ -29,6 +29,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'paperclip', '~> 3.0'
 
+gem 'aws-sdk', '~> 1.5.7'
+
+gem 'dotenv-rails', group: :development
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
