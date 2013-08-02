@@ -2,30 +2,8 @@
 
   <%= image_tag("splash-details.jpg", class:"img_top") %>
   <div class="hcol_lt">
-    <h2 class="ff_title fc_2">Weekend Schedule</h2>
-    <p> Here's some paragraph text about the details that are on this page. </p> </br>
-    <table class="full_width">
-      <tr>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Description</th>
-      </tr>
-      <% @details.each do |detail| %>
-        <tr>
-          <td><%= detail.when.strftime("%A, %B %e") %></td>
-          <td><%= detail.when.strftime("%l:%M%P") %></td>
-          <td><%= detail.description %></td>
-        </tr>
-      <% end %>
-    </table>
   </div>
   <div class="hcol_rt">    
     <h2 class="ff_title fc_2">Where to Stay</h2>
-    <p> Rhode Island is beautiful </p>
-    <p> You can stay at a vacation house </p>
-    <p> or at Hampton Inn </p>
-    <h2 class="ff_title fc_2">Things to See</h2>
-    <%= image_tag("holder480x480.jpg", class: "img_sq") %>
-    <p> Here's some paragraph text about the details that are on this page. </p> </br>
   </div>
 </div>

@@ -6,6 +6,8 @@ class PhotosController < ApplicationController
   # GET /photos.json
   def index
     @photos = Photo.all
+    @groom = Group.find_by_name(:Groom).guests.first
+    @bride = Group.find_by_name(:Bride).guests.first
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,7 +22,6 @@ class PhotosController < ApplicationController
       format.json { render json: @blogs }
     end    
   end
-
 
   # GET /photos/new
   # GET /photos/new.json
@@ -42,8 +43,6 @@ class PhotosController < ApplicationController
     @poster_id = @photo.poster_id
     @groom = Group.find_by_name(:Groom).guests.first
     @bride = Group.find_by_name(:Bride).guests.first
-
-
   end
 
   # POST /photos

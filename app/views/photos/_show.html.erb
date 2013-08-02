@@ -1,9 +1,11 @@
 <div class="photo_wrapper">
-  <%= image_tag(photo.pic.url(:medium)) %>
-
-  <p class="photo_title ff_cursive"> <%= blog.title %>   <span class="blog_date"> <%= blog.created_at.strftime("%-m/%-d/%y") %> </p></p>
-  <p class="blog_body"> <%= blog.body %> </p>
-  <p class="blog_signature ff_cursive "> -<%= blog.guest.firstname %> </p> 
+  <div class="image_wrapper">
+    <%= image_tag(photo.pic.url(:medium)) %>
+  </div>
+  <div class="content_wrapper">
+    <p class="photo_caption"> <%= photo.caption %> </p>
+    <p class="photo_poster"> posted by <%=photo.poster.firstname+" "+photo.poster.lastname.first%>. </p>
+  </div>
 </div>
 
 

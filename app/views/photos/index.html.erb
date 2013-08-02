@@ -1,7 +1,31 @@
 <div class="photos">
+
   <%= image_tag("splash-photos.jpg", class:"img_top") %>
+
+  <div>
   <h2 class="ff_title fc_2"> ~ Photos ~ </h2>
+  <%= link_to 'Upload a New Photo', new_photo_path, class: "button"%>
+  </div>
+  <div class="tcol_lt">
+    <h3 class="ff_title fc_1 photos_header"> <%= @bride.firstname %> </h3>
+    <% Photo.get_photos_of(@bride).each do |photo| %>
+      <%= render :partial => 'show', :locals => {:photo => photo} %>
+    <% end %>
+  </div>
+
+  <div class="tcol_mid">
+    <h3 class="fontawesome-heart fc_1 photos_header"> </h3>
+    <% Photo.get_photos_of(@bride, @groom).each do |photo| %>
+      <%= render :partial => 'show', :locals => {:photo => photo} %>
+    <% end %>
+  </div>
+
+  <div class="tcol_rt">
+    <h3 class="ff_title fc_1 photos_header"> <%= @groom.firstname %> </h3>
+    <% Photo.get_photos_of(@groom).each do |photo| %>
+      <%= render :partial => 'show', :locals => {:photo => photo} %>
+    <% end %>
+  </div>
 
 </div>
 
-<%= link_to 'Upload a New Photo', new_photo_path, class: "button"%>

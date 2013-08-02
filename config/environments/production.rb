@@ -75,4 +75,5 @@ Moonrise::Application.configure do
     :url => ":s3_domain_url",
     :path => ":class/:id/:style.:extension"
   }
+
 end

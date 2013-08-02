@@ -4,9 +4,34 @@ class Photo < ActiveRecord::Base
   belongs_to :poster, :class_name => "Guest"
   validates_attachment_presence :pic
   has_and_belongs_to_many :guests, autosave: true
-def guest
+  def guest
     unless guest_id.nil?
       Guest.find(guest_id)
     end
   end  
+
+  def self.get_photos_by_date
+    Photo.all.sort_by{ |photo| photo.created_at }.reverse
+  end
+
+  def self.get_photos_of(person, *others)
+    photos_list = person.photos
+    photos_list_temp = []
+
+    if others.count == 0 
+      photos_list.each do |photo|
+        if photo.guests.count == 1
+          photos_list_temp << photo
+        end
+      end
+    elsif others.count == 1
+      photos_list.each do |photo|
+        if photo.guests.include?(others.first)
+          photos_list_temp << photo
+        end
+      end
+    end
+    photos_list = photos_list_temp.sort_by{ |photo| photo.when }.reverse
+  
+  end 
 end

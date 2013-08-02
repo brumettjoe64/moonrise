@@ -12,9 +12,13 @@
     <%= link_to 'read more...', blogs_path, class: "ff_read right"%>
   </div>
 
-  <div class="hcol_rt">
+  <div class="hcol_rt photos">
     <h2 class="ff_title fc_2"> ~ New Photos ~ </h2>
-    <div class="photo_sm">
-    </div>
-  </div>
+    <% Photo.get_photos_by_date.first.try do |photo| %>
+      <%= render :partial => 'photos/show', :locals => {:photo => photo} %>
+    <% end %>
+    <% Photo.get_photos_by_date.second.try do |photo| %>   
+      <%= render :partial => 'photos/show', :locals => {:photo => photo} %>
+    <% end %>
+    <%= link_to 'see more...', photos_path, class: "ff_read right"%>  </div>
 </div>    

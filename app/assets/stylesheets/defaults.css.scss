@@ -28,6 +28,10 @@ html,body { width:100%; height:100%;  }
 .hcol_lt { width:370px; padding: 10px 10px 10px 20px; float:left; }
 .hcol_rt { width:370px; padding: 10px 20px 10px 10px; float:right; }
 
+.tcol_lt  { width:250px; padding: 10px  0px 10px 12px; float:left; }
+.tcol_mid { width:250px; padding: 10px 13px 10px 13px; float:left; }
+.tcol_rt  { width:250px; padding: 10px 12px 10px  0px; float:left; }
+
 /* Fonts */
 .ff_title           { font-family: 'Thirsty Rough'; }
 .ff_nav             { font-family: 'Pathway Gothic One'}
