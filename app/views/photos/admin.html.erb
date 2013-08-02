@@ -6,7 +6,8 @@
       <th>Image</th>
       <th>Caption</th>
       <th>Uploader</th>
-      <th>Tag</th>
+      <th>Who</th>
+      <th>When</th>      
       <th>Created</th>
       <th>Edited</th>      
 
@@ -17,8 +18,12 @@
     <tr>
       <td> <div class="thumb"> <%= image_tag(photo.pic.url(:thumb) || "holder100x100.jpg") %> </div> </td>
       <td><%= truncate(photo.caption,length:50) %></td>
-      <td><%= photo.guest.display_name if photo.guest %></td>
-      <td><%= photo.tag %></td>
+      <td><%= photo.poster.display_name if photo.poster %></td>
+      <td><% photo.guests.each do |tagged_guest| %>
+          <%= tagged_guest.firstname %>
+          <% end %>
+      </td>
+      <td><%= photo.when.strftime("%m/%d/%y") %></td>      
       <td><%= photo.created_at.strftime("%m/%d/%y %l:%M%P") %></td>
       <td><%= photo.updated_at.strftime("%m/%d/%y %l:%M%P") %></td>
       <td><%= link_to 'Edit', edit_photo_path(photo), class: "admin" %></td>

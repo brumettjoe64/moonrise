@@ -34,6 +34,7 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
+    <th>Sitekey</th>
     <th>Status</th>
     <th>Groups</th>
     <th colspan=3></th>
@@ -43,6 +44,7 @@
       <tr class="<%= "plusone" if guest.plusone? %>">
         <td><%= guest.display_name %></td>
         <td><%= guest.email %></td>
+        <td><%= guest.sitekey %></td>
         <td><%= guest.display_status %></td>
         <%#<td><%= truncate(guest.rsvp_info, length: 10) </td>%>
         <td><%= truncate(guest.groups.map{|x| x.name}.join(", "), length:25)%></td>

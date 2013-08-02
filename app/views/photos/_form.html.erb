@@ -11,22 +11,32 @@
       </div>
     <% end %>
 
-    <%= image_tag(@photo.pic.url(:medium)) %>
-    
     <div class="field">
       <%= f.label "Image:" %>
       <%= f.file_field(:pic, class: "lineup") %>
     </div>
+    <%= image_tag(@photo.pic.url(:medium)) if @photo.pic %>
     <div class="field">
       <%= f.label "Caption:" %>
       <%= f.text_field(:caption, class: "lineup") %>
     </div>
     <div class="field">
-      <%= f.label "Tag:" %>
-      <%= f.text_field(:tag, class: "lineup") %>
+      <%= f.label "Date Taken:" %>
+      <span class="lineup"><%= f.date_select(:when, :default => { year:2014, month:7, day:1}, :order => [:year, :month]) %> </span>
+    </div>    
+    <div class="field">
+      <%= f.label "Who's In It:"%>
+      <span class="groombox">
+        <%=check_box_tag "taglist[#{@groom.id}]", true, @photo.guests.include?(@groom)%>
+        <%= label_tag @groom.firstname %>
+      </span>
+      <span class="bridebox">
+        <%=check_box_tag "taglist[#{@bride.id}]", true, @photo.guests.include?(@bride)%>
+        <%= label_tag @bride.firstname %>
+      </span>
     </div>
     <div class="hfield">
-      <%= f.hidden_field(:guest_id, value: @guest_id) %>
+      <%= f.hidden_field(:poster_id, value: @poster_id) %>
     </div>
 
     <%= f.submit %>

@@ -21,7 +21,7 @@
       </div>
       <div class="field">
         <%= label_tag "Email:" %>
-        <%= text_field_tag 'emails[]', party_member.email, placeholder: 'gives this guest access to the site', class: "lineup"  %>
+        <%= text_field_tag 'emails[]', party_member.email, placeholder: 'enter email to give this guest access to the site', class: "lineup"  %>
       </div>
       </br>
       <span class="written"><%= "Guest Info" if party_member.party.count > 1 %> </span>

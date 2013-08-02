@@ -1,26 +1,29 @@
 TO DO LIST
 
-Add S3 image attachment ability
-Add comments controller
 
 LONG-TERM 
+- Add a tracker for page visits
 - Moonrise Kingdom font fade in text
 - Account Mailer when email address is changed
-- Divider for page sections
--
 
-7/24
+Learning
 ---------------
 Java Script tutorial
 How to use Coffee Script 
-Add select all button
+
+Front End
+---------------
+Install new read font
+FORMS !!! Unbox forms, no background color, make fields bigger
+use line height for blog text if needed
 RSVP JS
-Create group called All from the beginning and have people automatically added to it as they get created, create the group if it doesn't exist 
-
-
 Bannerize headings
 Red Bookmark on RSVP red
+Add select all button
 
-Unbox forms, no background color, make fields bigger
-add email to give this guest access to the site
-use line height for blog text if needed
+
+Back End
+---------------
+countdown
+Add comments controller
+jquery file upload for preview

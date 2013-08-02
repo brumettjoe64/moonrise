@@ -4,10 +4,12 @@ class Guest < ActiveRecord::Base
   include BCrypt
 
   has_many :plusones, :class_name => "Guest", :foreign_key => "invitee_id", :dependent => :destroy
+  has_many :photoposts, :class_name => "Photo",:foreign_key => "poster_id", :dependent => :destroy
   has_many :blogs, :dependent => :destroy
   belongs_to :invitee, :class_name => "Guest"
   has_and_belongs_to_many :groups, autosave: true
   has_and_belongs_to_many :details, autosave: true
+  has_and_belongs_to_many :photos, autosave: true
 
   attr_accessible :sitekey, :email, :firstname, :lastname, :invitee_id, :admin, :account_flag, :rsvp, :rsvp_info 
 
@@ -18,6 +20,8 @@ class Guest < ActiveRecord::Base
   validate :check_invitee
   validate :check_password
   validate :check_invitee_email   
+
+  after_create :add_to_Everyone
 
   VALID_RSVPS = [:no_reply, :going, :not_going]
   VALID_INFOS = [:no_cow, :no_pig, :no_lobster, :no_shellfish]
@@ -150,6 +154,13 @@ class Guest < ActiveRecord::Base
     if self.admin? and self.password_digest.nil?
       errors.add(:password, " required for admins") 
     end
+  end
+
+  def add_to_Everyone
+    group_Everyone = Group.find_by_name(:Everyone) || Group.new(name: :Everyone)
+    group_Everyone.save
+    group_Everyone.guests << self
+
   end
 
 end

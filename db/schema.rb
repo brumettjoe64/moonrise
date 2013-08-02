@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130726014955) do
+ActiveRecord::Schema.define(:version => 20130801214638) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -74,9 +74,16 @@ ActiveRecord::Schema.define(:version => 20130726014955) do
     t.string   "rsvp_info"
   end
 
+  create_table "guests_photos", :id => false, :force => true do |t|
+    t.integer "guest_id", :null => false
+    t.integer "photo_id", :null => false
+  end
+
+  add_index "guests_photos", ["guest_id", "photo_id"], :name => "index_guests_photos_on_guest_id_and_photo_id", :unique => true
+
   create_table "photos", :force => true do |t|
     t.string   "caption"
-    t.integer  "guest_id"
+    t.integer  "poster_id"
     t.string   "tag"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
@@ -84,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20130726014955) do
     t.string   "pic_content_type"
     t.integer  "pic_file_size"
     t.datetime "pic_updated_at"
+    t.datetime "when"
   end
 
 end
