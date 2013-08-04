@@ -22,7 +22,10 @@
     </div>
     <div class="field">
       <%= f.label "Date Taken:" %>
-      <span class="lineup"><%= f.date_select(:when, :default => { year:2014, month:7, day:1}, :order => [:year, :month]) %> </span>
+      <span class="lineup">
+        <%= f.date_select(:when, :order => [:year, :month], :start_year => 1985, :end_year => 2014,
+                          :default => { year:Time.now.year, month:Time.now.month, day:1}) %> 
+      </span>
     </div>    
     <div class="field">
       <%= f.label "Who's In It:"%>

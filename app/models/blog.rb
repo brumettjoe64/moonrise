@@ -1,7 +1,7 @@
 class Blog < ActiveRecord::Base
   attr_accessible :body, :title, :pic, :guest_id, :when
   belongs_to :guest
-  has_attached_file :pic, :styles => { :original => ["1500x1500>", :jpg], :medium => ["480x480>", :jpg], :thumb => ["100x100>", :jpg]}, :default_url => "holder100x100.jpg"
+  has_attached_file :pic, :styles => { :original => ["1500x1500>", :jpg], :medium => ["480x480>", :jpg], :thumb => ["100x100>", :jpg]}, :default_url => "image-blank.png"
   #has_attached_file :pic
   def guest
     unless guest_id.nil?

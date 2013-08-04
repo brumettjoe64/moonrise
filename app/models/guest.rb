@@ -62,7 +62,7 @@ class Guest < ActiveRecord::Base
 
   def login_name
     if invitee? and party.count > 1
-      firstname + "+"
+      firstname + "+" + (party.count-1).to_s
     else
       firstname
     end

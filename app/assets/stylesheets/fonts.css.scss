@@ -16,7 +16,7 @@
     src: url('thirstyroughregularthree-webfont.eot?#iefix') format('embedded-opentype'),
          url('thirstyroughregularthree-webfont.woff') format('woff'),
          url('thirstyroughregularthree-webfont.ttf') format('truetype'),
-         url('thirstyroughregularthree-webfont.svg#thirsty_roughregular_three') format('svg');
+         url('thirstyroughregularthree-webfont.svg#thirstyroughregularthree') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -32,9 +32,25 @@
   font-style: normal;
 }
 
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@font-face {
+  font-family: 'Proxima Nova';
+    src: url('proximanova-regular-webfont.eot');
+    src: url('proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('proximanova-regular-webfont.woff') format('woff'),
+         url('proximanova-regular-webfont.ttf') format('truetype'),
+         url('proximanova-regular-webfont.svg#proximanova-regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome|maki);
 
 /* fontawesome */
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
+}
+
+/* maki */
+[class*="maki-"]:before {
+  font-family: 'maki', sans-serif;
 }

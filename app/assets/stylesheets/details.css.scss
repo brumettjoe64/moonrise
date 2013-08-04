@@ -1,4 +1,20 @@
 div.details {
-  tr{border:1px solid white;}
-  table.admin_summary{width:800px;}
+
+  h3 {
+    text-align:left;
+    margin-top: 10px;
+    margin-bottom:5px;
+  }
+
+  .details_block{
+    width:100%;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, .4);
+  }
+
+  .details_section{
+    p{
+      font-size: 14px;
+      &.indent { text-indent:20px; }
+    }
+  }
 }

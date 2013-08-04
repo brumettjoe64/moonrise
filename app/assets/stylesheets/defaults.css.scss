@@ -32,10 +32,13 @@ html,body { width:100%; height:100%;  }
 .tcol_mid { width:250px; padding: 10px 13px 10px 13px; float:left; }
 .tcol_rt  { width:250px; padding: 10px 12px 10px  0px; float:left; }
 
+.ttcol_lt { width:440px; padding: 10px 10px 10px 20px; float:left; }
+.ttcol_rt { width:300px; padding: 10px 20px 10px 10px; float:right; }
+
 /* Fonts */
 .ff_title           { font-family: 'Thirsty Rough'; }
 .ff_nav             { font-family: 'Pathway Gothic One'}
-.ff_read,p,td,th    { font-family: 'MyriadPro'}
+.ff_read,p,td,th    { font-family: 'Proxima Nova'}
 .ff_cursive         { font-family: 'Cedarville Cursive'}
 
 /* Font colors */
@@ -178,7 +181,7 @@ body {
   }
 
   .admin {
-    td,th { font: 15px 'MyriadPro'; }
+    td,th { font: 15px 'Proxima Nova'; }
   }
 
   .admin_form {
@@ -187,7 +190,7 @@ body {
     padding: 20px;
     background: #DDDDDD;
     border: 5px solid #7D6E8B;
-    font: 15px 'MyriadPro'; color: black;
+    font: 15px 'Proxima Nova'; color: black;
 
     .field {
       margin-top: 5px; margin-bottom: 5px;
@@ -197,13 +200,13 @@ body {
     }
 
     label,textarea,input[type='text'],input[type='password'],select {
-       font: 15px 'MyriadPro'; color: black;
+       font: 15px 'Proxima Nova'; color: black;
        display: inline-block;
        padding: 2px; 
        margin: 2px 0; 
     }
 
-    td { font: 15px 'MyriadPro'; }
+    td { font: 15px 'Proxima Nova'; }
 
     input[type='text'],input[type='password'], textarea, table { 
       width: 270px;  

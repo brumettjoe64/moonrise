@@ -6,8 +6,8 @@ class PhotosController < ApplicationController
   # GET /photos.json
   def index
     @photos = Photo.all
-    @groom = Group.find_by_name(:Groom).guests.first
-    @bride = Group.find_by_name(:Bride).guests.first
+    @groom = Group.find_by_name("Groom").guests.first
+    @bride = Group.find_by_name("Bride").guests.first
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,8 +28,8 @@ class PhotosController < ApplicationController
   def new
     @photo = Photo.new
     @poster_id = session[:guest_id]
-    @groom = Group.find_by_name(:Groom).guests.first
-    @bride = Group.find_by_name(:Bride).guests.first
+    @groom = Group.find_by_name("Groom").guests.first
+    @bride = Group.find_by_name("Bride").guests.first
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,22 +41,22 @@ class PhotosController < ApplicationController
   def edit
     @photo = Photo.find(params[:id])
     @poster_id = @photo.poster_id
-    @groom = Group.find_by_name(:Groom).guests.first
-    @bride = Group.find_by_name(:Bride).guests.first
+    @groom = Group.find_by_name("Groom").guests.first
+    @bride = Group.find_by_name("Bride").guests.first
   end
 
   # POST /photos
   # POST /photos.json
   def create
     @photo = Photo.new(params[:photo])
-    @groom = Group.find_by_name(:Groom).guests.first
-    @bride = Group.find_by_name(:Bride).guests.first
+    @groom = Group.find_by_name("Groom").guests.first
+    @bride = Group.find_by_name("Bride").guests.first
     respond_to do |format|
       if @photo.save
         taggable_guests = [@groom, @bride]
 
         taggable_guests.each do |taggable_guest|
-          unless params.has_key?(:taglist) and params[:taglist][taggable_guest.id.to_s] == "true"  
+          if (params.has_key?(:taglist) and params[:taglist][taggable_guest.id.to_s] == "true") 
             @photo.guests << taggable_guest unless @photo.guests.include?(taggable_guest)
           else
             @photo.guests.delete(taggable_guest) if @photo.guests.include?(taggable_guest)
@@ -75,8 +75,8 @@ class PhotosController < ApplicationController
   # PUT /photos/1.json
   def update
     @photo = Photo.find(params[:id])
-    @groom = Group.find_by_name(:Groom).guests.first
-    @bride = Group.find_by_name(:Bride).guests.first
+    @groom = Group.find_by_name("Groom").guests.first
+    @bride = Group.find_by_name("Bride").guests.first
     respond_to do |format|
       if @photo.update_attributes(params[:photo])
         taggable_guests = [@groom, @bride]
