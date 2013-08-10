@@ -26,8 +26,8 @@
       onclick: "switch_to_modify_form_for(#{session_guest.party[pmi].id},#{session_guest.party[pmi-1].id})") %>
 
       <% if (pmi < pmt) %>
-        <%= button_tag("Next Guest", id: "mod_next_button"+pm.id.to_s, class: "btn btn-default", type: "button", 
-        onclick: "switch_to_modify_form_for(#{session_guest.party[pmi].id},#{session_guest.party[pmi-1].id})") %>
+        <%= button_tag("Next Guest", id: "mod_next_button"+pm.id.to_s, class: "btn btn-default right", type: "button", 
+        onclick: "switch_to_modify_form_for(#{session_guest.party[pmi].id},#{session_guest.party[pmi+1].id})") %>
       <% else %>
         <%= submit_tag("Save Changes", id: "mod_submit_button"+pm.id.to_s, class: "btn btn-default right") %>
       <% end %>
