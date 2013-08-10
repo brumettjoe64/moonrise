@@ -6,13 +6,19 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive|Pathway+Gothic+One' rel='stylesheet' type='text/css'>
-
 </head>
 <body>
+  <div id="overlay_form_info">
+      <%= form_tag '/guests/modify', method: 'put' do %>
+        <% session_guest.party.each_with_index do |party_member, index| %>     
+          <%= render :partial => 'guests/form_info', 
+                     :locals => {:pm => party_member, :pmi => index, :pmt => session_guest.party.count-1} %>
+        <% end %>
+      <% end %>
+  </div>
   <%= image_tag("bg-sail.jpg", id: "bg") %> 
     <%= render "shared/header" %>
   <div class="wrapper default_width">
-    
     <%= render "shared/nav" %>
     <p id="notice"><%= notice %></p>
     <p id="alert"><%= alert %></p>
@@ -23,6 +29,5 @@
   </div>  
     <div class="footer_push"> </div>
   <%= render "shared/footer" %>
-
 </body>
 </html>

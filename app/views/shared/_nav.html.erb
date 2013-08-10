@@ -1,6 +1,6 @@
 <div class="nav ff_nav">
   <ul>
-    <li class="left"><%= link_to ' '+Guest.find_by_id(session[:guest_id]).login_name, modify_party_guests_path, class:"fontawesome-cog"%></li>
+    <li class="left" onclick='<%="modify_form_info_for(#{session_guest.id.to_s})"%>'> <%= link_to ' '+session_guest.login_name, 'javascript:;', class:"fontawesome-cog"%></li>
     <li class="right"><%= link_to 'Logout', logout_path, method: :delete, class:"fontawesome-signout" %></li>
     <li><%= link_to ' Home',home_path, class:"fontawesome-home" %></li>
     <li><%= link_to ' Info', details_path, class:"fontawesome-info-sign" %></li>

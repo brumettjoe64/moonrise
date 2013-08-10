@@ -14,11 +14,7 @@ class SessionsController < ApplicationController
     if guest_by_email 
       if !guest_by_email.admin
         session[:guest_id] = guest_by_email.id
-        if guest_by_email.registered?
-          redirect_to home_url
-        else
-          redirect_to modify_party_guests_url
-        end
+        redirect_to home_url
       else
         redirect_to login_admin_url(login: params[:login])
       end
@@ -27,7 +23,7 @@ class SessionsController < ApplicationController
         redirect_to login_url, alert: "use your registered email"
       else
         session[:guest_id] = guest_by_sitekey
-        redirect_to modify_party_guests_url
+        redirect_to home_url
       end
     else 
       redirect_to login_url, alert: "invalid login"

@@ -7,14 +7,29 @@ email:     keduong@gmail.com
 -----------------------------------------------------------------------------*/
 
 /* Remove padding and margin from everything */ 
-* { 
-  margin: 0; 
-  border: 0; 
-  padding: 0; 
+*, *:before, *:after  { 
+  margin: 0; border: 0; padding: 0; 
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
 /* Size html and body containers to full height */
 html,body { width:100%; height:100%;  }
+
+/* Overlay for js popups */
+div[id*='overlay_']{
+    background-color:rgba(0, 0, 0, 0.5);
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+    overflow:scroll;
+    display:none;
+}
 
 /* Classes for floating things */
 .clear { clear:both; } 
@@ -25,8 +40,8 @@ html,body { width:100%; height:100%;  }
 
 .default_width { width:800px; margin-left:auto; margin-right:auto; }
 .full_width {width:100%;}
-.hcol_lt { width:370px; padding: 10px 10px 10px 20px; float:left; }
-.hcol_rt { width:370px; padding: 10px 20px 10px 10px; float:right; }
+.hcol_lt { width:400px; padding: 10px 10px 10px 20px; float:left; }
+.hcol_rt { width:400px; padding: 10px 20px 10px 10px; float:right; }
 
 .tcol_lt  { width:250px; padding: 10px  0px 10px 12px; float:left; }
 .tcol_mid { width:250px; padding: 10px 13px 10px 13px; float:left; }
@@ -62,15 +77,6 @@ a:link    {color: #800080; }
 a:visited {color: #800080; }
 li { list-style-type:none; }
 
-a.button, input[type='submit'] { 
-  margin: 5px;
-  border: 2px solid white; padding: 3px 10px; font: 20px 'Pathway Gothic One' ; 
-  color: white; background: #7D6E8B;
-}
-a.button:hover, input[type='submit']:hover { 
-  color: #7D6E8B; border-color: #7D6E8B; background: white;
-}
-
 /* Tables */
 table {
   color:white;
@@ -97,7 +103,6 @@ body {
   color: black;     
   text-align:center;
   h2 { margin-top:20px;}
-
   #bg { 
     width: 100%;
     height: 100%;
@@ -106,19 +111,16 @@ body {
     left: 0;
     z-index:-1;   
   }  
-
   .wrapper { min-height: 100%; height: auto !important; height: 100%; margin-bottom: -60px;
              box-shadow:  0px 3px 14px rgba(0, 0, 0, 0.3)}
-            // box-shadow: 0px 5px 10px 5px #7D6E8B;}
   .header { padding:10px; }
   .nav {
-    background: white; background: rgba(255, 255, 255, 0.5); 
+    background: white; background: rgba(255, 255, 255, 0.3); 
     padding: 5px 0px;
     li { display:inline;}
     a { margin: 0; padding:5px 20px;}
     a:link, a:visited {color: #7D6E8B}
     a:hover { color:white; background:#99b3b7;}
-    img { height:16px;}
   }
 
   .content {  
@@ -143,76 +145,6 @@ body {
 
   .footer { height:60px; position:relative;
     span {position:absolute; bottom:0px; width: 500px; left:50%; margin-left:-250px;};
-  }
-
-  .form {
-    width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #DDDDDD;
-    border: 5px solid #7D6E8B;
-
-    .field {
-      margin-top: 5px; margin-bottom: 5px;
-      position:relative;
-      text-align: left;
-      .lineup { position:absolute; left: 90px; }
-    }
-
-    .written {
-      font: 24px 'Pathway Gothic One'; color: black;
-    }
-
-    .note {
-      
-    }
-
-    label,input[type='text']{
-       font: 15px 'Myriad Pro'; color: black;
-       display: inline-block;
-       padding: 2px; 
-       margin: 2px 0; 
-    }
-    input[type='text'] { 
-      width: 270px;  
-    }
-  }
-
-  .admin {
-    td,th { font: 15px 'Proxima Nova'; }
-  }
-
-  .admin_form {
-    width: 450px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #DDDDDD;
-    border: 5px solid #7D6E8B;
-    font: 15px 'Proxima Nova'; color: black;
-
-    .field {
-      margin-top: 5px; margin-bottom: 5px;
-      position:relative;
-      text-align: left;
-      .lineup { position:absolute; left: 90px; }
-    }
-
-    label,textarea,input[type='text'],input[type='password'],select {
-       font: 15px 'Proxima Nova'; color: black;
-       display: inline-block;
-       padding: 2px; 
-       margin: 2px 0; 
-    }
-
-    td { font: 15px 'Proxima Nova'; }
-
-    input[type='text'],input[type='password'], textarea, table { 
-      width: 270px;  
-    }
-
-    textarea, .textarea_spacer {
-      height:180px;
-    }
   }
 
   #alert { color:red; position:absolute; top:0px; left:50%; width:50%; margin-left:-25%; text-align:center }

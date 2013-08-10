@@ -144,7 +144,7 @@ class GuestsController < ApplicationController
         format.html { redirect_to home_path, notice: 'Guest info was successfully modified.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit_info" }
+        format.html { redirect_to home_path, alert: 'There was a problem with the guest info submitted.' }
         format.json { render json: @party_member.errors, status: :unprocessable_entity }
       end
     end

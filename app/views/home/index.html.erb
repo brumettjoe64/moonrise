@@ -1,3 +1,5 @@
+<%= javascript_tag("window.onload = function(){ modify_form_info_for(#{session_guest.id.to_s})}") if !session_guest.registered? %>
+
 <div class="home">
   <%= image_tag("splash-home.jpg", class: "img_top") %>
   

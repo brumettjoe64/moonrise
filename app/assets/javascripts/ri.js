@@ -1,11 +1,6 @@
 var global_ri_icon_loaded_color = "blue";
 var global_ri_icon_unloaded_color = "#7D6E8B";
 
-window.onload = function(){
-  ri_save("ri_poi_minkmeadow");  
-  ri_load("ri_poi_minkmeadow");
-}
-
 function ri_hover(x) {
   ri_unload(global_ri_poi);
   ri_load(x);
@@ -97,14 +92,9 @@ function ri_load(x) {
       img_str = "/assets/ri-capecod.jpg";
       content_str = "Quaint harbors, windswept beaches, glorious dunes and blinking lighthouses. Explore Cape Cod National Seashore, bike past cranberry bogs on the Rail Trail or saunter around Sandwich, the Cape's oldest town. Many areas are architectural and culinary gems - full of weathered shingles, whaling captains' mansions, chowder shacks and upscale dining delights. Don't miss Woods Hole Oceanquest, famed Martha's Vineyard or charmingly upbeat Provincetown.  Don't Miss: The beaches.";
       break;
-
-
-
-
-
     default:
-      title_str = "Incorrect Object Id";
-      img_str = "/assets/image-blank.jpg";
+      title_str = "";
+      img_str = "/assets/image-blank.png";
       content_str = "";
       break;
   }

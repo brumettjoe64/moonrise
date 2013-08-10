@@ -1,0 +1,29 @@
+<%# pm, pmi, pmt %>
+<div class="form form_info" id=<%="form_info_"+pm.id.to_s%>>        
+  <span class="form_close fontawesome-remove" onclick = 'close_modify_form(this)'> </span>
+  <legend> <%= pm == session_guest ? "Your Info" : "Guest Info" %> </legend>
+    <p class="help-block"> <%= pm == session_guest ? "Create your account by entering your email address." : "If this guest would like access to this site, enter their email address." %> </p>
+    <div class="form-group">  
+    <%= label_tag "First Name", nil, class: "control-label"%>
+    <%= text_field_tag 'firstnames[]', pm.firstname, placeholder: 'Enter first name of guest', class: "form-control", id: 'fname_'+pm.id.to_s  %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "Last Name", nil, class: "control-label" %>
+    <%= text_field_tag 'lastnames[]', pm.lastname, placeholder: 'Enter last name of guest', class: "form-control", id: 'lname_'+pm.id.to_s %>
+  </div>
+  <div class="form-group">
+    <%= pm == session_guest ? label_tag("Email", nil, class: "control-label") : label_tag("Email (optional)", nil, class: "control-label") %>
+    <%= text_field_tag 'emails[]', pm.email, placeholder: pm == session_guest ? 'Enter your email address' : 'Enter email to give this guest access to the site', class: "form-control", id: 'email_'+pm.id.to_s  %>
+  </div>
+  </br>
+  <%= button_tag("Next Guest", id: "mod_next_button"+pm.id.to_s, class: "btn btn-default right", type: "button", 
+  onclick: "validate_and_switch_to_modify_form_for(#{session_guest.party[pmi].id},#{session_guest.party[pmi+1].id})") if pmi == 0 %>
+  <%= button_tag("Previous Guest", id: "mod_prev_button"+pm.id.to_s, class: "btn btn-default", type: "button", 
+  onclick: "switch_to_modify_form_for(#{session_guest.party[pmi].id},#{session_guest.party[pmi-1].id})") if pmi > 0 %>
+
+  <%= button_tag("Next Guest", id: "mod_next_button"+pm.id.to_s, class: "btn btn-default right", type: "button", 
+  onclick: "switch_to_modify_form_for(#{session_guest.party[pmi].id},#{session_guest.party[pmi+1].id})") if (0 < pmi && pmi < pmt) %>
+
+  <%= submit_tag("Save Changes", id: "mod_submit_button"+pm.id.to_s, class: "btn btn-default right") if pmi == pmt %>
+</div>
+  
