@@ -1,6 +1,6 @@
 <%# pm, pmi, pmt %>
 <div class="form form_info" id=<%="form_info_"+pm.id.to_s%>>        
-  <span class="form_close fontawesome-remove" onclick = 'close_modify_form(this)'> </span>
+  <span class="form_close fontawesome-remove" onclick = 'close_modify_form()'> </span>
   <legend> <%= pm == session_guest ? "Your Info" : "Guest Info" %> </legend>
     <p class="help-block"> <%= pm == session_guest ? "Create your account by entering your email address." : "If this guest would like access to this site, enter their email address." %> </p>
     <div class="form-group">  

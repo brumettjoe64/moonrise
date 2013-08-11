@@ -109,7 +109,8 @@ class Guest < ActiveRecord::Base
   end
   
   def registered?
-    self.account_flag 
+    #self.account_flag 
+    self.email != ""
   end
 
   def display_status

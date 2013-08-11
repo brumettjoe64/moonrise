@@ -43,11 +43,11 @@ div[id*='overlay_']{
 .hcol_lt { width:400px; padding: 10px 10px 10px 20px; float:left; }
 .hcol_rt { width:400px; padding: 10px 20px 10px 10px; float:right; }
 
-.tcol_lt  { width:250px; padding: 10px  0px 10px 12px; float:left; }
-.tcol_mid { width:250px; padding: 10px 13px 10px 13px; float:left; }
-.tcol_rt  { width:250px; padding: 10px 12px 10px  0px; float:left; }
+.tcol_lt  { width:266px; padding: 10px  0px 10px 12px; float:left; }
+.tcol_mid { width:267px; padding: 10px 13px 10px 13px; float:left; }
+.tcol_rt  { width:266px; padding: 10px 12px 10px  0px; float:left; }
 
-.ttcol_lt { width:440px; padding: 10px 10px 10px 20px; float:left; }
+.ttcol_lt { width:500px; padding: 10px 10px 10px 20px; float:left; }
 .ttcol_rt { width:300px; padding: 10px 20px 10px 10px; float:right; }
 
 /* Fonts */
@@ -121,6 +121,10 @@ body {
     a { margin: 0; padding:5px 20px;}
     a:link, a:visited {color: #7D6E8B}
     a:hover { color:white; background:#99b3b7;}
+
+    a.disabled {
+      &:link,&:visited,&:hover {color: #bbbbbb; background: rgba(255, 255, 255, 0); pointer-events: none; cursor: default;}
+    }
   }
 
   .content {  

@@ -10,7 +10,7 @@ div.photos {
 
 .photo_wrapper {
   border-radius: 3px 3px 0px 0px;
-  width: inherit;
+  width: 100%;
 
   margin: 10px 0px 15px 0px;
   background: white;
@@ -18,7 +18,7 @@ div.photos {
   
   .image_wrapper{
       position:relative;
-      width: inherit;
+      width: 100%;
       border-radius: inherit;
 
     &:after {
