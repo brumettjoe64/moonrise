@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authorize
-  helper_method :session_guest, :groom, :bride
+  helper_method :session_guest, :groom, :bride, :photo_authorize
 
   def session_guest
     @session_guest  ||= Guest.find_by_id(session[:guest_id])
@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
 
   def bride
     @bride ||= Group.find_by_name("Bride").guests.first
+  end
+
+  def photo_authorize(photo)
+    session_guest.admin || (photo.poster == session_guest)
   end
 
   protected
@@ -27,9 +31,4 @@ class ApplicationController < ActionController::Base
         redirect_to home_url, alert: "action requires admin access"
       end
     end
-
-    def photo_authorize(photo)
-      session_guest.admin || (photo.poster == session_guest)
-    end
-
 end
