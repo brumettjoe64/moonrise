@@ -1,48 +1,39 @@
-<div class="form">
-  <%= form_for(@photo) do |f| %>
-    <% if @photo.errors.any? %>
-      <div id="error_explanation">
-        <p><%= pluralize(@photo.errors.count, "error") %> prohibited this blog from being saved:</p>
-        <ul>
-        <% @photo.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
+<div class="form form_photo" id="photo_form_wrapper">
+  <span class="form_close" onclick = 'close_photo_form()'> <%= fa_icon "remove" %> </span> 
+  <legend id="photo_legend"> Upload Photo </legend>
+  <%= form_tag('/photos', multipart: true, id: "photo_form" ) do %>
+    <div class="form-group">
+      <%= label_tag "Image", nil, class: "control-label"%>
+      <%= file_field_tag "photo[pic]", class: "form-control fc-w-100", id: "photo_field", 
+        onchange: "readURL(this)", onclick: "reset_default_image()" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag "Caption", nil, class: "control-label"%>
+      <%= text_field_tag"photo[caption]", nil, class: "form-control fc-w-100", id: "photo_caption", :maxlength => 64 %>
+      <p class="help-block fs-14"> Maximum of 64 characters </p>
+    </div>
+    <div class="form-group">
+      <%= label_tag "Tags", nil, class: "control-label"%>
+      <div class="form-control fc-w-45">
+        <%= label_tag groom.firstname, check_box_tag("taglist[#{groom.id}]", true, false)+groom.firstname, :class => "checkbox-inline" %>
+        <%= label_tag bride.firstname, check_box_tag("taglist[#{bride.id}]", true, false)+bride.firstname, :class => "checkbox-inline" %>
       </div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label "Image:" %>
-      <%= f.file_field(:pic, class: "lineup") %>
-    </div>
-    <%= image_tag(@photo.pic.url(:medium)) if @photo.pic %>
-    <div class="field">
-      <%= f.label "Caption:" %>
-      <%= f.text_field(:caption, class: "lineup") %>
-    </div>
-    <div class="field">
-      <%= f.label "Date Taken:" %>
-      <span class="lineup">
-        <%= f.date_select(:when, :order => [:year, :month], :start_year => 1985, :end_year => 2014,
-                          :default => { year:Time.now.year, month:Time.now.month, day:1}) %> 
-      </span>
     </div>    
-    <div class="field">
-      <%= f.label "Who's In It:"%>
-      <span class="groombox">
-        <%=check_box_tag "taglist[#{@groom.id}]", true, @photo.guests.include?(@groom)%>
-        <%= label_tag @groom.firstname %>
-      </span>
-      <span class="bridebox">
-        <%=check_box_tag "taglist[#{@bride.id}]", true, @photo.guests.include?(@bride)%>
-        <%= label_tag @bride.firstname %>
-      </span>
+    <div class="image-thumbnail">
+      <%= image_tag("image-blank.png", id: "photo_preview")%>
     </div>
+    <div class="form-group">
+      <%= label_tag "Photo Timestamp", nil, class: "control-label"%>
+      <div>
+      <%= date_select("photo", "when", 
+          { :order => [:month, :year], :start_year => 1985, :end_year => 2014, :default => { year:Time.now.year, month:Time.now.month, day:1}},
+          {:class => "form-control fc-inline"}) %>
+      </div>
+    </div>    
     <div class="hfield">
-      <%= f.hidden_field(:poster_id, value: @poster_id) %>
+      <%= hidden_field_tag("photo[poster_id]", session_guest.id) %>
     </div>
-
-    <%= f.submit %>
-  <% end %>
-  <%= link_to 'Back', photos_path %>
+    <%= submit_tag("Save Photo", id: "photo_button", class: "btn btn-default",
+    onclick: "return validate_and_submit_photo_form();") %>
+  <% end %> 
 </div>

@@ -68,6 +68,14 @@ class Guest < ActiveRecord::Base
     end
   end
 
+  def login_icon
+    if invitee? and party.count > 1
+      '<i class="icon-group"></i> '.html_safe
+    else
+      '<i class="icon-user"></i> '.html_safe
+    end
+  end
+  
   def initials
     if firstname and lastname
       firstname.first+lastname.first

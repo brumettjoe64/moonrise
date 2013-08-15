@@ -1,16 +1,18 @@
 <div class="nav ff_nav">
   <ul>
-    <li class="left" onclick='<%="modify_form_info_for(#{session_guest.id.to_s})"%>'> <%= link_to ' '+session_guest.login_name, 'javascript:;', class:"fontawesome-cog"%></li>
-    <li class="right"><%= link_to 'Logout', logout_path, method: :delete, class:"fontawesome-signout" %></li>
-    <li><%= link_to ' Home',home_path, class:"fontawesome-home" %></li>
-    <li><%= link_to ' Info', details_path, class:"fontawesome-info-sign" %></li>
-    <li><%= link_to ' RI', ri_path, class:"fontawesome-picture"%></li>
-    <li><%= link_to ' Blog', blogs_path, class:"fontawesome-pencil"%></li>
-    <li><%= link_to ' Pics',photos_path, class:"fontawesome-camera" %><li>
-
+    <li class="left" onclick='<%="modify_form_info_for(#{session_guest.id.to_s})"%>'> 
+        <%= link_to session_guest.login_icon+session_guest.login_name, "javascript:void(0)"%></li>
+    <li class="right"><%= link_to '<i class="icon-signout"></i>'.html_safe+'Logout', logout_path, method: :delete %></li>
+    <li><%= link_to '<i class="icon-home"></i>'.html_safe+' Home',home_path %></li>
+    <li><%= link_to '<i class="icon-info-sign"></i>'.html_safe+' Info', details_path %></li>
+    <li><%= link_to '<i class="icon-anchor"></i>'.html_safe+' RI', ri_path %> </li>
+    <li><%= link_to '<i class="icon-pencil"></i>'.html_safe+' Blog', blogs_path %></li>
+    <li><%= link_to '<i class="icon-camera"></i>'.html_safe+' Pics', photos_path %><li>
     <% #<li><%= link_to 'Playlist', home_path, class:"upper" <li> %>  
     <% #<li><%= link_to 'Registry', home_path, class:"upper" <li> %>
-    <li><%= link_to ' RSVP', rsvp_guests_path, class:"fontawesome-envelope disabled" %></li>
+    <li><%= link_to '<i class="icon-envelope"></i>'.html_safe+' RSVP', rsvp_guests_path, class:"disabled" %></li>
+    
+
   </ul>
 
 </div>

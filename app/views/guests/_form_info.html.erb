@@ -1,19 +1,18 @@
-<%# pm, pmi, pmt %>
 <div class="form form_info" id=<%="form_info_"+pm.id.to_s%>>        
-  <span class="form_close fontawesome-remove" onclick = 'close_modify_form()'> </span>
-  <legend> <%= pm == session_guest ? "Your Info" : "Guest Info" %> </legend>
+  <span class="form_close" onclick = 'close_modify_form()'> <%= fa_icon "remove" %></span>
+  <legend> <%= pm == session_guest ? "Your Info" : "Guest Info" %> <span class="right fs-sm"> <%= "(#{pmi}/#{pmt})" if pmi > 0 %> </span> </legend>
     <p class="help-block"> <%= pm == session_guest ? "Create your account by entering your email address." : "If this guest would like access to this site, enter their email address." %> </p>
     <div class="form-group">  
     <%= label_tag "First Name", nil, class: "control-label"%>
-    <%= text_field_tag 'firstnames[]', pm.firstname, placeholder: 'Enter first name of guest', class: "form-control", id: 'fname_'+pm.id.to_s  %>
+    <%= text_field_tag 'firstnames[]', pm.firstname, placeholder: 'Enter first name of guest', class: "form-control fc-w-100", id: 'fname_'+pm.id.to_s  %>
   </div>
   <div class="form-group">
     <%= label_tag "Last Name", nil, class: "control-label" %>
-    <%= text_field_tag 'lastnames[]', pm.lastname, placeholder: 'Enter last name of guest', class: "form-control", id: 'lname_'+pm.id.to_s %>
+    <%= text_field_tag 'lastnames[]', pm.lastname, placeholder: 'Enter last name of guest', class: "form-control fc-w-100", id: 'lname_'+pm.id.to_s %>
   </div>
   <div class="form-group">
     <%= pm == session_guest ? label_tag("Email", nil, class: "control-label") : label_tag("Email (optional)", nil, class: "control-label") %>
-    <%= text_field_tag 'emails[]', pm.email, placeholder: pm == session_guest ? 'Enter your email address' : 'Enter email to give this guest access to the site', class: "form-control", id: 'email_'+pm.id.to_s  %>
+    <%= text_field_tag 'emails[]', pm.email, placeholder: pm == session_guest ? 'Enter your email address' : 'Enter email to give this guest access to the site', class: "form-control fc-w-100", id: 'email_'+pm.id.to_s  %>
   </div>
   </br>
 

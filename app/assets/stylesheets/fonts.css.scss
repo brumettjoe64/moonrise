@@ -22,17 +22,6 @@
 }
 
 @font-face {
-  font-family: 'MyriadPro';
-  src:font-url('MPro.eot');
-  src:font-url('MPro.eot?#iefix') format('embedded-opentype'),
-      font-url('MPro.svg#MPro') format('svg'),
-      font-url('MPro.woff') format('woff'),
-      font-url('MPro.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Proxima Nova';
     src: url('proximanova-regular-webfont.eot');
     src: url('proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -43,12 +32,7 @@
     font-style: normal;
 }
 
-@import url(http://weloveiconfonts.com/api/?family=fontawesome|maki);
-
-/* fontawesome */
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
+@import url(http://weloveiconfonts.com/api/?family=maki);
 
 /* maki */
 [class*="maki-"]:before {

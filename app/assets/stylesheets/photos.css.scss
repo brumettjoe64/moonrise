@@ -4,8 +4,8 @@ div.photos {
   line-height:50px;  
 }
 
-.button {
-  text-align: right;  
+.photo_button_wrapper {
+  margin-top: 25px;
 }
 
 .photo_wrapper {
@@ -20,7 +20,7 @@ div.photos {
       position:relative;
       width: 100%;
       border-radius: inherit;
-
+      cursor: pointer;
     &:after {
       content: '';
       border: rgba(255,255,255,.15) 1px solid;
@@ -49,6 +49,15 @@ div.photos {
       color: gray;
       text-align: left;
       font-size: 12px;
+    }
+    .photo_changer{
+      color: #999999;
+      font-size: 12px;
+      float:right;
+      margin-left:5px;
+      &:hover {
+        color: black;
+      }
     }
   }
 }

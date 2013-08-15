@@ -1,29 +1,61 @@
-TO DO LIST
+TO DO LIST 
 
 
-LONG-TERM 
-- Add a tracker for page visits
-- Moonrise Kingdom font fade in text
-- Account Mailer when email address is changed
-
-Learning
+Today
 ---------------
-Java Script tutorial
-How to use Coffee Script 
+minkmeadow.com -> www.minkmeadow.com
+style ri page
+Front page javascript / front image filter / Fade in Moonrise Kingdom Text
+Photo Enlargement
+Picture Enlargement
+
+Before launch
+---------------
+Default error page
+Guest Management Pop Up shows scroll bars
+Add a tracker for page visits
+Bannerize headings
+Zoom blogs
+Fix poster bug
+
+After launch
+---------------
+
 
 Front End
 ---------------
-Install new read font
-FORMS !!! Unbox forms, no background color, make fields bigger
-use line height for blog text if needed
-RSVP JS
-Bannerize headings
+Compass or a dolphin on the RI Map picture
+Countdown
 Red Bookmark on RSVP red
-Add select all button
-
+Even out home page entries
 
 Back End
 ---------------
-countdown
 Add comments controller
-jquery file upload for preview
+Account mailer 
+RSVP JS
+RSVP where are you staying
+
+Learning
+---------------
+jQuery - sort of an API for javascript
+json - object model that you can use to send java script objects (ex: iphone data)
+ajax - asynchronous query / commands to the database through javascript (ex: bid or auto-fill-in);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

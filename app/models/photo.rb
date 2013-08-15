@@ -32,6 +32,9 @@ class Photo < ActiveRecord::Base
       end
     end
     photos_list = photos_list_temp.sort_by{ |photo| photo.when }.reverse
-  
   end 
+
+  def to_json_for_photo_form
+    to_json(only: [:id, :caption, :poster_id, :when], :include => {:guests => {:only => [:id, :firstname]}});
+  end
 end

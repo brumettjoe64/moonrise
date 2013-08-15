@@ -1,5 +1,5 @@
 .form {
-  width: 525px;
+  width: 550px;
   border: 1px solid #cccccc;
   font-family: 'Proxima Nova';
   text-align: left;
@@ -23,6 +23,34 @@
   display: none;
 }
 
+.form_photo {
+  overflow:scroll;
+  height: 550px;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  margin: auto;
+  display: none;
+
+  .image-thumbnail {
+    width:260px; height:260px;
+    background: #eeeeee; overflow:hidden;
+    position: absolute; bottom: 15px; right: 15px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, .4);
+    img {
+      position:absolute; width:inherit;
+      margin: auto; top:0; right:0; bottom:0; left:0; 
+    }
+  }
+
+  #photo_button {
+    position: absolute;
+    bottom: 15px;
+  }
+}
+
 .form_close {
   color: #cccccc;
   position:absolute;
@@ -31,12 +59,22 @@
   &:hover { color: #777777; cursor: pointer;}
 }
 
+.fc-inline { margin-right: 10px; display: inline-block !important }
+
+.fc-w-25  { width: 25%; }
+.fc-w-33  { width: 33%; }
+.fc-w-45  { width: 45%; }
+.fc-w-50  { width: 50%; }
+.fc-w-100 { width: 100%; }
+
+
 .admin_form {
   width: 500px;
   border: 1px solid white;  
   font-family: 'Proxima Nova';
   text-align: left;
 }
+
 
 /* Bootstrap 3.0 Form Settings */
 
@@ -57,6 +95,9 @@ legend {
   color: #99B3B7;
   border: 0;
   border-bottom: 1px solid #99B3B7; //#e5e5e5;
+
+  .fs-sm{ font-size: 15px; margin-top: 15px; }
+
 }
 
 label {
@@ -129,7 +170,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .form-control {
   display: block;
-  width: 100%;
   height: 34px;
   padding: 6px 12px;
   font-family: 'Proxima Nova';
@@ -477,8 +517,8 @@ fieldset[disabled] .btn-default.active {
 
 .btn-primary {
   color: #ffffff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: #7D6E8B;;
+  border-color: #cccccc;
 }
 
 .btn-primary:hover,
@@ -486,8 +526,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active {
   color: #ffffff;
-  background-color: #3276b1;
-  border-color: #285e8e;
+  background-color: #685b73;
+  border-color: #cccccc;
 }
 
 .btn-primary.disabled,
