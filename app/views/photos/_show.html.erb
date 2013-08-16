@@ -6,7 +6,7 @@
     <p class="photo_caption"> <%= photo.caption %> </p>
     <p class="photo_poster"> posted by <%=photo.poster.firstname+" "+photo.poster.lastname.first%>. 
     <%= link_to(fa_icon("remove"), photo, class: "photo_changer", method: :delete, data: { confirm: 'Are you sure you want to delete this picture?' }) if photo_authorize(photo) %>
-    <%= link_to(fa_icon("pencil"), "javascript:void(0)", class: "photo_changer",  
+    <%= link_to(fa_icon("pencil"), "javascript:void(0)", class: "photo_changer",
       onclick: "open_photo_form(#{photo.to_json_for_photo_form},#{photo.pic.url(:medium).to_json})") if photo_authorize(photo) %>
     </p>
   </div>

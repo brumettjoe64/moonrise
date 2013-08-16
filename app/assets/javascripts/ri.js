@@ -1,19 +1,12 @@
-var global_ri_icon_loaded_color = "black";
-var global_ri_icon_unloaded_color = "#7D6E8B";
 var global_ri_poi = "ri_poi_minkmeadow";
 function ri_hover(x) {
-  $("#"+x).css('font-size', 40);
-  $("#"+x).css('z-index', 2);
-  $("#"+x).css('margin-left', -10);
-
+  $("#"+x).addClass('highlighted');
 }
 
 function ri_unhover(x) {
   var icon = document.getElementById(x);
-  $("#"+x).css('font-size', 20);
-  $("#"+x).css('z-index', 1);
-  $("#"+x).css('margin-left', 0);
-
+  $("#"+x).removeClass('highlighted');
+  ri_load(global_ri_poi);
 }
 
 function ri_save(x) {
@@ -24,7 +17,7 @@ function ri_save(x) {
 
 function ri_unload(x) {
   var icon = document.getElementById(x);
-  icon.style.color = global_ri_icon_unloaded_color;
+  $("#"+x).removeClass('highlighted');
 }
 
 function ri_load(x) {
@@ -42,7 +35,7 @@ function ri_load(x) {
     case "ri_poi_minkmeadow":
       title_str = "Mink Meadow";
       img_str = "/assets/ri-minkmeadow.jpg";
-      content_str = "Jones family residence and the location of the ceremony and reception on July 5th.";
+      content_str = "Jones family residence and the location of the ceremony and reception on July 5th. Address: 885 Tuckertown Road, Wakefield, RI.";
       break;
     case "ri_poi_narragansett":
       title_str = "Narragansett";
@@ -109,5 +102,6 @@ function ri_load(x) {
   title.innerHTML=title_str;
   img.src = img_str;
   content.innerHTML = content_str;
-  icon.style.color = global_ri_icon_loaded_color;
+  $("#"+x).addClass('highlighted');
+
 }
