@@ -30,9 +30,6 @@
           {:class => "form-control fc-inline"}) %>
       </div>
     </div>    
-    <div class="hfield">
-      <%= hidden_field_tag("photo[poster_id]", session_guest.id) %>
-    </div>
     <%= submit_tag("Save Photo", id: "photo_button", class: "btn btn-default",
     onclick: "return validate_and_submit_photo_form();") %>
   <% end %> 

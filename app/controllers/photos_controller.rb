@@ -22,7 +22,7 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = Photo.new(params[:photo])
+    @photo = Photo.new(params[:photo].merge(poster_id: session_guest.id))
     respond_to do |format|
       if @photo.save
         taggable_guests = [groom, bride]
