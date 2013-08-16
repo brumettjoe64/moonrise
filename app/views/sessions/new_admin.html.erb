@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Moonrise Kingdom</title>
+  <title>Mink Meadow</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Crafty+Girls' rel='stylesheet' type='text/css'>
+ <link href='http://fonts.googleapis.com/css?family=Crafty+Girls' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
+<%= javascript_tag('window.onload=function(){adjustBgImage(); fadeInText()}; window.onresize=function(){adjustBgImage()};') %>
+
 <div class="sessions_wrapper">
+  <%= image_tag('bg-front.jpg', id: "login_img") %>
   <div id="login_form">
-    <%= form_tag('/login_admin', method: 'post') do %>
+      <%= form_tag('/login_admin', method: 'post') do %>
       <div class="password_field">
         <%= password_field_tag(:password, nil, placeholder: 'enter password ...', autofocus: true) %>
         <%= submit_tag("Login", id: "login_button") %>
@@ -22,21 +25,20 @@
     <% end %>
     <p id="login_notice"><%= notice %></p>
     <p id="login_alert"><%= alert %></p>
-  </div>
+  </div>  
   <div id="login_text">
-    <h1 class="login_lrg">Kenny and Lauren's Wedding</h1>
-    <h1 class="login_sm">in</h1>
-    <h1 class="login_med">Wakefield, Rhode Island</h1>
-    <h1 class="login_sm">on</h1>
-    <h1 class="login_med">July 5th, 2014</h1>
+    <div id="login_text1a"> <h1 class="login_lrg">Kenny and Lauren's Wedding</h1> </div>
+    <div id="login_text2b"> 
+      <h1 class="login_sm">in</h1>
+      <h1 class="login_med">Wakefield, Rhode Island</h1>
+    </div>
+    <div id="login_text3c"> 
+      <h1 class="login_sm">on</h1>
+      <h1 class="login_med">July 5th, 2014</h1>
+    </div>
   </div>
+
 </div>
 
 </body>
 </html>
-
-
-
-
-
-

@@ -51,7 +51,7 @@ div[id*='overlay_']{
 .ttcol_rt { width:300px; padding: 10px 20px 10px 10px; float:right; }
 
 /* Fonts */
-.ff_supertitle      { font-family: 'Thirsty Rough'; }
+.ff_supertitle      { font-family: 'Thirsty Rough'; text-shadow: 0 1px #fffaec; }
 .ff_title           { font-family: 'Thirsty'; }
 .ff_nav             { font-family: 'Pathway Gothic One'}
 .ff_read,p,td,th    { font-family: 'Proxima Nova'}
@@ -63,7 +63,7 @@ div[id*='overlay_']{
 .fc_3, a:link.fc_3, a:visited.fc_3 {color: white;}
 
 /* Font sizes */
-h1 { font-size: 60px; font-weight:normal; text-shadow: 0 1px #fffaec} // text-shadow: 3px 0px #99B3B7; }
+h1 { font-size: 60px; font-weight:normal; } 
 h2 { font-size: 40px; font-weight:normal; } 
 h3 { font-size: 30px; font-weight:normal; } //text-shadow: 2px 2px white; }
 h4 { font-size: 20px; font-weight:normal; }

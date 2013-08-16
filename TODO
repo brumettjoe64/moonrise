@@ -1,30 +1,27 @@
 TO DO LIST 
 
-
 Today
 ---------------
-minkmeadow.com -> www.minkmeadow.com
-style ri page
-Front page javascript / front image filter / Fade in Moonrise Kingdom Text
+Style RI page
+
 Photo Enlargement
-Picture Enlargement
+Blog Enlargement
 
 Before launch
 ---------------
+Info page image
 Default error page
-Guest Management Pop Up shows scroll bars
-Add a tracker for page visits
-Bannerize headings
-Zoom blogs
+Guest Management Pop Up shows scroll bars??
 Fix poster bug
+Bannerize headings
+Add a tracker for page visits
+Look over info page styling/text
 
 After launch
 ---------------
 
-
 Front End
 ---------------
-Compass or a dolphin on the RI Map picture
 Countdown
 Red Bookmark on RSVP red
 Even out home page entries
@@ -41,21 +38,4 @@ Learning
 jQuery - sort of an API for javascript
 json - object model that you can use to send java script objects (ex: iphone data)
 ajax - asynchronous query / commands to the database through javascript (ex: bid or auto-fill-in);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

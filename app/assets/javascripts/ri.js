@@ -1,18 +1,25 @@
-var global_ri_icon_loaded_color = "blue";
+var global_ri_icon_loaded_color = "black";
 var global_ri_icon_unloaded_color = "#7D6E8B";
-
+var global_ri_poi = "ri_poi_minkmeadow";
 function ri_hover(x) {
-  ri_unload(global_ri_poi);
-  ri_load(x);
+  $("#"+x).css('font-size', 40);
+  $("#"+x).css('z-index', 2);
+  $("#"+x).css('margin-left', -10);
+
 }
 
 function ri_unhover(x) {
-  ri_unload(x);
-  ri_load(global_ri_poi);
+  var icon = document.getElementById(x);
+  $("#"+x).css('font-size', 20);
+  $("#"+x).css('z-index', 1);
+  $("#"+x).css('margin-left', 0);
+
 }
 
 function ri_save(x) {
-  global_ri_poi = x;  
+  ri_unload(global_ri_poi);
+  global_ri_poi = x;
+  ri_load(global_ri_poi);  
 }
 
 function ri_unload(x) {
@@ -60,7 +67,7 @@ function ri_load(x) {
     case "ri_poi_providence":
       title_str = "Providence";
       img_str = "/assets/ri-providence.jpg";
-      content_str = "The former rum and molasses trading town is now one of the best places to live in the United States. Historic sites, wonderful museums and theaters seamlessly blend with newer attractions on the block including a modern mega-mall, scenic Riverwalk, outdoor skating arena, convention center, plus new hotels and restaurants. Wander back in time on Benefit Street, where eminent Federal period homes recall the city's wealthy past. For a modern experience, check out the more than 100 stores at Providence Place. Or tantalize your taste buds on 'The Hill', a historic area that boasts many award- winning restaurants, from the Italian and Mediterranean, to Caribbean, Mexican, Chinese, seafood and baked goods. For a different perspective, take a romantic river cruise on an authentic Venetian gondola. Don't Miss: Waterfire.";
+      content_str = "The former rum and molasses trading town is now one of the best places to live in the United States. Historic sites, wonderful museums and theaters seamlessly blend with newer attractions on the block including a modern mega-mall, scenic Riverwalk, outdoor skating arena, convention center, plus new hotels and restaurants. Wander back in time on Benefit Street, where eminent Federal period homes recall the city's wealthy past. Or tantalize your taste buds on 'The Hill', a historic area that boasts many award- winning restaurants. For a different perspective, take a romantic river cruise on an authentic Venetian gondola. Don't Miss: Waterfire.";
       break;
     case "ri_poi_blockisland":
       title_str = "Block Island";

@@ -1,11 +1,13 @@
-<%= javascript_tag('window.onload = function(){ ri_save("ri_poi_minkmeadow"); ri_load("ri_poi_minkmeadow"); }') %>
+<%#= javascript_tag('window.onload = function(){ ri_save("ri_poi_minkmeadow"); ri_load("ri_poi_minkmeadow"); }') %>
+<%= javascript_tag('window.onload = function(){ ri_save("ri_poi_minkmeadow"); }') %>
 <div class="ri">
   <%= image_tag("splash-ri2.jpg", class: "img_top") %>
+    <div class="hcol_lt">
     <h2 class="ff_title fc_2"> ~ Rhode Island ~ </h2>
-  <div class="hcol_lt">
+  
     <div class="map_wrapper">
-      <%= image_tag("ri-map.png") %>
-      <div id="ri_poi_minkmeadow" class="icon-home" 
+      <%= image_tag("ri-mapc.png") %>
+      <div id="ri_poi_minkmeadow" class="icon-home"
            onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
       <div id="ri_poi_narragansett" class="maki-swimming" 
            onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
@@ -23,19 +25,23 @@
            onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
       <div id="ri_poi_wickford" class="maki-shop" 
            onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_ny" class="icon-arrow-down" 
+      <div id="ri_poi_ny" class="icon-circle-arrow-down" 
            onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_boston" class="icon-arrow-up" 
+      <div id="ri_poi_boston" class="icon-circle-arrow-up" 
            onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_capecod" class="icon-arrow-right" 
+      <div id="ri_poi_capecod" class="icon-circle-arrow-right" 
            onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
     </div>
   </div>
   <div class="hcol_rt">
-    <div class="content_wrapper">
-      <img id="ri_content_img" src=<%= image_path("ri-narragansett.jpg") %> > </img>
-      <p id="ri_content_title"> Narragansett </p>
-      <p id="ri_content"> With four of the state's most popular beaches, Narragansett is our recommended location to stay in Southern Rhode Island. Once a wealthy community rivaling nearby Newport, the history of Narragansett is still visible. The Towers, spanning Ocean Drive, is the only remaining section of a luxurious casino built in 1883. Having survived numerous fires and vicious nor'easters, The Towers is the town's most enduring landmark.  Don't miss: Iggy's Clamcakes and Chowder.  </p>
+    <div class="content_size_wrapper">
+      <div class="content_wrapper">
+        <img id="ri_content_img" src=<%= image_path("ri-narragansett.jpg") %> > </img>
+        <div id="ri_content_text">
+          <p id="ri_content_title"> Narragansett </p>
+          <p id="ri_content"> With four of the state's most popular beaches, Narragansett is our recommended location to stay in Southern Rhode Island. Once a wealthy community rivaling nearby Newport, the history of Narragansett is still visible. The Towers, spanning Ocean Drive, is the only remaining section of a luxurious casino built in 1883. Having survived numerous fires and vicious nor'easters, The Towers is the town's most enduring landmark.  Don't miss: Iggy's Clamcakes and Chowder.  </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>    
