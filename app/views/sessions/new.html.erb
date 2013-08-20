@@ -9,7 +9,14 @@
 </head>
 <body>
 
-<%= javascript_tag('window.onload=function(){adjustBgImage(); fadeInText()}; window.onresize=function(){adjustBgImage()};') %>
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    adjustBgImage();
+    fadeInText();
+    })
+    $(window).resize(function(){adjustBgImage();})
+
+<% end %>
 
 <div class="sessions_wrapper">
   <%= image_tag('bg-front.jpg', id: "login_img") %>

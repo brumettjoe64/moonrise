@@ -3,9 +3,10 @@
   <div id="overlay_form_photo">
     <%= render :partial => 'photos/form' %>
   </div>
-
+  <div id="overlay_photo_display">
+    <%= render :partial => 'photos/display' %>
+  </div>
   <h2 class="ff_title fc_2"> ~ Photos of Us ~ </h2>
-
   <div class="photo_button_wrapper">
     <%= button_tag("Upload a New Photo", id: "new_photo_button", class: "btn btn-primary", type: "button", 
       onclick: "open_photo_form()") %>    

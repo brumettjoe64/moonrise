@@ -6,18 +6,6 @@ class Photo < ActiveRecord::Base
   validate :file_dimensions
   has_and_belongs_to_many :guests, autosave: true
 
-  def img_height
-    #self.pic.url(:medium)
-      photo_path = (pic.options[:storage] == :s3) ? pic.url(:medium) : pic.path(:medium)
-      #Paperclip::Geometry.from_file(photo_path).height.to_int
-  end
-
-  def img_width
-    #self.pic.url(:medium)
-      photo_path = (pic.options[:storage] == :s3) ? pic.url(:medium) : pic.path(:medium)
-      #Paperclip::Geometry.from_file(photo_path).width.to_int
-  end
-
   def self.get_photos_by_date
     Photo.all.sort_by{ |photo| photo.created_at }.reverse
   end
@@ -43,14 +31,11 @@ class Photo < ActiveRecord::Base
   end 
 
   def file_dimensions
-
     new_photo_path = (pic.queued_for_write[:original]) ? pic.queued_for_write[:original].path : nil
     old_photo_path = (pic.options[:storage] == :s3) ? pic.url(:original) : pic.path(:original)
-
     dimensions = Paperclip::Geometry.from_file(new_photo_path || old_photo_path)
     self.width = dimensions.width.to_int
     self.height = dimensions.height.to_int
-
   end
 
   def self.update_file_dimensions
@@ -61,7 +46,7 @@ class Photo < ActiveRecord::Base
   end
 
   def to_json()
-    h = super(only: [:id, :caption, :poster, :when, :image_s, :image_m, :image_l, :image_w, :image_h], :include => {:guests => {:only => [:id, :firstname]}});
+    h = super(only: [:id, :caption, :poster, :when, :image_s, :image_m, :image_l, :height, :width], :include => {:guests => {:only => [:id, :firstname]}});
   end
 
   def as_json(options = { })
@@ -69,8 +54,6 @@ class Photo < ActiveRecord::Base
     h[:image_s] = pic.url(:thumb)
     h[:image_m] = pic.url(:medium)
     h[:image_l] = pic.url(:original)
-    h[:image_h] = img_height
-    h[:image_w] = img_width
     h[:poster] = "#{poster.firstname} #{poster.lastname}"
     h
   end

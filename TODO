@@ -9,9 +9,6 @@ Blog Enlargement
 Before launch
 ---------------
 Info page image
-Default error page
-Guest Management Pop Up shows scroll bars??
-Fix poster bug
 Bannerize headings
 Add a tracker for page visits
 Look over info page styling/text
@@ -32,6 +29,8 @@ Add comments controller
 Account mailer 
 RSVP JS
 RSVP where are you staying
+Default error page
+
 
 Learning
 ---------------

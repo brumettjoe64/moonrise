@@ -1,4 +1,35 @@
 var global_photo_default_pic_url = '/assets/image-blank.png';
+
+function open_photo_display(image_wrapper) {
+  var photo = $(image_wrapper).children("img").data("photo");
+  $("#overlay_photo_display").show();
+  $("body").css("overflow", "hidden");
+  $("#photo_display_caption").text(photo["caption"]);
+  $("#photo_display_poster").text(photo["poster"]);
+  $("#photo_display_image").attr("src", photo["image_l"]);
+  $("#photo_display_image").data("w", photo["width"]);
+  $("#photo_display_image").data("h", photo["height"]);
+  resize_photo_display();
+}
+
+function resize_photo_display() {
+  var margin_tb = 50;
+  var wh = $(window).height()-2*margin_tb;
+  var iw = $("#photo_display_image").data("w");
+  var ih = $("#photo_display_image").data("h");
+
+  $("#photo_display_image").height(wh);
+  $("#photo_display_image").width(wh*iw/ih);
+  $("#content_display_wrapper").height(wh);
+
+} 
+
+
+function close_photo_display() {
+  $("#overlay_photo_display").hide();
+  $("body").css("overflow", "scroll");
+}
+
 function open_photo_form(photo_in_json,thumb_url) {
   var overlay = document.getElementById("overlay_form_photo");
   var body = document.getElementsByTagName("body")[0];
@@ -14,7 +45,6 @@ function open_photo_form(photo_in_json,thumb_url) {
 
   clearFileInput(field);
 
-  console.log("Click!");
   if (photo_in_json) {
     legend.innerHTML = "Edit Photo";
     form.action = "/photos/"+photo_in_json.id;
