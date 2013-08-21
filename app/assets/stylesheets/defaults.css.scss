@@ -47,8 +47,8 @@ div[id*='overlay_']{
 .tcol_mid { width:267px; padding: 10px 13px 10px 13px; float:left; }
 .tcol_rt  { width:266px; padding: 10px 12px 10px  0px; float:left; }
 
-.ttcol_lt { width:500px; padding: 10px 10px 10px 20px; float:left; }
-.ttcol_rt { width:300px; padding: 10px 20px 10px 10px; float:right; }
+.ttcol_lt { width:300px; padding: 10px 10px 10px 20px; float:left; }
+.ttcol_rt { width:500px; padding: 10px 20px 10px 10px; float:right; }
 
 /* Fonts */
 .ff_supertitle      { font-family: 'Thirsty Rough'; text-shadow: 0 1px #fffaec; }
@@ -75,8 +75,8 @@ p  { font-size: 16px; text-align:left; }
 
 /* Links, List, and Buttons*/
 a  { text-decoration:none; }
-a:link    {color: #800080; }
-a:visited {color: #800080; }
+a:link    {color: #7D6E8B; }
+a:visited {color: #7D6E8B; }
 li { list-style-type:none; }
 
 /* Tables */
@@ -138,6 +138,18 @@ body {
       width: 800px;
       height: 400px;
     }
+
+    .banner_lrg{
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .banner_half{
+      margin-top: 20px;
+      margin-bottom: 10px;
+      width:350px;
+    }
+
+
 
     .spacer { height:50px; }
     .thumb { width:100px; height:100px; background: black ; position:relative;

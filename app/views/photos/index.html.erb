@@ -6,9 +6,11 @@
   <div id="overlay_photo_display" >
     <%= render :partial => 'photos/display' %>
   </div>
-  <h2 class="ff_title fc_2"> ~ Photo Album ~ </h2>
+  <%= image_tag("banner-photos.png", class:"banner_lrg") %>
+
   <div class="photo_button_wrapper">
-    <%= button_tag("Upload a New Photo", id: "new_photo_button", class: "btn btn-primary", type: "button", 
+    <p> These are a few of our favorite pictures we've taken over the years. We'd love to see your favorites too! </p>
+    <%= button_tag("Add to the Album", id: "new_photo_button", class: "btn btn-primary", type: "button", 
       onclick: "open_photo_form()") %>    
   </div>
 

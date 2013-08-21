@@ -1,21 +1,31 @@
 <div class="details">
   <%= image_tag("splash-details.jpg", class:"img_top") %>
-  <div class="ttcol_lt">
-    <h3 class="ff_title fc_2"><%= fa_icon "info-sign", text: "The Details" %> </h3>
+  <%= image_tag("banner-details.png", class:"banner_lrg") %>
+
+<div class="ttcol_rt">
     <%= image_tag("details-block.png", class:"details_block") %>
   </div>
 
-  <div class="ttcol_rt">    
+
+  <div class="ttcol_lt">    
     <div class="details_section">
       <h3 class="ff_title fc_2 maki-airport"> How to Get There</h3>
-      <p> If you plan on flying in, PVD is only 30 minutes from Mink Meadow. BOS will likely offer more options and cheaper travel, and is 1.5 hours away. </p>
+      <p> If you plan on flying in, PVD is only 30 minutes from Mink Meadow. If you're willing to drive a bit (1.5 hours), BOS will likely offer more options and cheaper travel. </p>
       <%#https://www.google.com/maps/ms?msid=203024597025170313355.0004e4170940015f97b6a&msa=0%>
-      <p class="indent"> <%= fa_icon "double-angle-right", text: "PVD" %> </p>
-      <p class="indent"> <%= fa_icon "double-angle-right", text: "BOS" %> </p>
+      <p class="indent"> 
+          <a href="http://www.google.com/maps/ms?msid=203024597025170313355.0004e4170940015f97b6a&msa=0">
+            <%= fa_icon "double-angle-right", text: "TF Green Airport (PVD)" %> 
+          </a>
+      </p>
+      <p class="indent"> 
+          <a href="http://www.google.com/maps/ms?msid=203024597025170313355.0004e4170940015f97b6a&msa=0">
+            <%= fa_icon "double-angle-right", text: "Logan International (BOS)" %> 
+          </a>
+      </p>
     </div>
     <div class="details_section">
       <h3 class="ff_title fc_2 maki-lodging"> Where to Stay</h3>
-      <p> Since we're so close to the beach, the funnest (and cheapest!) option is to stay at one of the many rental vacation houses in the area: </p>
+      <p> Since we're so close to the beach, the best option is to stay at one of the many rental vacation houses in the area. Here are some links to help you get started: </p>
       <p class="indent"> 
         <a href="http://www.homeaway.com/search/keywords:Narragansett+area%2C+Rhode+Island"> 
           <%= fa_icon "double-angle-right", text: "HomeAway" %> 
@@ -31,7 +41,7 @@
           <%= fa_icon "double-angle-right", text: "AirBnB" %>
         </a> 
       </p>
-      <p> In case you want to stay at a hotel, here are the ones we recommend: </p>
+      <p> In case you'd rather stay at a hotel, here are the ones we recommend: </p>
       <p class="indent"> 
         <a href="http://hamptoninn3.hilton.com/en/hotels/rhode-island/hampton-inn-south-kingstown-newport-area-NPTSKHX/index.html"> 
           <%= fa_icon "double-angle-right", text: "Hampton Inn" %>
@@ -49,5 +59,6 @@
       <p> <%= link_to 'learn more...', ri_path, class: "ff_read right"%>  </p>
     </div>
   </div>
+
 
 </div>

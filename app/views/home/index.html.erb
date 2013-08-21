@@ -3,11 +3,14 @@
 <div id="overlay_photo_display" >
   <%= render :partial => 'photos/display' %>
 </div>
+<div id="overlay_form_photo">
+  <%= render :partial => 'photos/form' %>
+</div>
+
 <div class="home">
   <%= image_tag("splash-home.jpg", class: "img_top") %>
-  
   <div class="hcol_lt blogs">
-    <h2 class="ff_title fc_2"> ~ Recent Blogs ~ </h2>
+    <%= image_tag("banner-home-blogs.png", class:"banner_half") %>
     <% Blog.get_blogs_by_date.first.try do |blog| %>
       <%= render :partial => 'blogs/show', :locals => {:blog => blog} %>
     <% end %>
@@ -18,11 +21,7 @@
   </div>
 
   <div class="hcol_rt photos">
-    <div id="overlay_form_photo">
-      <%= render :partial => 'photos/form' %>
-    </div>
-
-    <h2 class="ff_title fc_2"> ~ New Photos ~ </h2>
+    <%= image_tag("banner-home-photos.png", class:"banner_half") %>
     <% Photo.get_photos_by_date.first.try do |photo| %>
       <%= render :partial => 'photos/show', :locals => {:photo => photo} %>
     <% end %>

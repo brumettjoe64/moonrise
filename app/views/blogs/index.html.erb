@@ -1,6 +1,6 @@
 <div class="blogs">
   <%= image_tag("splash-blog.jpg", class:"img_top") %>
-  <h2 class="ff_title fc_2"> ~ Our Wedding Photo Blog ~ </h2>
+  <%= image_tag("banner-blog.png", class:"banner_lrg") %>
   <div class="hcol_lt">
     <% @blogs_left.each do |blog| %>
       <%= render :partial => 'show', :locals => {:blog => blog} %>

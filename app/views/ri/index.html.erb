@@ -2,10 +2,10 @@
 <%= javascript_tag('window.onload = function(){ ri_save("ri_poi_minkmeadow"); }') %>
 <div class="ri">
   <%= image_tag("splash-ri2.jpg", class: "img_top") %>
+  <%= image_tag("banner-ri.png", class:"banner_lrg") %>
+
     <div class="hcol_lt">
-    <h2 class="ff_title fc_2"> ~ Rhode Island ~ </h2>
-  
-    <div class="map_wrapper">
+      <div class="map_wrapper">
       <%= image_tag("ri-mapc.png") %>
       <div id="ri_poi_minkmeadow" class="icon-home"
            onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
