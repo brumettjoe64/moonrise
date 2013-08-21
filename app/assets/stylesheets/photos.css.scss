@@ -1,19 +1,29 @@
 div#overlay_photo_display {
-  background-color:rgba(0, 0, 0, 0.8);
+  background-color:rgba(255, 255, 255, 0.9);
+
   #photo_display_wrapper{ 
-    margin: auto;
-    margin-top:50px;
-    #photo_display_close{
-      z-index: 1;
+    background:white;
+    width:660px;
+    margin: 20px auto;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, .4);
+    //padding-bottom:20px;
+    
+    #title_display_wrapper{
+      text-align: left;
+      i{font-size: 50px; margin-right:5px;}
+      #photo_display_poster{font: bold 25px 'Proxima Nova'; margin-right:5px;}
+      #photo_display_time{font: 14px 'Proxima Nova'; color: #aaaaaa;}
+      padding:20px 30px;
+      border-bottom: 1px solid #bbbbbb;
     }
     #image_display_wrapper{
-      display: inline-block;
-     img { display: inline; }
+      padding: 20px 30px;
+      width:100%;
+      img { width:100%;}  
+      border-bottom: 1px solid #bbbbbb;
     }
     #content_display_wrapper{
-      display: inline-block;
-      width:250px;
-      background:white;
+      padding-top: 20px;
     }
   }
 }

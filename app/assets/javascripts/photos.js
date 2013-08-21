@@ -3,13 +3,20 @@ var global_photo_default_pic_url = '/assets/image-blank.png';
 function open_photo_display(image_wrapper) {
   var photo = $(image_wrapper).children("img").data("photo");
   $("#overlay_photo_display").show();
+  $("#overlay_photo_display").click(function(e) { 
+    if ($(e.target).is("#overlay_photo_display")) close_photo_display();
+  });
+
   $("body").css("overflow", "hidden");
   $("#photo_display_caption").text(photo["caption"]);
-  $("#photo_display_poster").text(photo["poster"]);
+  $("#photo_display_time").text(convert_time(photo["created_at"]));
+  //$("#photo_display_time").text("Time Now");
+
+  $("#photo_display_poster").text(" posted by "+photo["poster"]);
   $("#photo_display_image").attr("src", photo["image_l"]);
   $("#photo_display_image").data("w", photo["width"]);
   $("#photo_display_image").data("h", photo["height"]);
-  resize_photo_display();
+  //resize_photo_display();
 }
 
 function resize_photo_display() {
@@ -19,9 +26,11 @@ function resize_photo_display() {
   var ih = $("#photo_display_image").data("h");
 
   $("#photo_display_image").height(wh);
-  $("#photo_display_image").width(wh*iw/ih);
   $("#content_display_wrapper").height(wh);
-
+  $("#photo_display_wrapper").height(wh);
+ 
+  $("#photo_display_image").width(wh*iw/ih);
+  $("#photo_display_wrapper").width($("#photo_display_image").width()+ $("#content_display_wrapper").width());
 } 
 
 
@@ -155,3 +164,7 @@ function validate_file_exists(field) {
   }
 }
 
+function convert_time(inputTime) {
+  //console.log(moment(inputTime).fromNow());  
+  return moment(inputTime).fromNow();
+}

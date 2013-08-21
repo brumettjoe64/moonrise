@@ -46,7 +46,7 @@ class Photo < ActiveRecord::Base
   end
 
   def to_json()
-    h = super(only: [:id, :caption, :poster, :when, :image_s, :image_m, :image_l, :height, :width], :include => {:guests => {:only => [:id, :firstname]}});
+    h = super(only: [:id, :caption, :poster, :when, :image_s, :image_m, :image_l, :height, :width, :created_at], :include => {:guests => {:only => [:id, :firstname]}});
   end
 
   def as_json(options = { })

@@ -1,6 +1,6 @@
 <%= javascript_tag("window.onload = function(){ modify_form_info_for(#{session_guest.id.to_s})}") if !session_guest.registered? %>
 
-<div id="overlay_photo_display">
+<div id="overlay_photo_display" >
   <%= render :partial => 'photos/display' %>
 </div>
 <div class="home">
