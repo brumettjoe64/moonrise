@@ -48,7 +48,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(params[:blog])
+    @blog = Blog.new(params[:blog].merge(guest_id: session_guest.id))
     respond_to do |format|
       if @blog.save
         format.html { redirect_to admin_blogs_path, notice: 'Blog was successfully created.' }
