@@ -1,16 +1,19 @@
 class SessionsController < ApplicationController
   skip_before_filter :authorize, only: [:new, :new_admin, :create, :create_admin]
+  
   def new
     render :layout => false
   end
+
   def new_admin
     render :layout => false
   end
 
-
   def create
-    guest_by_email = Guest.find_by_email(params[:login])
-    guest_by_sitekey = Guest.find_by_sitekey(params[:login])
+    guest_by_email = Guest.where('lower(email)=?', params[:login].downcase).first
+    #guest_by_email = Guest.find_by_email(params[:login])
+    guest_by_sitekey = Guest.where('lower(sitekey)=?', params[:login].downcase).first
+    #guest_by_sitekey = Guest.find_by_sitekey(params[:login])
     if guest_by_email 
       if !guest_by_email.admin
         session[:guest_id] = guest_by_email.id
@@ -31,8 +34,7 @@ class SessionsController < ApplicationController
   end
 
   def create_admin
-    logger.debug("Login is ...#{params[:login]}")
-    guest = Guest.find_by_email(params[:login])
+    guest = Guest.where('lower(email)=?', params[:login].downcase).first
     if guest and guest.password == params[:password]
       session[:guest_id] = guest.id
       redirect_to home_url
