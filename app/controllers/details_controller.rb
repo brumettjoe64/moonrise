@@ -5,6 +5,7 @@ class DetailsController < ApplicationController
   # GET /details.json
 
   def index
+    session_guest.hit_logger("details")
     @guest = Guest.find_by_id(session[:guest_id])
     @groups = @guest.groups
     @details = @guest.details

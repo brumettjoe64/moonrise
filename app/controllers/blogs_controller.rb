@@ -27,6 +27,7 @@ class BlogsController < ApplicationController
   end
 
   def index
+    session_guest.hit_logger("blog")
     @blogs_by_column = Blog.get_blogs_by_column
     @blogs_left = @blogs_by_column[0]
     @blogs_right = @blogs_by_column[1]

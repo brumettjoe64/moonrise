@@ -82,22 +82,21 @@ li { list-style-type:none; }
 /* Tables */
 table {
   color:white;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border: 1px solid black;
   border-spacing: 0;
   border-collapse: collapse;
   margin: 10px auto;
 }
 
-th,td { 
-  padding:5px; background: #7D6E8B; 
-  font: 20px 'Pathway Gothic One';
-  text-align:center;
-  border-left: 1px solid white; border-right: 1px solid white;
+th,td,tr { 
+  color: black;
+  background: white;
+  font-size: 12px;
+  padding:5px; 
+  border: 1px solid #cccccc;
 }
 
-td { font: 15px 'Pathway Gothic One'; text-align:left; background: #99b3b7;}
-
+td{text-align:left;}
 /* Body */
 
 body {

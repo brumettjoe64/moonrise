@@ -33,5 +33,11 @@
   </table>
 
   </br>
-  <%= link_to 'New Photo', new_photo_path, class: "button"%>
+
+  <div id="overlay_form_photo">
+    <%= render :partial => 'photos/form' %>
+  </div>
+
+  <%= button_tag("New Photo", id: "new_photo_button", class: "btn btn-primary", type: "button", 
+      onclick: "open_photo_form()") %>    
 </div>

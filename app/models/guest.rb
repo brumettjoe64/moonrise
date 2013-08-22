@@ -169,7 +169,17 @@ class Guest < ActiveRecord::Base
     group_Everyone = Group.find_by_name(:Everyone) || Group.new(name: :Everyone)
     group_Everyone.save
     group_Everyone.guests << self
+  end
 
+  def hit_logger(cName)
+    last_ts   = self.send(cName+"_ts")
+    last_hits = self.send(cName+"_hits")
+
+    if ((!last_ts) || (last_ts < 2.hours.ago))
+      self.send(cName+"_ts=", DateTime.now)
+      self.send(cName+"_hits=", last_hits+1)
+      self.save
+    end
   end
 
 end

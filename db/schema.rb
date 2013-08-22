@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130820002439) do
+ActiveRecord::Schema.define(:version => 20130822044224) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(:version => 20130820002439) do
     t.string   "password_digest"
     t.boolean  "account_flag",    :default => false
     t.string   "rsvp_info"
+    t.datetime "home_ts"
+    t.integer  "home_hits",       :default => 0
+    t.datetime "blog_ts"
+    t.integer  "blog_hits",       :default => 0
+    t.datetime "photo_ts"
+    t.integer  "photo_hits",      :default => 0
+    t.datetime "details_ts"
+    t.integer  "details_hits",    :default => 0
+    t.datetime "ri_ts"
+    t.integer  "ri_hits",         :default => 0
   end
 
   create_table "guests_photos", :id => false, :force => true do |t|

@@ -4,6 +4,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
+    session_guest.hit_logger("photo")
     @photos = Photo.all
     respond_to do |format|
       format.html # index.html.erb
