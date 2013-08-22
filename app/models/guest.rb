@@ -173,7 +173,7 @@ class Guest < ActiveRecord::Base
 
   def hit_logger(cName)
     last_ts   = self.send(cName+"_ts")
-    last_hits = self.send(cName+"_hits")
+    last_hits = self.send(cName+"_hits").to_i
 
     if ((!last_ts) || (last_ts < 2.hours.ago))
       self.send(cName+"_ts=", DateTime.now)
