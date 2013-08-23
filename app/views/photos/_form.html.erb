@@ -12,8 +12,10 @@
       <%= text_field_tag"photo[caption]", nil, class: "form-control fc-w-100", id: "photo_caption", :maxlength => 64 %>
       <p class="help-block fs-14"> Maximum of 64 characters </p>
     </div>
+
+    <legend id="photo_info_legend" class="legendb"> Extra Info </legend>
     <div class="form-group">
-      <%= label_tag "Tags", nil, class: "control-label"%>
+      <%= label_tag "Who", nil, class: "control-label"%>
       <div class="form-control fc-w-45">
         <%= label_tag groom.firstname, check_box_tag("taglist[#{groom.id}]", true, false)+groom.firstname, :class => "checkbox-inline" %>
         <%= label_tag bride.firstname, check_box_tag("taglist[#{bride.id}]", true, false)+bride.firstname, :class => "checkbox-inline" %>
@@ -23,13 +25,19 @@
       <%= image_tag("image-blank.png", id: "photo_preview")%>
     </div>
     <div class="form-group">
-      <%= label_tag "Photo Timestamp", nil, class: "control-label"%>
+      <%= label_tag "When", nil, class: "control-label"%>
       <div>
       <%= date_select("photo", "when", 
           { :order => [:month, :year], :start_year => 1985, :end_year => 2014, :default => { year:Time.now.year, month:Time.now.month, day:1}},
           {:class => "form-control fc-inline"}) %>
       </div>
     </div>    
+    <div class="form-group">
+      <%= label_tag "Where", nil, class: "control-label"%>
+      <%= text_field_tag"photo[where]", nil, placeholder: "e.g. San Jose, CA", class: "form-control fc-w-45", id: "photo_where", :maxlength => 64 %>
+    </div>
+
+
      <%= submit_tag("Save Photo", id: "photo_button", class: "btn btn-default",
     onclick: "return validate_and_submit_photo_form();") %>
   <% end %> 

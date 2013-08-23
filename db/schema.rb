@@ -11,18 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130822044224) do
+ActiveRecord::Schema.define(:version => 20130823014134) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.integer  "guest_id"
     t.string   "pic_file_name"
     t.string   "pic_content_type"
     t.integer  "pic_file_size"
     t.datetime "pic_updated_at"
+    t.integer  "width",            :default => 0
+    t.integer  "height",           :default => 0
   end
 
   create_table "details", :force => true do |t|
@@ -95,8 +97,8 @@ ActiveRecord::Schema.define(:version => 20130822044224) do
     t.string   "caption"
     t.integer  "poster_id"
     t.string   "tag"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.string   "pic_file_name"
     t.string   "pic_content_type"
     t.integer  "pic_file_size"
@@ -104,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20130822044224) do
     t.datetime "when"
     t.integer  "width",            :default => 0
     t.integer  "height",           :default => 0
+    t.string   "where",            :default => ""
   end
 
 end

@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :caption, :poster_id, :tag, :pic, :when
+  attr_accessible :caption, :poster_id, :tag, :pic, :when, :where
   has_attached_file :pic, :styles => { :original => ["1500x1500>", :jpg], :medium => ["480x480>", :jpg], :thumb => ["100x100>", :jpg]}, :default_url => "image-blank.png"
   belongs_to :poster, :class_name => "Guest"
   validates_attachment_presence :pic
@@ -46,7 +46,7 @@ class Photo < ActiveRecord::Base
   end
 
   def to_json()
-    h = super(only: [:id, :caption, :poster, :when, :image_s, :image_m, :image_l, :height, :width, :created_at], :include => {:guests => {:only => [:id, :firstname]}});
+    h = super(only: [:id, :caption, :poster, :when, :where, :image_s, :image_m, :image_l, :height, :width, :created_at], :include => {:guests => {:only => [:id, :firstname]}});
   end
 
   def as_json(options = { })

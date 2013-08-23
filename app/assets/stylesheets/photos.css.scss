@@ -23,7 +23,9 @@ div#overlay_photo_display {
       border-bottom: 1px solid #bbbbbb;
     }
     #content_display_wrapper{
-      padding-top: 20px;
+      //padding-top: 20px;
+      #photo_display_caption{font: 20px 'Proxima Nova';}
+      #photo_display_info{font: 14px 'Proxima Nova'; color: #aaaaaa; }
     }
   }
 }

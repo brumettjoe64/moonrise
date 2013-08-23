@@ -2,11 +2,12 @@ TO DO LIST
 
 Today
 ---------------
+Add a where field to photo upload
+Update photo display to include where and when info
+Blog zoom
 
 Before launch
 ---------------
-Add a where field to photo upload
-blog zoom
 
 After launch
 ---------------
@@ -16,20 +17,17 @@ Front End
 Countdown
 Red Bookmark on RSVP red
 Even out home page entries
-
-Back End
----------------
-Fix blog merge poster bug
-Add comments controller
-Account mailer 
-RSVP JS
-RSVP where are you staying
-RI spinner until uploaded
-Style backend
+Style admin
 Default error page
 
 
+Back End
+---------------
+Comments controller
+Account mailer 
+RSVP JS (where are you staying, when are you getting here)
+RI spinner until uploaded
+
 Learning
 ---------------
-ajax - asynchronous query / commands to the database through javascript (ex: bid or auto-fill-in);
-
+Ajax - asynchronous query / commands to the database through javascript (ex: bid or auto-fill-in);

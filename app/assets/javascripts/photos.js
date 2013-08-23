@@ -9,6 +9,17 @@ function open_photo_display(image_wrapper) {
 
   $("body").css("overflow", "hidden");
   $("#photo_display_caption").text(photo["caption"]);
+
+  var info_text = "taken ";
+
+  if (!photo["where"].match(/^\s*$/)) {
+    info_text += "near "+photo["where"]+" · "+moment(photo["when"]).format("MMMM YYYY");
+  } else {
+    info_text += "in "+moment(photo["when"]).format("MMMM YYYY");
+  }
+  
+  $("#photo_display_info").text(info_text);
+
   $("#photo_display_time").text(convert_time(photo["created_at"]));
   //$("#photo_display_time").text("Time Now");
 

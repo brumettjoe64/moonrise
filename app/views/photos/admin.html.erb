@@ -8,6 +8,7 @@
       <th>Uploader</th>
       <th>Who</th>
       <th>When</th>      
+      <th>Where</th>      
       <th>Created</th>
       <th>Edited</th>      
 
@@ -24,6 +25,7 @@
           <% end %>
       </td>
       <td><%= photo.when.strftime("%m/%d/%y") %></td>      
+      <td><%= photo.where %></td>      
       <td><%= photo.created_at.strftime("%m/%d/%y %l:%M%P") %></td>
       <td><%= photo.updated_at.strftime("%m/%d/%y %l:%M%P") %></td>
       <td><%= link_to 'Edit', edit_photo_path(photo), class: "admin" %></td>
