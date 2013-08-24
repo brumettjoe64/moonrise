@@ -2,19 +2,14 @@ class Blog < ActiveRecord::Base
   attr_accessible :body, :title, :pic, :guest_id, :when
   belongs_to :guest
   has_attached_file :pic, :styles => { :original => ["1500x1500>", :jpg], :medium => ["480x480>", :jpg], :thumb => ["100x100>", :jpg]}, :default_url => "image-blank.png"
-  #has_attached_file :pic
+  validate :file_dimensions
+
   def guest
     unless guest_id.nil?
       Guest.find(guest_id)
     end
   end
   
-  def img_height
-    #self.pic.url(:medium)
-      photo_path = (pic.options[:storage] == :s3) ? pic.url(:medium) : pic.path(:medium)
-      Paperclip::Geometry.from_file(photo_path).height.to_int
-  end
-
   def self.get_blogs_by_date
     Blog.all.sort_by{ |blog| blog.created_at }.reverse
   end
@@ -28,12 +23,13 @@ class Blog < ActiveRecord::Base
     blogs_by_column = []
 
     blogs.each do |blog| 
+
       if height_left > height_right
-        height_right += blog.img_height
+        height_right += blog.height.to_f/blog.width
         blogs_right << blog
       else
         blogs_left << blog
-        height_left += blog.img_height
+        height_left += blog.height.to_f/blog.width
       end
     end
 
@@ -41,4 +37,35 @@ class Blog < ActiveRecord::Base
     blogs_by_column[1] = blogs_right
     blogs_by_column
   end 
+
+  def file_dimensions
+    new_photo_path = (pic.queued_for_write[:original]) ? pic.queued_for_write[:original].path : nil
+    old_photo_path = (pic.options[:storage] == :s3) ? pic.url(:original) : pic.path(:original)
+    dimensions = Paperclip::Geometry.from_file(new_photo_path || old_photo_path)
+    self.width = dimensions.width.to_int
+    self.height = dimensions.height.to_int
+  end
+
+  def self.update_file_dimensions
+    Blog.all.each do |blog|
+      blog.file_dimensions
+      blog.save
+    end
+  end
+
+
+  def to_json()
+    h = super(only: [:body, :title, :poster, :when, :image_s, :image_m, :image_l, :height, :width, :created_at]);
+  end
+
+  def as_json(options = { })
+    h = super(options)
+    h[:image_s] = pic.url(:thumb)
+    h[:image_m] = pic.url(:medium)
+    h[:image_l] = pic.url(:original)
+    h[:poster] = "#{self.guest.firstname} #{self.guest.lastname}"
+    h
+  end
+
+
 end

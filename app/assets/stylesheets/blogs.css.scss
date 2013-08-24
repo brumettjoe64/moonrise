@@ -1,4 +1,53 @@
-div.blogs {
+div#overlay_blog_display {
+  //background-color:rgba(255, 255, 255, 0.9);
+
+  #blog_display_wrapper{ 
+    background:white;
+    width:660px;
+    margin: 20px auto 0px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, .4);
+    
+    #blog_display_title_wrapper{
+      text-align: left;
+      padding:20px 30px 10px 20px;
+      border-bottom: 1px solid #bbbbbb;
+
+      #blog_display_title { 
+        display:inline-block;
+        font: bold 25px/1.0 'Proxima Nova'; margin-right:5px;
+        &:first-letter { font: 50px/1.0 'Thirsty'; padding: 10px 0px 10px 5px; } //color: #7D6E8B; }
+      }
+      #blog_display_date{
+        display:inline-block;
+        font: 14px 'Proxima Nova'; color: #aaaaaa;
+      }
+    }
+    #blog_display_content_wrapper{
+      padding: 20px 30px;
+      width:100%;
+      img { width:100%;}  
+      border-bottom: 1px solid #bbbbbb;
+    }
+    #blog_display_body_wrapper{
+      padding-top: 5px;
+      padding-bottom: 0px;
+      
+      text-indent: 25px;  
+      text-align:left;
+
+      #blog_display_body{
+        display: inline;
+        font: 18px 'Proxima Nova';
+      }
+      #blog_display_poster{
+        display: inline-block;
+        float:right;
+        font: 18px/2.0 'Cedarville Cursive'; 
+      }
+    }
+  }
+}
+
 
 .blog_wrapper {
   border-radius: 3px 3px 0px 0px;
@@ -7,7 +56,7 @@ div.blogs {
   margin: 10px 0px 15px 0px;
   background: white;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, .4);
-  
+  cursor: pointer;
   .image_wrapper{
     position:relative;
     width: 100%;
@@ -30,15 +79,15 @@ div.blogs {
   
   .content_wrapper{
     position:relative;  
-    padding: 6px;
+    padding: 6px 6px 10px;
     background-image: image_url("whitey.png");
     font-size:14px;
-    .blog_title {text-align:left; font-size:14px;}
+    text-align: left;
+    .blog_title {font-size:14px;}
     .blog_date {float:right;font-size:14px;} 
-    .blog_body {margin: 10px 0px; text-indent:20px; font-size:14px; color:gray;}
-    .blog_signature {text-align:right; font-size:16px; font-family: 'Cedarville Cursive'; line-height:10px;}
+    .blog_body {display:inline; margin: 10px 0px; text-indent:20px; font-size:14px; color:gray;}
+    .blog_signature {display:inline; float:right; font-size:14px; font-family: 'Cedarville Cursive';}
 
   }
 }
 
-}

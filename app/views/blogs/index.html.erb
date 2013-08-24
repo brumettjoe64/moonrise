@@ -1,6 +1,11 @@
 <div class="blogs">
   <%= image_tag("splash-blog.jpg", class:"img_top") %>
   <%= image_tag("banner-blog.png", class:"banner_lrg") %>
+
+  <div id="overlay_blog_display" >
+    <%= render :partial => 'blogs/display' %>
+  </div>
+
   <div class="hcol_lt">
     <% @blogs_left.each do |blog| %>
       <%= render :partial => 'show', :locals => {:blog => blog} %>

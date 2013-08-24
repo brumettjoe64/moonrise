@@ -1,7 +1,7 @@
-<div class="blog_wrapper">
+<div class="blog_wrapper" onclick="open_blog_display(this)">
 
   <div class="image_wrapper">
-    <%= image_tag(blog.pic.url(:medium)) %>
+    <%= image_tag(blog.pic.url(:medium), data: { blog: blog.to_json}) %>
   </div>
 
   <div class="content_wrapper">
