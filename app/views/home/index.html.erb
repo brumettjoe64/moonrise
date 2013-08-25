@@ -31,5 +31,8 @@
     <% Photo.get_photos_by_date.second.try do |photo| %>   
       <%= render :partial => 'photos/show', :locals => {:photo => photo} %>
     <% end %>
+    <% Photo.get_photos_by_date.third.try do |photo| %>   
+      <%= render :partial => 'photos/show', :locals => {:photo => photo} %>
+    <% end %>
     <%= link_to 'see more...', photos_path, class: "ff_read right"%>  </div>
 </div>    
