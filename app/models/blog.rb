@@ -55,7 +55,7 @@ class Blog < ActiveRecord::Base
 
 
   def to_json()
-    h = super(only: [:body, :title, :poster, :when, :image_s, :image_m, :image_l, :height, :width, :created_at]);
+    h = super(only: [:body, :title, :poster, :when, :image_s, :image_m, :image_l, :height, :width, :created_at])
   end
 
   def as_json(options = { })

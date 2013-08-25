@@ -10,9 +10,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    guest_by_email = Guest.where('lower(email)=?', params[:login].downcase).first
+    guest_by_email = (params[:login] != "") ? Guest.where('lower(email)=?', params[:login].downcase).first : nil
     #guest_by_email = Guest.find_by_email(params[:login])
-    guest_by_sitekey = Guest.where('lower(sitekey)=?', params[:login].downcase).first
+    guest_by_sitekey = (params[:login] != "") ?  Guest.where('lower(sitekey)=?', params[:login].downcase).first : nil
     #guest_by_sitekey = Guest.find_by_sitekey(params[:login])
     if guest_by_email 
       if !guest_by_email.admin
