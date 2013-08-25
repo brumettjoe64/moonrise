@@ -62,6 +62,7 @@ function open_photo_form(photo_in_json,thumb_url) {
   var thumb = document.getElementById("photo_preview");
   var month = document.getElementById("photo_when_2i");
   var year = document.getElementById("photo_when_1i");
+  var where = document.getElementById("photo_where");
 
   clearFileInput(field);
 
@@ -72,6 +73,7 @@ function open_photo_form(photo_in_json,thumb_url) {
     thumb.src = thumb_url;
     year.value = (new Date(photo_in_json.when).getFullYear());
     month.value = (new Date(photo_in_json.when).getMonth()+1);
+    where.value = photo_in_json.where;
     addSubmitMethodInput();
     for (var i=0; i<tags.length; i++) {
       var tag_id = parseInt(tags[i].id.match(/\d+/)[0]);
@@ -89,6 +91,7 @@ function open_photo_form(photo_in_json,thumb_url) {
     thumb.src = '/assets/image-blank.png';
     year.value = (new Date().getFullYear());
     month.value = (new Date().getMonth()+1);
+    where.value = "";
     removeSubmitMethodInput();
     for (var i=0; i<tags.length; i++) {
       tags[i].checked = false; 
