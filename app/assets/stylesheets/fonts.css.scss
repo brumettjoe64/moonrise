@@ -32,6 +32,17 @@
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'Proxima Nova';
+    src: url('proximanova-bold-webfont.eot');
+    src: url('proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('proximanova-bold-webfont.woff') format('woff'),
+         url('proximanova-bold-webfont.ttf') format('truetype'),
+         url('proximanova-bold-webfont.svg#proximanova-bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
 @import url(http://weloveiconfonts.com/api/?family=maki);
 
 /* maki */
