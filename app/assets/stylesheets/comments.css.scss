@@ -1,0 +1,59 @@
+// Place all the styles related to the Likes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment_box {
+  background-color: #F7F7F7;
+  //  border-top: 1px solid #F0F0F0; border-bottom: 1px solid #DDD;
+  margin: 0px; padding: 0px;
+  color: #777;
+  text-align: left;
+
+  .comment_form {
+    padding: 10px;
+    .comment_button {
+      display:none;
+    }
+    #comment_field {
+      font-size: 12px;
+      height: 24px;
+    }
+  }
+
+  .comment_link {
+    //background-color: #F9F9F9;
+    border-top: 1px solid #F0F0F0; border-bottom: 1px solid #DDD;
+    height: 24px;
+    line-height: 23px;
+    margin: 0px; padding: 0px;
+    .comment_info {
+      text-align: center;
+      text-align: left; padding-left: 10px;  
+      color: #99B3B7; font-size: 12px; font-weight: 600;
+      font-family: "Proxima Nova";
+    }
+  }
+  .comment_list {
+    border-top: 1px solid #F0F0F0; 
+    //border-bottom: 1px solid #DDD;
+    .comment {
+      padding: 2px 20px 2px 10px;
+      position: relative;
+      .comment_hdr { color: #99B3B7; font-size: 12px; i {position: relative; top: -5px; font-size: 10px;}}
+      .comment_msg { color: gray; font-size: 12px; &:before { content: "\00a0 ";} }
+    }
+    .my_comment {
+      .comment_editor { 
+        display:none;
+        position: absolute; top:0px; right:3px;
+        a { color: #99B3B7; font-size: 12px; }
+      }
+      &:hover {
+        background-color: #DDD;
+        > div.comment_editor {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

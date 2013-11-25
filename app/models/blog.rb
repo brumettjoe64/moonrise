@@ -4,6 +4,9 @@ class Blog < ActiveRecord::Base
   has_attached_file :pic, :styles => { :original => ["1500x1500>", :jpg], :medium => ["480x480>", :jpg], :thumb => ["100x100>", :jpg]}, :default_url => "image-blank.png"
   validate :file_dimensions
 
+  is_likeable 
+  is_commentable
+
   def guest
     unless guest_id.nil?
       Guest.find(guest_id)

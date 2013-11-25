@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130823014134) do
+ActiveRecord::Schema.define(:version => 20131122170447) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(:version => 20130823014134) do
     t.datetime "pic_updated_at"
     t.integer  "width",            :default => 0
     t.integer  "height",           :default => 0
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "guest_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.text     "message"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "details", :force => true do |t|
@@ -92,6 +101,14 @@ ActiveRecord::Schema.define(:version => 20130823014134) do
   end
 
   add_index "guests_photos", ["guest_id", "photo_id"], :name => "index_guests_photos_on_guest_id_and_photo_id", :unique => true
+
+  create_table "likes", :force => true do |t|
+    t.integer  "guest_id"
+    t.integer  "likeable_id"
+    t.string   "likeable_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "photos", :force => true do |t|
     t.string   "caption"

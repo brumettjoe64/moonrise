@@ -32,7 +32,8 @@ div[id*='overlay_']{
 }
 
 /* Classes for floating things */
-.clear { clear: both; } 
+.clear:before, .clear:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clear:after { clear: both; }
 .right { float: right; } 
 .left  { float: left; }
 .upper { text-transform: uppercase; font-weight:1000;}

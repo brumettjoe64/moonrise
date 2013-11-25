@@ -1,0 +1,1 @@
+$(<%="likebar_for_#{@likeable.class.name.downcase}_#{@likeable.id.to_s}"%>).html("<%= escape_javascript(render partial: 'likes/like_bar', locals: {likeable: @likeable}) %>");

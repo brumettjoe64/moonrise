@@ -1,0 +1,6 @@
+<%= form_for :comment, url: comments_path, remote: true, html: {:method => :post, :class => "comment_form"} do |f| %>
+  <%= f.hidden_field :commentable_type, value: commentable.class.name %>
+  <%= f.hidden_field :commentable_id, value: commentable.id %>
+  <%= f.text_field :message, value:"", placeholder: 'Write a comment...', class: "form-control fc-w-100", id: "comment_field"%>
+  <%= submit_tag("New Comment", class: "comment_button") %>
+<% end %>

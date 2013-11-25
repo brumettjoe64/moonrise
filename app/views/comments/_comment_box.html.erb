@@ -1,0 +1,27 @@
+<% if (commentable.comments.count > 2) %>
+  <div class="comment_link">
+    <% if expand %>
+      <%= link_to "Hide comments...", 
+          collapse_comments_path(ctype: commentable.class.name, cid: commentable.id),
+          remote: true, 
+          class: "comment_info" 
+      %>
+    <% else %>
+      <%= link_to "Show #{commentable.comments.count-2} more comments...", 
+          expand_comments_path(ctype: commentable.class.name, cid: commentable.id),
+          remote: true, 
+          class: "comment_info"
+      %>      
+    <% end %>
+  </div>  
+<% end %>
+
+<div class="comment_list" id=<%="comments_for_#{commentable.class.name.downcase}_#{commentable.id.to_s}"%>> 
+  <% clist = expand ? commentable.comments.reverse : commentable.comments[0..1].reverse %> 
+  <% clist.each do |c| %>
+    <%= (render partial: "comments/show", locals: {comment: c, commentable: commentable}) if c %>
+  <% end %>
+</div>
+<div class="comment_bar">
+  <%= render partial: "comments/new", locals: {commentable: commentable} %>
+</div>

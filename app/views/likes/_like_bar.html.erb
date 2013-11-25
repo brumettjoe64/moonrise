@@ -1,0 +1,20 @@
+<% if like = likeable.liked_by?(session_guest) %>
+  <%= form_for :like, remote: true, url: like_path(like), html: {:method => :delete, :class => "like_form"} do |f| %>
+    <button type="submit" class="like_btn unlike"> <%=fa_icon("heart")%> </button>
+  <%end%>
+<% else %>
+  <%= form_for :like, remote: true, url: likes_path, html: {:method => :post, :class => "like_form"} do |f| %>
+    <%= f.hidden_field :likeable_type, value: likeable.class.name %>
+    <%= f.hidden_field :likeable_id, value: likeable.id %>
+    <%#= f.submit fa_icon("heart"), class: "photo_changer" %>
+    <button type="submit" class="like_btn like"><%=fa_icon("heart-empty")%></button>
+  <% end %>
+<% end %> 
+<div class="like_text"> 
+  <%= likeable.likes_display.html_safe %> 
+  <div class="liked_by"> 
+    <% likeable.likes_display_guest_list.each do |liker| %>
+      <div> <%=liker.display_name%> <span class="likeblue"> <%=fa_icon("heart")%> </span> <span class="likepurple"> <%=fa_icon("heart")%> </span></div> 
+    <% end %>
+  </div>
+</div>

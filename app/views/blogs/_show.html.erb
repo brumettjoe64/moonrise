@@ -1,13 +1,20 @@
-<div class="blog_wrapper" onclick="open_blog_display(this)">
-
-  <div class="image_wrapper">
+<div class="blog_wrapper" >
+  <div class="image_wrapper" onclick="open_blog_display(this.parentNode)">
     <%= image_tag(blog.pic.url(:medium), data: { blog: blog.to_json}) %>
   </div>
-
   <div class="content_wrapper">
-    <p class="blog_title ff_read"> <%= blog.title %>   <span class="blog_date"> <%= blog.created_at.strftime("%-m/%-d/%y") %> </p></p>
-    <p class="blog_body"> <%= blog.body %> </p>
-    <p class="blog_signature"> <%= blog.guest.firstname.first %><%= blog.guest.lastname.first.downcase %></p> 
+    <div class="blog_text_wrapper clear">
+      <p class="blog_title ff_read"> <%= blog.title %>   <span class="blog_date"> <%= blog.created_at.strftime("%-m/%-d/%y") %> </p></p>
+      <p class="blog_body"> <%= blog.body %> </p>
+      <p> </p>
+      <p class="blog_signature right"> - <%= blog.guest.firstname.first %><%= blog.guest.lastname.first.downcase %></p>
+    </div>  
+    <div class="like_bar" id=<%="likebar_for_#{blog.class.name.downcase}_#{blog.id.to_s}"%>>
+      <%= render partial: "likes/like_bar", locals: {likeable: blog} %>
+    </div>
+    <div class="comment_box" id=<%="commentbox_for_#{blog.class.name.downcase}_#{blog.id.to_s}"%>>
+      <%= render partial: "comments/comment_box", locals: {commentable: blog, expand: false} %>
+    </div>
   </div>
 </div>
 

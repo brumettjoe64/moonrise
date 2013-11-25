@@ -45,6 +45,15 @@ Moonrise::Application.routes.draw do
   #  get 'edit_guests' => :edit_guests
   #end
 
+  resources :likes
+  resources :comments do
+    collection do
+      get 'expand' => :expand, as: 'expand'
+      get 'collapse' => :collapse, as: 'collapse'
+    end
+  end
+
+
   controller :sessions do
     get 'login_admin' => :new_admin
     post 'login_admin' => :create_admin

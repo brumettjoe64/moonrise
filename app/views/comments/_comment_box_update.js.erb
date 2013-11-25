@@ -1,0 +1,1 @@
+$(<%="commentbox_for_#{@commentable.class.name.downcase}_#{@commentable.id.to_s}"%>).html("<%= escape_javascript(render partial: 'comments/comment_box', locals: {commentable: @commentable, expand:@expand}) %>");

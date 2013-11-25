@@ -6,6 +6,9 @@ class Photo < ActiveRecord::Base
   validate :file_dimensions
   has_and_belongs_to_many :guests, autosave: true
 
+  is_likeable 
+  is_commentable
+
   def self.get_photos_by_date
     Photo.all.sort_by{ |photo| photo.created_at }.reverse
   end

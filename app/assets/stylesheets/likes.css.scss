@@ -1,0 +1,67 @@
+// Place all the styles related to the Likes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.like_bar {
+  background-color: #F3F3F3;
+  border-top: 1px solid #F0F0F0; 
+  border-bottom: 1px solid #DDD;
+  height: 24px;
+  margin: 0px;
+  padding: 0px;
+  color: #777;
+  text-align: left;
+}
+
+.like_form {
+  float:left;
+  padding: 0px 3px;
+  border-right: 1px solid #DDD;
+  .like_btn {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;  
+    line-height: 23px;
+    cursor: pointer;
+    display:inline-block;
+  }
+  .like   { color: #7D6E8B; }
+  .unlike { color: #7D6E8B; }
+}
+
+
+
+.like_text {
+  position:relative;
+  display:inline-block;
+  padding:3px 5px;
+  font-size: 12px;
+  font-family: 'Proxima Nova'; 
+}
+
+.liked_by_trigger {
+  position:relative;
+  color: #99B3B7;
+  //text-decoration: underline;
+  cursor: pointer;
+}
+
+.liked_by { 
+  display:none; 
+  z-index:1;
+  position: absolute;
+  left:50px;
+  top:22px;
+  //bottom: 21px;
+  background-color: #DDD;
+  padding: 3px 0px 3px 5px;
+  border: 1px solid #DDD;
+  border-top: none;
+  .likeblue { position:relative; color: #99B3B7; font-size: 8px; top:-1px;}
+  .likepurple { position:relative; color: #7D6E8B; font-size: 8px; top:-3px; right: 7px;}
+}
+
+.liked_by_trigger:hover ~ .liked_by{
+  display:block;
+}
+
