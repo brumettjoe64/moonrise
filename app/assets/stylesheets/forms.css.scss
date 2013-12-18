@@ -70,9 +70,9 @@
 
 .admin_form {
   width: 500px;
-  border: 1px solid white;  
   font-family: 'Proxima Nova';
   text-align: left;
+  margin-left: auto; margin-right: auto;
 }
 
 
@@ -289,6 +289,7 @@ textarea.input-lg,
 textarea.input-sm {
   height: auto;
 }
+
 
 .has-warning .help-block,
 .has-warning .control-label {

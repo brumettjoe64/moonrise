@@ -1,0 +1,27 @@
+<div class="admin_form">
+  <%= form_for(@email) do |f| %>
+    <div class="form-group">
+      <%= label_tag "From", nil, class: "control-label" %>
+      <%= text_field_tag 'email[from]', "kennyandlauren@minkmeadow.com" , placeholder: 'This appears in the send field', class: "form-control fc-w-100" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag "Subject", nil, class: "control-label" %>
+      <%= text_field_tag 'email[subject]' , @email.subject, placeholder: 'Enter a subject line for the email', class: "form-control fc-w-100" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag "Recipients", nil, class: "control-label" %>
+      <%= select_tag 'email[group_id]' , options_from_collection_for_select(Group.all,'id','name', @email.group_id), class: "form-control fc-w-100" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag "Text Email", nil, class: "control-label" %>
+      <%= text_area_tag 'email[plain]' , @email.plain, placeholder: 'Email Text', class: "form-control fc-w-100", rows: 10 %>
+    </div>
+    <div class="form-group">
+      <%= label_tag "HTML Email", nil, class: "control-label" %>
+      <%= text_area_tag 'email[html]' , @email.html, placeholder: 'Email HTML', class: "form-control fc-w-100", rows: 10 %>
+    </div>
+
+    <%= button_to 'Save Email', new_email_path, class: "btn btn-primary fc_3"%>    
+
+  <% end %>
+</div>

@@ -1,0 +1,27 @@
+<div class="emails admin">
+  <h2 class="ff_title fc_2">Manage Emails </h2>
+  <table class>
+    <tr>
+      <th> Subject </th>
+      <th> From </th>
+      <th> To </th>
+      <th> Sent? </th>
+      <th> Text </th>
+      <th> HTML </th>
+      <th colspan=2> </th>
+    </tr>
+    <% @emails.each do |email| %>
+    <tr>
+      <td> <%= email.subject.truncate(25) %> </td>
+      <td> <%= email.from %> </td>
+      <td> <%= email.group.name %> </td>
+      <td> <%= email.sendtime %> </td>
+      <td> Link To Email_Path</td>
+      <td> Link To Email_Path</td>
+      <td> <%= link_to fa_icon("pencil"), edit_email_path(email) %> </td>
+      <td> <%= link_to fa_icon("envelope"), ship_email_path(email), method: :put %> </td>
+    </tr>  
+    <% end %>
+  </table>
+  <%= link_to 'New Email', new_email_path, class: "btn btn-primary fc_3"%>
+</div>

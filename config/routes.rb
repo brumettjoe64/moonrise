@@ -1,5 +1,19 @@
 Moonrise::Application.routes.draw do
 
+  resources :emails do
+    collection do 
+      get 'admin' => :admin, as: 'admin'
+    end
+    member do
+      put 'ship' => :ship, as: 'ship'
+    end
+  end
+
+#  controller :admin_mailer do
+#    get 'mail' => :index, as: 'mail'
+#    put 'mail/send' => :send_mail, as: 'send_mail'
+#  end
+  
   resources :photos do
     collection do
       get 'admin'  => :admin, as: 'admin'

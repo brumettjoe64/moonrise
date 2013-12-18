@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131122170447) do
+ActiveRecord::Schema.define(:version => 20131218220139) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -56,6 +56,18 @@ ActiveRecord::Schema.define(:version => 20131122170447) do
   end
 
   add_index "details_guests", ["detail_id", "guest_id"], :name => "index_details_guests_on_detail_id_and_guest_id", :unique => true
+
+  create_table "emails", :force => true do |t|
+    t.string   "from"
+    t.string   "subject"
+    t.integer  "guest_id"
+    t.integer  "group_id"
+    t.text     "plain"
+    t.text     "html"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.datetime "sendtime"
+  end
 
   create_table "groups", :force => true do |t|
     t.string   "name"
