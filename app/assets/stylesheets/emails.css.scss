@@ -1,0 +1,32 @@
+// Place all the styles related to the Email controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.email_wrapper{
+  width:600px;
+  margin: 25px auto;
+  background-color:white;
+  box-shadow: 0px 0px 3px 3px rgba(0,0,0,.2);
+  text-align:left;
+
+  .email_header{  
+    font-family: arial,sans-serif;
+    padding: 10px;
+    background-color: #EEE;
+    font-size: 15px;
+    line-height: 20px;
+    div.email_type {
+      color: gray;
+    }
+  }
+
+  .email_plain{
+    font-family: arial,sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    line-height: 20px;
+    white-space: pre-wrap;
+  }
+  .email_html{
+  }
+
+}

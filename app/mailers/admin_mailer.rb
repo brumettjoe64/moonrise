@@ -1,5 +1,5 @@
 class AdminMailer < ActionMailer::Base
-  default from: "kennyandlauren@minkmeadow.com"
+  default from: "minkmeadow@gmail.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -8,6 +8,8 @@ class AdminMailer < ActionMailer::Base
   #
   def ship(email,guest)
     @email = email
-    mail to: guest.email, subject: email.subject, from: email.from 
+    @guest = guest
+    @recents = Blog.all.concat(Photo.all).sort_by{ |item| item.updated_at}.reverse[0..3]
+    mail to: guest.email, subject: email.subject, from: email.from, name: email.from 
   end
 end

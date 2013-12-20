@@ -1,0 +1,35 @@
+<div class="emails admin">
+  <h2 class="ff_title fc_2">Preview Email </h2>
+
+  <div class="email_wrapper">  
+    <div class="email_header">
+      <div class="email_type"> HTML Version </div>
+      <div class="email_from">
+        From: <%= @email.from + " <minkmeadow@gmail.com>"%> 
+      </div>
+      <div class="email_to">
+        To: <%= @email.group.guests.first.email %>
+      </div>
+      <div class="email_subject">
+        Subject: <%= @email.subject %>
+      </div>
+    </div>
+    <div class="email_html"><%= render file: "admin_mailer/ship.html.erb"%></div>
+  </div>
+
+  <div class="email_wrapper">  
+    <div class="email_header">
+      <div class="email_type"> Text Version </div>
+      <div class="email_from">
+        From: <%= @email.from + " <minkmeadow@gmail.com>"%> 
+      </div>
+      <div class="email_to">
+        To: <%= @guest.email %>
+      </div>
+      <div class="email_subject">
+        Subject: <%= @email.subject %>
+      </div>
+    </div>
+    <div class="email_plain"><%= render file: "admin_mailer/ship.text.erb"%></div>
+  </div>
+<div>

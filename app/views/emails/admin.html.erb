@@ -1,14 +1,12 @@
 <div class="emails admin">
   <h2 class="ff_title fc_2">Manage Emails </h2>
-  <table class>
+  <table class="admin_summary">
     <tr>
       <th> Subject </th>
       <th> From </th>
       <th> To </th>
       <th> Sent? </th>
-      <th> Text </th>
-      <th> HTML </th>
-      <th colspan=2> </th>
+      <th colspan=3> Actions </th>
     </tr>
     <% @emails.each do |email| %>
     <tr>
@@ -16,9 +14,8 @@
       <td> <%= email.from %> </td>
       <td> <%= email.group.name %> </td>
       <td> <%= email.sendtime %> </td>
-      <td> Link To Email_Path</td>
-      <td> Link To Email_Path</td>
       <td> <%= link_to fa_icon("pencil"), edit_email_path(email) %> </td>
+      <td> <%= link_to fa_icon("search"), email_path(email) %> </td>
       <td> <%= link_to fa_icon("envelope"), ship_email_path(email), method: :put %> </td>
     </tr>  
     <% end %>

@@ -1,2 +1,39 @@
-<h1>Kenny and Lauren's Wedding</h1>
-<%= @email.html.html_safe %>
+<table style="width:100%; margin:0px; font-family:'arial','helvetica','sans-serif'; font-size:14px; border:none; border-collapse:collapse;">
+  <tr style="background-color:#7D6E8B;" > 
+    <th style="width:100%; text-align:left; color:white; height:60px;" colspan=6> 
+      <%= image_tag "email-header1.jpg", style: "width:100%" %> 
+    </th>
+  </tr>
+  
+  <tr>
+    <td style="padding:20px 10px; font-weight:bold;" colspan=6>
+      Dear <%= @guest.firstname %>,
+    </td>
+  </tr>
+  <tr>
+    <td style="padding-left:25px; padding-right:25px; white-space:pre-wrap" colspan=6><%= @email.html.html_safe %>
+    </td>
+  </tr>
+  <tr style="" >
+    <td style="padding-bottom:20px; padding-left:10px; padding-right:10px; text-align:left; font-weight:bold;" colspan=6>
+    <span style="padding-left:400px;"> Love, </span> <br/>
+    <span style="padding-left:425px;"><%= @email.from %></span>
+    </td>
+  </tr>
+
+  <tr style="background-color:#99B3B7;" > 
+    <td style="width:100%; text-align:left; color:white; height:60px;" colspan=6> 
+      <%= image_tag "email-header2.jpg", style: "width:100%" %> 
+    </td>
+  </tr>
+
+  <tr style="background-color:white;" >
+    <td style="width:10px;" colspan=1></td>
+    <% @recents.each do |recent| %>
+      <td style="width:90px; padding: 20px 10px;" colspan=1>
+        <%= link_to image_tag(recent.pic.url(:medium), style: "width:100%;"), home_path%>
+      </td>  
+    <% end %>
+    <td style="width:10px;" colspan=1></td>
+  </tr>
+</table>

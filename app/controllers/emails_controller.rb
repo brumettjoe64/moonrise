@@ -3,7 +3,6 @@ class EmailsController < ApplicationController
 
   def ship
     @email = Email.find(params[:id])
-
     @email.group.guests.each do |r|
       if !r.email.nil? && !r.email.blank?
         AdminMailer.ship(@email,r).deliver
@@ -55,5 +54,12 @@ class EmailsController < ApplicationController
       end
     end
   end
+
+  def show
+    @email = Email.find(params[:id])
+    @guest = @email.group.guests.first
+    @recents = Blog.all.concat(Photo.all).sort_by{ |item| item.updated_at}.reverse[0..3]
+  end
+
 end
 
