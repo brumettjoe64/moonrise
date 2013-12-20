@@ -86,5 +86,4 @@ Moonrise::Application.configure do
     password: ENV['GMAIL_PASSWORD'], 
     enable_starttls_auto: true
   }
-
 end
