@@ -76,6 +76,9 @@ Moonrise::Application.configure do
     :path => ":class/:id/:style.:extension"
   }
 
+  config.action_mailer.default_url_options = {
+    host: "minkmeadow.com"
+  }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { 
     address: "smtp.gmail.com",
