@@ -32,4 +32,9 @@
     </div>
     <div class="email_plain"><%= render file: "admin_mailer/ship.text.erb"%></div>
   </div>
+
+  <%= link_to 'Back', admin_emails_path, class: "btn btn-primary fc_3"%>
+  <%= link_to 'Edit', edit_email_path(@email), class: "btn btn-primary fc_3"%>
+  <%= link_to 'Send', ship_email_path(@email), method: :put, class: "btn btn-primary fc_3"%>  
+
 <div>
