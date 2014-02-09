@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131218220139) do
+ActiveRecord::Schema.define(:version => 20140209000955) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -136,6 +136,16 @@ ActiveRecord::Schema.define(:version => 20131218220139) do
     t.integer  "width",            :default => 0
     t.integer  "height",           :default => 0
     t.string   "where",            :default => ""
+  end
+
+  create_table "rsvps", :force => true do |t|
+    t.boolean  "wedding"
+    t.boolean  "tea"
+    t.boolean  "nosurf"
+    t.boolean  "noturf"
+    t.integer  "guest_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

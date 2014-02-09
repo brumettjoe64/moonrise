@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  wedding: false
+  tea: false
+  nosurf: false
+  noturf: false
+
+two:
+  wedding: false
+  tea: false
+  nosurf: false
+  noturf: false
