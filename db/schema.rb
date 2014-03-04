@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140209001616) do
+ActiveRecord::Schema.define(:version => 20140209002357) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -93,7 +93,6 @@ ActiveRecord::Schema.define(:version => 20140209001616) do
     t.boolean  "admin",           :default => false
     t.string   "password_digest"
     t.boolean  "account_flag",    :default => false
-    t.string   "rsvp_info"
     t.datetime "home_ts"
     t.integer  "home_hits",       :default => 0
     t.datetime "blog_ts"
