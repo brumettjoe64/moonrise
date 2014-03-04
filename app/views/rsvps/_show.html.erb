@@ -1,0 +1,52 @@
+<%= form_tag '/rsvps/modify', method: 'post', remote: true do %>
+<div class="flipbox-container">
+  <div class="rsvp_form flipbox"> 
+    <div class="rsvp_hdr" >
+      <p class="rsvp_hdr_big ff_nav">RSVP</p>
+      <p class="rsvp_hdr_txt">Please respond by May 5th</p>
+    </div>
+    <div class="rsvp_grp_top"><%= fa_icon "chevron-up 1x" %></div>
+    <div class="rsvp_grp_bot"><%= fa_icon "chevron-down 1x" %></div>
+    <div id="rsvp_submit"><%= image_tag "rsvp-stamp.png"%><div>SEND RSVP</div></div>
+    <div class="rsvp_grp_list">
+      <% session_guest.party.each_with_index do |pm,index| %>
+      <div class="rsvp_grp" id=<%="rsvp_grp_#{index}"%>> 
+        <div class="rsvp_grp_main">
+          <div class="rsvp_field_name"> <span class="rsvp_name"><%= pm.display_name %></span> </div>
+          <div class="rsvp_field_line"> Guest: ______________________________________ </div>
+          <div class="rsvp_field_go"> 
+            <span class="rsvp_box"><%= fa_icon "square-o 2x"%></span><span class="rsvp_check"><%= fa_icon "check 2x"%></span> Gladly accepts
+          </div>
+          <div class="rsvp_field_nogo">
+            <span class="rsvp_box"><%= fa_icon "square-o 2x"%></span><span class="rsvp_check"><%= fa_icon "check 2x"%></span> Sadly declines
+          </div>
+          <div class="rsvp_extras">
+            <div class="rsvp_field_tea">
+              <span class="rsvp_box"><%= fa_icon "square-o 2x"%></span><span class="rsvp_check"><%= fa_icon "check 2x"%></span> Also attending the tea ceremony on Friday, July 4th 
+            </div>
+            <div class="rsvp_field_food"> Food exceptions: 
+              <div class="rsvp_field_noturf">
+                <%= image_tag("rsvp-cow.png", class: "rsvp_pic")%>
+                <div class="rsvp_check_food"><%= fa_icon "times 2x"%></div>
+                <div class="rsvp_check_text">I don't eat beef</div>
+              </div>
+              <div class="rsvp_field_nosurf">
+                <%= image_tag("rsvp-lobster.png", class: "rsvp_pic")%>
+                <div class="rsvp_check_food"><%= fa_icon "times 2x"%></div>
+                <div class="rsvp_check_text">I don't eat shellfish</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= hidden_field_tag('guest_id[]', pm.id, id:'guest_id_'+index.to_s) %>
+        <%= hidden_field_tag('wedding[]', pm.rsvp ? pm.rsvp.wedding : "nil", id:'wedding_'+index.to_s) %> 
+        <%= hidden_field_tag('tea[]', pm.rsvp ? pm.rsvp.tea : "false", id:'tea_'+index.to_s) %> 
+        <%= hidden_field_tag('nosurf[]', pm.rsvp ? pm.rsvp.nosurf : "false", id:'nosurf_'+index.to_s) %> 
+        <%= hidden_field_tag('noturf[]', pm.rsvp ? pm.rsvp.noturf : "false", id:'noturf_'+index.to_s) %>   
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
+

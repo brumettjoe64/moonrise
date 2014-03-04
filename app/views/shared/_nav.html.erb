@@ -2,17 +2,15 @@
   <ul>
     <li class="left" onclick='<%="modify_form_info_for(#{session_guest.id.to_s})"%>'> 
         <%= link_to session_guest.login_icon+session_guest.login_name, "javascript:void(0)"%></li>
-    <li class="right"><%= link_to '<i class="icon-signout"></i>'.html_safe+'Logout', logout_path, method: :delete %></li>
-    <li><%= link_to '<i class="icon-home"></i>'.html_safe+' Home',home_path %></li>
-    <li><%= link_to '<i class="icon-info-sign"></i>'.html_safe+' Info', details_path %></li>
-    <li><%= link_to '<i class="icon-anchor"></i>'.html_safe+' RI', ri_path %> </li>
-    <li><%= link_to '<i class="icon-pencil"></i>'.html_safe+' Blog', blogs_path %></li>
-    <li><%= link_to '<i class="icon-camera"></i>'.html_safe+' Pics', photos_path %><li>
+    <li class="right"><%= link_to fa_icon("sign-out")+'Logout', logout_path, method: :delete %></li>
+    <li><%= link_to fa_icon("home")+' Home',home_path %></li>
+    <li><%= link_to fa_icon("info-circle")+' Info', details_path %></li>
+    <li><%= link_to fa_icon("anchor")+' RI', ri_path %> </li>
+    <li><%= link_to fa_icon("pencil")+' Blog', blogs_path %></li>
+    <li><%= link_to fa_icon("camera")+' Pics', photos_path %><li>
     <% #<li><%= link_to 'Playlist', home_path, class:"upper" <li> %>  
     <% #<li><%= link_to 'Registry', home_path, class:"upper" <li> %>
-    <li><%= link_to '<i class="icon-envelope"></i>'.html_safe+' RSVP', rsvp_guests_path, class:"disabled" %></li>
-    
-
+    <li onclick='rsvp_open_form()'><%= link_to fa_icon("envelope")+' RSVP', "javascript:void(0)"%></li>
   </ul>
 
 </div>

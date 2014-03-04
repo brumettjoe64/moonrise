@@ -6,8 +6,7 @@
   <%= form_for :like, remote: true, url: likes_path, html: {:method => :post, :class => "like_form"} do |f| %>
     <%= f.hidden_field :likeable_type, value: likeable.class.name %>
     <%= f.hidden_field :likeable_id, value: likeable.id %>
-    <%#= f.submit fa_icon("heart"), class: "photo_changer" %>
-    <button type="submit" class="like_btn like"><%=fa_icon("heart-empty")%></button>
+    <button type="submit" class="like_btn like"><%=fa_icon("heart-o")%></button>
   <% end %>
 <% end %> 
 <div class="like_text"> 

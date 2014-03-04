@@ -1,5 +1,5 @@
 <div class="form form_info" id=<%="form_info_"+pm.id.to_s%>>        
-  <span class="form_close" onclick = 'close_modify_form()'> <%= fa_icon "remove" %></span>
+  <span class="form_close" onclick = 'close_modify_form()'> <%= fa_icon "times" %></span>
   <legend> <%= pm == session_guest ? "Your Info" : "Guest Info" %> <span class="right fs-sm"> <%= "(#{pmi}/#{pmt})" if pmi > 0 %> </span> </legend>
     <p class="help-block"> <%= pm == session_guest ? "Create your account by entering your email address." : "If this guest would like access to this site, enter their email address." %> </p>
     <div class="form-group">  

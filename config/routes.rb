@@ -46,26 +46,20 @@ Moonrise::Application.routes.draw do
       get 'admin'  => :admin, as: 'admin'
       get 'modify' => :edit_info, as: 'modify_party'
       put 'modify' => :update_info
-      get 'rsvp'   => :edit_rsvp, as: 'rsvp'
-      put 'rsvp'   => :update_rsvp
     end
   end
-#  controller :guests do
-#    get 'guests/modify' => :edit_info, as: 'modify_party'
-#    put 'guests/modify' => :update_info
-#  end
-
-  #controller :guests do
-  #  get 'edit_guests' => :edit_guests
-  #end
-
-  resources :likes
+  resources :rsvps do
+    collection do
+      post 'modify' => :modify, as: 'modify_rsvp'
+    end
+  end
   resources :comments do
     collection do
       get 'expand' => :expand, as: 'expand'
       get 'collapse' => :collapse, as: 'collapse'
     end
   end
+  resources :likes
 
 
   controller :sessions do

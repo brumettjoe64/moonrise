@@ -1,5 +1,5 @@
 <div class="form form_photo" id="photo_form_wrapper">
-  <span class="form_close" onclick = 'close_photo_form()'> <%= fa_icon "remove" %> </span> 
+  <span class="form_close" onclick = 'close_photo_form()'> <%= fa_icon "times" %> </span> 
   <legend id="photo_legend"> Upload Photo </legend>
   <%= form_tag('/photos', multipart: true, id: "photo_form" ) do %>
     <div class="form-group">

@@ -4,14 +4,14 @@ div#overlay_blog_display {
   #blog_display_wrapper{ 
     background:white;
     width:660px;
-    margin: 20px auto 0px;
+    margin: 20px auto 20px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, .4);
-    
+    i{font-size: 50px; margin-right:5px;}    
     #blog_display_title_wrapper{
       text-align: left;
       padding:20px 30px 10px 20px;
       border-bottom: 1px solid #bbbbbb;
-
+      
       #blog_display_title { 
         display:inline-block;
         font: bold 25px/1.0 'Proxima Nova'; margin-right:5px;

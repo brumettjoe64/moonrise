@@ -14,9 +14,9 @@ class GuestsController < ApplicationController
     @guests = Guest.order(:firstname).all
     @invitees = Guest.order(:firstname).where(invitee_id: nil)
     @registered = Guest.where(account_flag: true)
-    @gos = Guest.where(rsvp: :going)    
-    @nos = Guest.where(rsvp: :not_going)    
-    @maybes = Guest.where(rsvp: :no_reply)
+    @gos = Rsvp.where(wedding: true)    
+    @nos = Rsvp.where(wedding: nil)    
+    @maybes = Guest.where(rsvp_id: nil)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -85,32 +85,6 @@ class GuestsController < ApplicationController
       else
         format.html { render action: "edit" }
         format.json { render json: @guest.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT guests/rsvp
-  def update_rsvp
-    @guest = Guest.find_by_id(session[:guest_id])
-    @party = @guest.party
-
-    successful_save = true
-    
-    @party.each do |pm|
-      unless !successful_save
-        pm.rsvp = params["rsvp"][pm.id.to_s]
-        pm.rsvp_info = params["rsvp_info"][pm.id.to_s]
-        successful_save = pm.save
-      end 
-    end
-
-    respond_to do |format|
-      if successful_save
-        format.html { redirect_to home_path, notice: 'RSVP was successfully modified.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit_info" }
-        format.json { render json: pm.errors, status: :unprocessable_entity }
       end
     end
   end

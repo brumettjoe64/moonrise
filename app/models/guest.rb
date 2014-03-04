@@ -12,21 +12,18 @@ class Guest < ActiveRecord::Base
   has_and_belongs_to_many :groups, autosave: true
   has_and_belongs_to_many :details, autosave: true
   has_and_belongs_to_many :photos, autosave: true
+  has_one :rsvp
 
-  attr_accessible :sitekey, :email, :firstname, :lastname, :invitee_id, :admin, :account_flag, :rsvp, :rsvp_info 
+  attr_accessible :sitekey, :email, :firstname, :lastname, :invitee_id, :admin, :account_flag, :rsvp_id 
 
   validates_uniqueness_of :email, :allow_blank => true, :allow_nil => true  
   validates_uniqueness_of :sitekey, :allow_blank => true, :allow_nil => true
   
-  validate :check_rsvp
   validate :check_invitee
   validate :check_password
   validate :check_invitee_email   
 
   after_create :add_to_Everyone
-
-  VALID_RSVPS = [:no_reply, :going, :not_going]
-  VALID_INFOS = [:no_cow, :no_pig, :no_lobster, :no_shellfish]
 
   # Password encoding for admins
   def password
@@ -72,9 +69,9 @@ class Guest < ActiveRecord::Base
 
   def login_icon
     if invitee? and party.count > 1
-      '<i class="icon-group"></i> '.html_safe
+      '<i class="fa fa-group"></i> '.html_safe
     else
-      '<i class="icon-user"></i> '.html_safe
+      '<i class="fa fa-user"></i> '.html_safe
     end
   end
   
@@ -155,10 +152,6 @@ class Guest < ActiveRecord::Base
         errors.add(:invitee_id, "cannot be a plus one")
       end
     end 
-  end
-
-  def check_rsvp
-    errors.add(:rsvp, "#{self.rsvp} is not a valid rsvp status") unless VALID_RSVPS.include?(self.rsvp.to_sym)
   end
 
   def check_password
