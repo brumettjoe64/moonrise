@@ -26,6 +26,12 @@ class Guest < ActiveRecord::Base
   after_create :add_to_Everyone
 
   # Password encoding for admins
+
+  def add_rsvp(rsvp_obj)
+    self.rsvp_id = rsvp_obj.id
+    self.save
+  end
+
   def password
     @password ||= Password.new(password_digest)
   end
@@ -123,13 +129,23 @@ class Guest < ActiveRecord::Base
   def display_status
     if self.invitee?
       if self.registered?  
-        self.rsvp
+        status = ""
+        status += self.rsvp ? (self.rsvp.wedding ? "Go   " : "NoGo ") : "N/A  "
+        status += self.rsvp ? (self.rsvp.tea ? "Tea   " : "NoTea ") : "N/A   "
+        status += self.rsvp ? (self.rsvp.noturf ? "NoBeef " : "       ") : "N/A    "
+        status += self.rsvp ? (self.rsvp.nosurf ? "NoSurf " : "       ") : "N/A    "
+        status
       else
         "no_login"
       end
     else
       if self.invitee.registered?
-        self.rsvp
+        status = ""
+        status += self.rsvp ? (self.rsvp.wedding ? "Go   " : "NoGo ") : "N/A  "
+        status += self.rsvp ? (self.rsvp.tea ? "Tea   " : "NoTea ") : "N/A   "
+        status += self.rsvp ? (self.rsvp.noturf ? "NoBeef " : "       ") : "N/A    "
+        status += self.rsvp ? (self.rsvp.nosurf ? "NoSurf " : "       ") : "N/A    "
+        status
       else
         "no_login"
       end

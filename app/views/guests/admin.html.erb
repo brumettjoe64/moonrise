@@ -7,7 +7,7 @@
     <td><%= @guests.count %></td>
   </tr>
   <tr>
-    <td> RSVPers </td>
+    <td> Main Invitees </td>
     <td> <%= @invitees.count %> </td>
   </tr>
   <tr>
@@ -26,6 +26,23 @@
     <td> Maybe.. </td>
     <td> <%= @maybes.count %> </td>
   </tr>  
+  <tr>
+    <td> Tea Ceremony </td>
+    <td> <%= @tea.count %> of <%= Group.find_by_name("Tea Ceremony").guests.count %> </td>
+  </tr>
+  <tr>
+    <td> No Tea Ceremony </td>
+    <td> <%= @notea.count %> of <%= Group.find_by_name("Tea Ceremony").guests.count %> </td>
+  </tr>
+  <tr>
+    <td> No Surf </td>
+    <td> <%= @nosurf.count %> </td>
+  </tr>
+  <tr>
+    <td> No Turf </td>
+    <td> <%= @noturf.count %> </td>
+  </tr>    
+
 </table>
 
 <table class="admin_summary">

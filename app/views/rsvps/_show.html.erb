@@ -6,8 +6,8 @@
       <p class="rsvp_hdr_txt">Please respond by May 5th</p>
     </div>
     <div class="rsvp_grp_top"><%= fa_icon "chevron-up 1x" %></div>
-    <div class="rsvp_grp_bot"><%= fa_icon "chevron-down 1x" %></div>
-    <div id="rsvp_submit"><%= image_tag "rsvp-stamp.png"%><div>SEND RSVP</div></div>
+    <div class="rsvp_grp_bot"><div class="rsvp_next_text">Next Guest</div><%= fa_icon "chevron-down 1x" %></div>
+    <div class="rsvp_grp_submit"><div class="rsvp_next_text">Send Reply</div><%= fa_icon "envelope 1x" %></div>
     <div class="rsvp_grp_list">
       <% session_guest.party.each_with_index do |pm,index| %>
       <div class="rsvp_grp" id=<%="rsvp_grp_#{index}"%>> 
@@ -21,10 +21,11 @@
             <span class="rsvp_box"><%= fa_icon "square-o 2x"%></span><span class="rsvp_check"><%= fa_icon "check 2x"%></span> Sadly declines
           </div>
           <div class="rsvp_extras">
-            <div class="rsvp_field_tea">
+            <div class="<%= pm.groups.find_by_name("Tea Ceremony") ? "rsvp_field_tea rsvp_extra_pos0" : "rsvp_field_tea rsvp_hide" %>">
               <span class="rsvp_box"><%= fa_icon "square-o 2x"%></span><span class="rsvp_check"><%= fa_icon "check 2x"%></span> Also attending the tea ceremony on Friday, July 4th 
             </div>
-            <div class="rsvp_field_food"> Food exceptions: 
+
+            <div class="<%= pm.groups.find_by_name("Tea Ceremony") ? "rsvp_field_food rsvp_extra_pos1" : "rsvp_field_food rsvp_extra_pos0" %>"> Food exceptions: 
               <div class="rsvp_field_noturf">
                 <%= image_tag("rsvp-cow.png", class: "rsvp_pic")%>
                 <div class="rsvp_check_food"><%= fa_icon "times 2x"%></div>

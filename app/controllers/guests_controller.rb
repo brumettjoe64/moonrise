@@ -15,8 +15,12 @@ class GuestsController < ApplicationController
     @invitees = Guest.order(:firstname).where(invitee_id: nil)
     @registered = Guest.where(account_flag: true)
     @gos = Rsvp.where(wedding: true)    
-    @nos = Rsvp.where(wedding: nil)    
-    @maybes = Guest.where(rsvp_id: nil)
+    @nos = Rsvp.where(wedding: false)    
+    @maybes = Guest.where(rsvp_id: nil)+Rsvp.where(wedding: nil)
+    @tea = Rsvp.where(tea: true)
+    @notea = Rsvp.where(tea: false)
+    @nosurf = Rsvp.where(nosurf: true)
+    @noturf = Rsvp.where(noturf: false)
 
     respond_to do |format|
       format.html # index.html.erb
