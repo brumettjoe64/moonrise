@@ -10,7 +10,7 @@
 
     <% @groups.each do |group| %>
       <tr>
-        <td rowspan="<%=group.guests.count%>"> <%= group.name %></td>
+        <td rowspan="<%=group.guests.count%>"> <%= group.name + " (" + group.guests.count.to_s + ") "%></td>
         <% @guests=group.guests.order(:firstname) %>
         <% @guest1=@guests.shift %>        
         <td> <%= @guest1.display_name if @guest1%></td> 
