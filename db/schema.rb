@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140209002357) do
+ActiveRecord::Schema.define(:version => 20140307050217) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -104,6 +104,8 @@ ActiveRecord::Schema.define(:version => 20140209002357) do
     t.datetime "ri_ts"
     t.integer  "ri_hits",         :default => 0
     t.integer  "rsvp_id"
+    t.datetime "registry_ts"
+    t.integer  "registry_hits",   :default => 0
   end
 
   create_table "guests_photos", :id => false, :force => true do |t|

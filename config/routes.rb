@@ -1,5 +1,7 @@
 Moonrise::Application.routes.draw do
 
+  get "registry/index"
+
   resources :emails do
     collection do 
       get 'admin' => :admin, as: 'admin'
@@ -73,6 +75,8 @@ Moonrise::Application.routes.draw do
   root :to => "home#index", as: "home"
 
   match 'rhodeisland' => "ri#index", as: "ri"
+
+  match 'registry' => "registry#index", as: "registry"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

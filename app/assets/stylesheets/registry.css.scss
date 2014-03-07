@@ -1,0 +1,22 @@
+.registry{
+  .registry_text_wrapper {
+    margin: 0px 50px; 
+    padding: 25px 25px;
+    p { text-align: justify;  }
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    .registry_signoff { text-align: right; margin-right: 105px; }
+    .registry_signature { text-align: right; }
+  }
+  .registry_links_wrapper {
+    margin: 25px 50px;
+    div { 
+      display:inline-block;
+      float:left; 
+      margin: 0px 25px;
+      width:300px; height:300px;
+      img{ width:300px; height:300px;}
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, .4);
+    }
+  }
+}
