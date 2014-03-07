@@ -53,7 +53,7 @@ function close_modify_form(button_obj) {
   var overlay = document.getElementById("overlay_form_info");
   var body = document.getElementsByTagName("body")[0];
  
-  body.style.overflow = "scroll";
+  body.style.overflow = "auto";
   overlay.style.display = "none";
   button_obj.parentNode.style.display = "none";
 }

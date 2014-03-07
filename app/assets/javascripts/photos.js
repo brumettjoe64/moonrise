@@ -47,13 +47,10 @@ function resize_photo_display() {
 
 function close_photo_display() {
   $("#overlay_photo_display").hide();
-  $("body").css("overflow", "scroll");
+  $("body").css("overflow", "auto");
 }
 
 function open_photo_form(photo_in_json,thumb_url) {
-  var overlay = document.getElementById("overlay_form_photo");
-  var body = document.getElementsByTagName("body")[0];
-  var form_wrapper = document.getElementById("photo_form_wrapper");
   var legend = document.getElementById("photo_legend");
   var form = document.getElementById("photo_form");
   var field = document.getElementById("photo_field");
@@ -99,20 +96,17 @@ function open_photo_form(photo_in_json,thumb_url) {
   }
 
   global_photo_default_pic_url = thumb.src;
-  body.style.overflow = "hidden";
-  overlay.style.display = "block";
-  form_wrapper.style.display = "block";
+
+  $("#overlay_form_photo").show();  
+  $("body").css("overflow", "hidden");
+  $("#photo_form_wrapper").show();
 
 }
 
 function close_photo_form() {
-  var overlay = document.getElementById("overlay_form_photo");
-  var body = document.getElementsByTagName("body")[0];
-  var form_wrapper = document.getElementById("photo_form_wrapper");
-
-  body.style.overflow = "scroll";
-  overlay.style.display = "none";
-  form_wrapper.style.display = "none";
+  $("#overlay_form_photo").hide();  
+  $("body").css("overflow", "auto");
+  $("#photo_form_wrapper").hide();
 }
 
 function readURL(input) {

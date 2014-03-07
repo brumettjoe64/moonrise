@@ -18,5 +18,5 @@ function open_blog_display(image_wrapper) {
 
 function close_blog_display() {
   $("#overlay_blog_display").hide();
-  $("body").css("overflow", "scroll");
+  $("body").css("overflow", "auto");
 }

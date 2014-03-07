@@ -57,7 +57,7 @@ function rsvp_open_form() {
 
 function rsvp_close_form() {
   $("#overlay_form_rsvp").hide();
-  $("body").css("overflow", "scroll");
+  $("body").css("overflow", "auto");
 }
 
 function rsvp_close_thanks() {
