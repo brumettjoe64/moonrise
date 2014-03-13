@@ -2,69 +2,59 @@
   <%= image_tag("splash-details.jpg", class:"img_top") %>
   <%= image_tag("banner-details.png", class:"banner_lrg") %>
 
-<div class="ttcol_rt">
-    <%= image_tag("details-block.png", class:"details_block") %>
+  <div class="details_block dbl details_wedding">
+    <%= image_tag("details-block.png", class:"dw_img") %>
+    <div class="dw_schedule">
+      <p class="dw_1"> Wedding Day<p>
+      <p class="dw_2"> 4pm Ceremony </p>
+      <p class="dw_2"> 5pm Cocktails & Games </p>
+      <p class="dw_2"> 7pm Dinner </p>
+      <p class="dw_2"> 9pm Dancing! </p>
+      <p class="dw_2"> 11pm Fireside Smores </p>
+      <p class="dw_3"> * Transportation will be available from  Mink Meadow at the end of the night!</p>
+    </div>
+  </div>  
+  <div class="details_block dbr details_party">
+    <p class="dp_1"> The Party </p>
+    <ul>
+      <li><%=image_tag("details-ngan.jpg")%><p class="top">Ngan</p></li>
+      <li><%=image_tag("details-don.jpg")%><p class="top">Don</p></li>
+      <li><%=image_tag("details-fritz.jpg")%><p class="top">Fritz</p></li>
+      <li><%=image_tag("details-kelly.jpg")%><p class="top">Kelly</p></li>
+      <li><%=image_tag("details-evan.jpg")%><p class="top">Evan</p></li>
+    </ul>
+    <ul>
+      <li><%=image_tag("details-caite.jpg")%><p class="bot">Caite</p></li>
+      <li><%=image_tag("details-danielle.jpg")%><p class="bot">Danielle</p></li>
+      <li><%=image_tag("details-cristina.jpg")%><p class="bot">Cristina</p></li>
+      <li><%=image_tag("details-kristen.jpg")%><p class="bot">Kristen</p></li>
+      <li><%=image_tag("details-keira.jpg")%><p class="bot">Keira</p></li>
+    </ul>
   </div>
-
-
-  <div class="ttcol_lt">    
-    <div class="details_section">
-      <h3 class="ff_title fc_2 maki-airport"> How to Get There</h3>
-      <p> If you plan on flying in, PVD is only 30 minutes from Mink Meadow. If you're willing to drive a bit (1.5 hours), BOS will likely offer more options and cheaper travel. </p>
-      <%#https://www.google.com/maps/ms?msid=203024597025170313355.0004e4170940015f97b6a&msa=0%>
-      <p class="indent"> 
-          <a href="http://www.google.com/maps/ms?msid=203024597025170313355.0004e4170940015f97b6a&msa=0">
-            <%= fa_icon "double-angle-right", text: "TF Green Airport (PVD)" %> 
-          </a>
-      </p>
-      <p class="indent"> 
-          <a href="http://www.google.com/maps/ms?msid=203024597025170313355.0004e4170940015f97b6a&msa=0">
-            <%= fa_icon "double-angle-right", text: "Logan International (BOS)" %> 
-          </a>
+  <div class="details_block dbl details_travel">
+    <p class="dt_1"> Travel Information </p>
+    <div> 
+      <p class="dt_2 maki-airport"> How to Get Here</p>
+      <p class="dt_3"> If you are flying in, there are two airports near by: </p> 
+        <p><a href="http://www.google.com/maps/ms?msid=203024597025170313355.0004e4170940015f97b6a&msa=0" class="dt_4"><%= fa_icon "caret-right 1x"%> PVD (TF Green Airport)</a>
+        <a href="http://www.google.com/maps/ms?msid=203024597025170313355.0004e4170940015f97b6a&msa=0" class="dt_4"><%= fa_icon "caret-right 1x"%> BOS (Logan International)</a></p>
       </p>
     </div>
-    <div class="details_section">
-      <h3 class="ff_title fc_2 maki-lodging"> Where to Stay</h3>
-      <p> Since we're so close to the beach, the best option is to stay at one of the many rental vacation houses in the area. Here are some links to help you get started: </p>
-
-      <p class="indent"> 
-        <a href="http://rentals.barefoot.com/ilinks/v4/durkin/search.aspx"> 
-          <%= fa_icon "double-angle-right", text: "Durkin Cottages" %> 
-        </a> 
+    <div> 
+      <p class="dt_2 maki-lodging"> Where to Stay </p>
+      <p class="dt_3"> Because we're so close to the beach, there are plenty of vacation houses and hotels in the area. Here are some links: </p> 
+      <p><a href="http://rentals.barefoot.com/ilinks/v4/durkin/search.aspx" class="dt_4"><%= fa_icon "caret-right 1x"%> Durkin Cottages</a>
+         <a href="http://www.ihg.com/holidayinn/hotels/us/en/south-kingstown/sknri/hoteldetail" class="dt_4"><%= fa_icon "caret-right 1x"%> Holiday Inn (Code: DUO)</a>
       </p>
-      <p class="indent"> 
-        <a href="http://www.homeaway.com/search/keywords:Narragansett+area%2C+Rhode+Island"> 
-          <%= fa_icon "double-angle-right", text: "HomeAway" %> 
-        </a> 
-      </p>
-      <p class="indent"> 
-        <a href="http://www.vrbo.com/vacation-rentals/usa/rhode-island/narragansett"> 
-          <%= fa_icon "double-angle-right", text: "VRBO" %>
-        </a> 
-      </p> 
-      <p class="indent"> 
-        <a href="https://www.airbnb.com/s/Narragansett--RI"> 
-          <%= fa_icon "double-angle-right", text: "AirBnB" %>
-        </a> 
-      </p>
-      <p> In case you'd rather stay at a hotel, here are the ones we recommend: </p>
-      <p class="indent"> 
-        <a href="http://hamptoninn3.hilton.com/en/hotels/rhode-island/hampton-inn-south-kingstown-newport-area-NPTSKHX/index.html"> 
-          <%= fa_icon "double-angle-right", text: "Hampton Inn" %>
-        </a>
-      </p>
-      <p class="indent"> 
-        <a href="http://www.ihg.com/holidayinn/hotels/us/en/south-kingstown/sknri/hoteldetail"> 
-          <%= fa_icon "double-angle-right", text: "Holiday Inn (Group Code: DUO)" %> 
-        </a> 
+      <p><a href="http://www.homeaway.com/search/keywords:Narragansett+area%2C+Rhode+Island" class="dt_4"><%= fa_icon "caret-right 1x"%> Home Away</a>
+        <a href="http://hamptoninn3.hilton.com/en/hotels/rhode-island/hampton-inn-south-kingstown-newport-area-NPTSKHX/index.html" class="dt_4"><%= fa_icon "caret-right 1x"%> Hampton Inn</a>
       </p>
     </div>
-    <div class="details_section">
-      <h3 class="ff_title fc_2 maki-swimming"> What to Do</h3>
-      <p> There's a ton to see and do in Rhode Island and the surrounding states, especially in the summer.  Stay local to enjoy the Newport Mansions, the Narragansett Beaches, and state capital of providence.  Or, take a trip out to Boston, Cape Cod, or New York City - all are within a few hours of driving.  </p>
-      <p> <%= link_to 'learn more...', ri_path, class: "ff_read right"%>  </p>
+    <div> 
+      <p class="dt_2 maki-swimming"> What to Do</p>
+      <p class="dt_3"> There's a ton to see and do in Rhode Island and the surrounding states.  Stay local to enjoy the Newport Mansions, sunny beaches, and Providence. <%= link_to ' ...more', ri_path, class: "ff_read"%>
+
+      </p>
     </div>
   </div>
-
-
 </div>

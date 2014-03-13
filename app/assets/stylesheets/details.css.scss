@@ -1,21 +1,51 @@
+//Invitation purple #af7ba7
+//Website purple #7D6E8B
+//Website blue #99B3B7
+//Invitation lblue #e0eae9
+
 div.details {
-
-  h3 {
-    text-align:left;
-    margin-top: 10px;
-    margin-bottom:5px;
+  //.img_top {margin-bottom: 50px;}
+  .dbl { margin-bottom: 50px; margin-left: 25px; float:left; clear:both; }
+  .dbr { margin-bottom: 50px; margin-right:25px; float:right; clear:both; }
+  .details_block {
+    width: 600px; 
+    background-image: image_url('rsvp-invitation-lite.png'); background-size: 50%;
+    border: 10px solid white; border-radius: 4px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .4);
+    margin-bottom: 25px;
+    //p {display: inline-block;}
   }
-
-  .details_block{
-    width:100%;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, .4);
+  .details_wedding {
+    text-align: left;
+    height: 350px; 
+    .dw_img   { width: 330px; height: 330px; display: inline-block; float:left;}
+    .dw_schedule { width: 250px; height: 330px; display: inline-block; padding: 20px 5px 20px 10px; }
+    .dw_1 { font: 30px 'Thirsty Rough'; width: 100%; color: #7D6E8B; text-shadow: 1px 1px white; padding:10px 10px; }
+    .dw_2 { font: 20px 'Pathway Gothic One'; line-height:35px; padding-left: 25px; color: #99B3B7}
+    .dw_3 { font: 12px 'Thirsty'; color: #7D6E8B; margin-top: 10px; width: 90%; text-align: center; padding-left: 15px;}
   }
-
-  .details_section{
-    p{
-      font-size: 14px;
-      &.indent { text-indent:20px; }
-      margin: 10px 0px 5px 0px;
-    }
+  .details_party {
+    height: 350px; 
+    padding: 10px;
+    .dp_1 { font: 30px 'Thirsty Rough'; width: 100%; color: #99B3B7; text-align: center; text-shadow: 1px 1px white; margin-bottom: 25px; }
+    ul li { display: inline;}
+    li,img,p { width: 100px;}
+    li,img   { height: 100px;}
+    li { 
+      position: relative; 
+      p { font: 20px 'Pathway Gothic One'; color: #7D6E8B;}
+      p.top { position: absolute; top:-115px; width: 100%; text-align: center;}
+      p.bot { position: absolute; top:15px; width: 100%; text-align: center;}
+    } 
+    img      { margin: 4px 4px;}
+  }
+  .details_travel {
+    height: 350px; 
+    padding: 10px;
+    .dt_1 { font: 30px 'Thirsty Rough'; width: 100%; color: #7D6E8B; text-align: center; text-shadow: 1px 1px white; margin-bottom: -15px;}
+    .dt_2 { font: 20px 'Pathway Gothic One'; color: #99B3B7; margin-left: 10px; margin-top: 10px;}
+    .dt_3 { font: 15px 'Proxima Nova'; margin: 5px 20px 10px; text-align: justify;}
+    .dt_4 { font: 15px 'Proxima Nova'; width: 200px; margin-left: 40px; display: inline-block;}
   }
 }
+

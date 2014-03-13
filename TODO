@@ -1,0 +1,87 @@
+
+
+
+<div class="ttcol_rt">
+    <%#= image_tag("details-block.png", class:"details_block") %>
+</div>
+
+
+
+  <div class="ttcol_lt">    
+    <div class="details_section">
+      <h3 class="ff_title fc_2 maki-airport"> How to Get There</h3>
+      <p> If you plan on flying in, PVD is only 30 minutes from Mink Meadow. If you're willing to drive a bit (1.5 hours), BOS will likely offer more options and cheaper travel. </p>
+      <%#https://www.google.com/maps/ms?msid=203024597025170313355.0004e4170940015f97b6a&msa=0%>
+      <p class="indent"> 
+          <a href="http://www.google.com/maps/ms?msid=203024597025170313355.0004e4170940015f97b6a&msa=0">
+            <%= fa_icon "double-angle-right", text: "TF Green Airport (PVD)" %> 
+          </a>
+      </p>
+      <p class="indent"> 
+          <a href="http://www.google.com/maps/ms?msid=203024597025170313355.0004e4170940015f97b6a&msa=0">
+            <%= fa_icon "double-angle-right", text: "Logan International (BOS)" %> 
+          </a>
+      </p>
+    </div>
+    <div class="details_section">
+      <h3 class="ff_title fc_2 maki-lodging"> Where to Stay</h3>
+      <p> Since we're so close to the beach, the best option is to stay at one of the many rental vacation houses in the area. Here are some links to help you get started: </p>
+
+      <p class="indent"> 
+        <a href="http://rentals.barefoot.com/ilinks/v4/durkin/search.aspx"> 
+          <%= fa_icon "double-angle-right", text: "Durkin Cottages" %> 
+        </a> 
+      </p>
+      <p class="indent"> 
+        <a href="http://www.homeaway.com/search/keywords:Narragansett+area%2C+Rhode+Island"> 
+          <%= fa_icon "double-angle-right", text: "HomeAway" %> 
+        </a> 
+      </p>
+      <p class="indent"> 
+        <a href="http://www.vrbo.com/vacation-rentals/usa/rhode-island/narragansett"> 
+          <%= fa_icon "double-angle-right", text: "VRBO" %>
+        </a> 
+      </p> 
+      <p class="indent"> 
+        <a href="https://www.airbnb.com/s/Narragansett--RI"> 
+          <%= fa_icon "double-angle-right", text: "AirBnB" %>
+        </a> 
+      </p>
+      <p> In case you'd rather stay at a hotel, here are the ones we recommend: </p>
+      <p class="indent"> 
+        <a href="http://hamptoninn3.hilton.com/en/hotels/rhode-island/hampton-inn-south-kingstown-newport-area-NPTSKHX/index.html"> 
+          <%= fa_icon "double-angle-right", text: "Hampton Inn" %>
+        </a>
+      </p>
+      <p class="indent"> 
+        <a href="http://www.ihg.com/holidayinn/hotels/us/en/south-kingstown/sknri/hoteldetail"> 
+          <%= fa_icon "double-angle-right", text: "Holiday Inn (Group Code: DUO)" %> 
+        </a> 
+      </p>
+    </div>
+    <div class="details_section">
+      <h3 class="ff_title fc_2 maki-swimming"> What to Do</h3>
+      <p> There's a ton to see and do in Rhode Island and the surrounding states, especially in the summer.  Stay local to enjoy the Newport Mansions, the Narragansett Beaches, and state capital of providence.  Or, take a trip out to Boston, Cape Cod, or New York City - all are within a few hours of driving.  </p>
+      <p> <%= link_to 'learn more...', ri_path, class: "ff_read right"%>  </p>
+    </div>
+  </div>
+
+  
+  h3 {
+    text-align:left;
+    margin-top: 10px;
+    margin-bottom:5px;
+  }
+
+  .details_block{
+    width:100%;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, .4);
+  }
+
+  .details_section{
+    p{
+      font-size: 14px;
+      &.indent { text-indent:20px; }
+      margin: 10px 0px 5px 0px;
+    }
+  }
