@@ -1,107 +1,27 @@
 div.ri {
-  h2 {
-    margin-bottom: 20px;
+
+  .banner_lrg {
+    margin-left:auto; margin-right:auto;
   }
 
-  .map_wrapper {
-    position:relative;
-    img {
-      //border: 1px black solid;
-      display: block;
-      height:550px;
-      width:370px;
-    }
-    div[id*='ri_poi'] {
-      font-size:20px;
-      color: #7D6E8B;
-      //text-shadow: #333333 0px 0px 5px;
-      cursor: pointer;
-      position:absolute;
+  .ri_wrapper {
+    padding-left: 1px;
+    .ri_wrapper_box {
+      width: 266px; height: 480px;
+      position: relative;
+      float:left;
+      display:inline-block;
+      background-color: white; //box-shadow: 0px 1px 4px rgba(0, 0, 0, .4);   
 
-      &.highlighted{
-        font-size: 45px;
-        color: white;
-        z-index: 2;
-        margin-left:  -12px;
-        margin-bottom:-12px;
-        text-shadow: #333333 0px 0px 5px;
+      .ri_img_wrapper {
+        width:100%; 
+        img { width:100%;}
       }
-    }
-    #ri_poi_narragansett{
-      bottom:175px;
-      left:200px;
-    }
-     #ri_poi_blockisland{
-      bottom:40px;
-      left:130px;
-    }
-    #ri_poi_minkmeadow{
-      bottom:170px;
-      left:160px;
-    }
-    #ri_poi_providence{
-      bottom:415px;
-      left:210px;
-    }
-    #ri_poi_fireworks{
-      bottom:180px;
-      left:180px;
-    }
-    #ri_poi_galilee{
-      bottom:130px;
-      left:180px;
-    }
-    #ri_poi_wickford{
-      bottom:265px;
-      left:175px;
-    }
-    #ri_poi_newport{
-      bottom:205px;
-      left:265px;
-    }
-    #ri_poi_airport{
-      bottom:350px;
-      left:200px;
-    }
-    #ri_poi_ny{
-      bottom:135px;
-      left:50px;
-    }
-    #ri_poi_boston{
-      bottom:505px;
-      left:150px;
-    }
-    #ri_poi_capecod{
-      bottom:495px;
-      left:210px;
-    }
+      .ri_title_wrapper {font-size: 15px; padding: 10px; padding-bottom: 0px; color: #99B3B7; font-weight: bold;}
+      .ri_text_wrapper {font-size: 12px; padding: 0 20px 10px 10px;}
+      .ri_footer_wrapper {font-size: 12px; padding: 0 20px 15px 10px; position:absolute; bottom: 0px;}
 
-  }
-
-  .content_size_wrapper {
-    //margin-top:px;
-    height:650px;
-  }
-  .content_wrapper {
-    background:white;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, .4);
-    padding-bottom: 20px;
-    img#ri_content_img {
-      //border: 1px black solid;
-      display: block;
-      width:100%;
-    }
-    div#ri_content_text {
-      //height:370px;
-      p#ri_content_title {
-        margin: 10px;
-      }
-      p#ri_content {
-        text-indent: 20px;
-        margin: 10px;
-        font-size:14px;
-      }
     }
   }
-
 }
+

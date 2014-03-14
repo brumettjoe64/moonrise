@@ -1,47 +1,71 @@
 <%#= javascript_tag('window.onload = function(){ ri_save("ri_poi_minkmeadow"); ri_load("ri_poi_minkmeadow"); }') %>
-<%= javascript_tag('window.onload = function(){ ri_save("ri_poi_minkmeadow"); }') %>
+<%#= javascript_tag('window.onload = function(){ ri_save("ri_poi_minkmeadow"); }') %>
 <div class="ri">
   <%= image_tag("splash-ri2.jpg", class: "img_top") %>
   <%= image_tag("banner-ri.png", class:"banner_lrg") %>
 
-    <div class="hcol_lt">
-      <div class="map_wrapper">
-      <%= image_tag("ri-mapc.png") %>
-      <div id="ri_poi_minkmeadow" class="fa fa-home"
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_narragansett" class="maki-swimming" 
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-        <div id="ri_poi_fireworks" class="fa fa-certificate" 
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_airport" class="maki-airport" 
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_newport" class="maki-town-hall" 
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_providence" class="fa fa-fire" 
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_blockisland" class="maki-ferry" 
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_galilee" class="maki-harbor" 
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_wickford" class="maki-shop" 
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_ny" class="fa fa-arrow-circle-down" 
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_boston" class="fa fa-arrow-circle-up" 
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
-      <div id="ri_poi_capecod" class="fa fa-arrow-circle-right" 
-           onmouseover="ri_hover(this.id)" onmouseout="ri_unhover(this.id)" onclick="ri_save(this.id)"> </div>
+  <div class="ri_wrapper">
+    
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-minkmeadow.jpg" %> </div>
+      <p class="ri_title_wrapper"> Mink Meadow </p>
+      <p class="ri_text_wrapper"> Jones family residence and the location of the ceremony and reception on July 5th. Address: 885 Tuckertown Rd, Wakefield, RI. </p><p class="ri_footer_wrapper"><i>Don't miss: The wedding!</i></p>
+
+    </div> 
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-narragansett.jpg" %> </div>
+      <p class="ri_title_wrapper"> Narragansett </p>
+      <p class="ri_text_wrapper"> With four of the state's most popular beaches, Narragansett is our recommended location to stay in Southern Rhode Island. Once a wealthy community rivaling nearby Newport, the history of Narragansett is still visible. The Towers, spanning Ocean Drive, is the only remaining section of a luxurious casino built in 1883. </p><p class="ri_footer_wrapper"><i>Don't miss: Iggy's Clamcakes and Chowder</i></p>
     </div>
-  </div>
-  <div class="hcol_rt">
-    <div class="content_size_wrapper">
-      <div class="content_wrapper">
-        <img id="ri_content_img" src=<%= image_path("ri-narragansett.jpg") %> > </img>
-        <div id="ri_content_text">
-          <p id="ri_content_title"> Narragansett </p>
-          <p id="ri_content"> With four of the state's most popular beaches, Narragansett is our recommended location to stay in Southern Rhode Island. Once a wealthy community rivaling nearby Newport, the history of Narragansett is still visible. The Towers, spanning Ocean Drive, is the only remaining section of a luxurious casino built in 1883. Having survived numerous fires and vicious nor'easters, The Towers is the town's most enduring landmark.  Don't miss: Iggy's Clamcakes and Chowder.  </p>
-        </div>
-      </div>
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-fireworks.jpg" %> </div>
+      <p class="ri_title_wrapper"> Fireworks </p>
+      <p class="ri_text_wrapper"> Watch the local fireworks on Old Mountain Field, just down the street from Lauren's old high school and the quaint Main Street of her home town.  Pre-fireworks festivities include live music,children’s activities including three bounce houses and food vendors. </p><p class="ri_footer_wrapper"><i> Don't miss: Del's Lemonade</i></p>
+    </div>
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-newport.jpg" %> </div>
+      <p class="ri_title_wrapper"> Newport </p>
+      <p class="ri_text_wrapper"> Once the summer playground of America's wealthiest families, Newport remains a popular summer vacation destination. The famous mansions offer detailed tours and give a fascinating glimpse into Gilded Age extravagance. While the town emphasizes its history with a variety of museums and tours, Newport also has a vibrant, contemporary side, made manifest in quirky shops and great restaurants. </p><p class="ri_footer_wrapper"><i>Don't miss: Cliff walk</i></p>
+    </div>
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-blockisland.jpg" %> </div>
+      <p class="ri_title_wrapper"> Block Island</p>
+      <p class="ri_text_wrapper"> Sail away on the Block Island Ferry, and view the island's alluring blend of so many elements that help a frazzled refugee from the working world exhale and relax.  This pork chop-shaped island has gorgeous beaches, stunning ocean vistas, 32 miles of hiking trails, 250-foot-high coastal cliffs, a deep sense of history, and a lively night scene. </p><p class="ri_footer_wrapper"><i>Don't miss: The top deck of the Ferry</i></p>
+    </div>
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-galilee.jpg" %> </div>
+      <p class="ri_title_wrapper"> Port of Galilee </p>
+      <p class="ri_text_wrapper"> A beautiful and authentic New England fishing, Galilee is known for its beautiful beaches, sightseeing cruises/tours, quality shopping, dining and unprecedented fishing/quahogging. It also is home to the Block Island Ferry and has been a thriving fishing port that transports 16+ million pounds of fish/shellfish each year up and down the East Coast. </p><p class="ri_footer_wrapper"><i>Don't miss: Lobsters at the Kristen J.</i></p>
+    </div>
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-providence.jpg" %> </div>
+      <p class="ri_title_wrapper"> Providence </p>
+      <p class="ri_text_wrapper"> The former rum and molasses trading town is now one of the best places to live in the United States. Historic sites, wonderful museums and theaters seamlessly blend with newer attractions on the block including a modern mega-mall, scenic Riverwalk, convention center, plus new hotels and restaurants. For a different perspective, take a romantic river cruise on an authentic Venetian gondola. </p><p class="ri_footer_wrapper"> <i> Don't miss: The waterfire lighting</i> </p>
+    </div>
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-wickford.jpg" %> </div>
+      <p class="ri_title_wrapper"> Wickford </p>
+      <p class="ri_text_wrapper"> Nestled along the waterfront of Wickford Harbor, historic Wickford Village offers a taste of New England as it was a century or more ago. Its historic homes from the 1700s, churches, gardens and picturesque harbor offer a glimpse of our nation’s early history. Watch the boats, enjoy lunch at an outdoor cafe, browse through the shops, walk the tree-lined streets and even feed the ducks. </p><p class="ri_footer_wrapper"> Don't miss: <i> Souvenir shopping</i> </p>
+    </div>
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-airport.jpg" %> </div>
+      <p class="ri_title_wrapper"> TF Green Airport (PVD) </p>
+      <p class="ri_text_wrapper"> TF Green is a quick 30 minute drive from Wakefield.  Boston Logan is not much farther, at only an hour and a half drive. </p><p class="ri_footer_wrapper"> Don't miss: <i> ...it's an airport</i></p>
+    </div>
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-capecod.jpg" %> </div>
+      <p class="ri_title_wrapper"> Cape Cod </p>
+      <p class="ri_text_wrapper"> Quaint harbors, windswept beaches, glorious dunes and blinking lighthouses. Explore Cape Cod National Seashore, bike past cranberry bogs on the Rail Trail or saunter around Sandwich, the Cape's oldest town. Don't miss Woods Hole Oceanquest, famed Martha's Vineyard or charmingly upbeat Provincetown. </p><p class="ri_footer_wrapper"> Don't miss: <i>Breakwater Beach</i> </p>
+    </div>
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-boston.jpg" %> </div>
+      <p class="ri_title_wrapper"> Boston </p>
+      <p class="ri_text_wrapper"> A two hour drive and you can enjoy some of the country’s most important historical sites and impassioned sports fans. Catch a game at Fenway Park before heading to the North End for the Italian neighborhood’s legendary cannoli. Take in the gilded glory of the State House from the edge of the Boston Common and walk the Freedom Trail, a walking route between 16 sites that were integral to the American Revolution. </p><p class="ri_footer_wrapper"> Don't miss: <i> Mike's Pastries </i> </p>
+    </div>
+    <div class="ri_wrapper_box">
+      <div class="ri_img_wrapper"> <%= image_tag "ri-ny.jpg" %> </div>
+      <p class="ri_title_wrapper"> New York </p>
+      <p class="ri_text_wrapper"> A four hour drive or train ride will bring you to the big apple.  Conquering New York in one visit is impossible. Instead, hit the must-sees – the Empire State Building, the Statue of Liberty, Central Park, the Metropolitan Museum of Art – and then explore off the beaten path with visits to The Cloisters or one of the city’s libraries. </p><p class="ri_footer_wrapper"> Don't miss: <i> Real NY Bagels and Pizza </i> </p>
     </div>
   </div>
 </div>    

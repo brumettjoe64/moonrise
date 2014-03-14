@@ -28,14 +28,13 @@ div.details {
     height: 350px; 
     padding: 10px;
     .dp_1 { font: 30px 'Thirsty Rough'; width: 100%; color: #99B3B7; text-align: center; text-shadow: 1px 1px white; margin-bottom: 25px; }
-    ul li { display: inline;}
+    ul,li { display: inline; position: relative;}
     li,img,p { width: 100px;}
     li,img   { height: 100px;}
     li { 
-      position: relative; 
       p { font: 20px 'Pathway Gothic One'; color: #7D6E8B;}
-      p.top { position: absolute; top:-115px; width: 100%; text-align: center;}
-      p.bot { position: absolute; top:15px; width: 100%; text-align: center;}
+      p.top { position: absolute; top:-115px; left: 0px; width: 100%; text-align: center;}
+      p.bot { position: absolute; top:15px; left: 0px; width: 100%; text-align: center;}
     } 
     img      { margin: 4px 4px;}
   }
