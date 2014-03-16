@@ -22,7 +22,7 @@
   <%= image_tag('bg-front.jpg', id: "login_img") %>
   <div id="login_form">
     <%= form_tag('/login', method: 'post') do %>
-      <%= text_field_tag(:login, nil, placeholder: 'sign in here', autofocus: 'true') %>
+      <%= text_field_tag(:login, nil, placeholder: 'enter your email to login', autofocus: 'true') %>
       <%= submit_tag("Login", id: "login_button") %>
     <% end %>  
     <p id="login_notice"><%= notice %></p>
