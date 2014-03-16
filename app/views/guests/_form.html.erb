@@ -29,14 +29,6 @@
     <%= f.text_field(:sitekey, class: "lineup") %>
   </div>
   <div class="field">
-    <%= f.label "RSVP" %>
-    <span class="lineup"><%= f.select(:rsvp, Guest::VALID_RSVPS) %> </span>
-  </div>
-  <div class="field">
-    <%= f.label "Info" %>
-    <%= f.text_field(:rsvp_info, class: "lineup") %>
-  </div>
-  <div class="field">
     <%= f.label "Admin?" %>
     <%= f.check_box(:admin, class: "lineup") %>
   </div>
