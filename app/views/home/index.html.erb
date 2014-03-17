@@ -20,6 +20,9 @@
     <% Blog.get_blogs_by_date.second.try do |blog| %>   
       <%= render :partial => 'blogs/show', :locals => {:blog => blog} %>
     <% end %>
+    <% Blog.get_blogs_by_date.third.try do |blog| %>   
+      <%= render :partial => 'blogs/show', :locals => {:blog => blog} %>
+    <% end %>
     <%= link_to 'read more...', blogs_path, class: "ff_read right"%>
   </div>
 

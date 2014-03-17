@@ -3,7 +3,6 @@
     <% if @guest.errors.any? %>
       <div id="error_explanation">
         <p><%= pluralize(@guest.errors.count, "error") %> prohibited this guest from being saved:</p>
-
         <ul>
         <% @guest.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -11,7 +10,6 @@
         </ul>
       </div>
     <% end %>
-
   <div class="field">
     <%= f.label "First Name" %>
     <%= f.text_field(:firstname, class: "lineup") %>
@@ -44,5 +42,4 @@
   </div>
   <% end %>
   <%= link_to 'Back', admin_guests_path %>
-
 </div>
