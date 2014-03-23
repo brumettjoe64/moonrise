@@ -130,10 +130,10 @@ class Guest < ActiveRecord::Base
     if self.invitee?
       if self.registered?  
         status = ""
-        status += self.rsvp ? (self.rsvp.wedding ? "Go   " : "NoGo ") : "N/A  "
-        status += self.rsvp ? (self.rsvp.tea ? "Tea   " : "NoTea ") : "N/A   "
-        status += self.rsvp ? (self.rsvp.noturf ? "NoBeef " : "       ") : "N/A    "
-        status += self.rsvp ? (self.rsvp.nosurf ? "NoSurf " : "       ") : "N/A    "
+        status += (self.rsvp && !self.rsvp.wedding.nil?) ? (self.rsvp.wedding ? "Go   " : "NoGo ") : "N/A  "
+        status += (self.rsvp && !self.rsvp.wedding.nil?) ? (self.rsvp.tea ? "Tea   " : "NoTea ") : "N/A   "
+        status += (self.rsvp && !self.rsvp.wedding.nil?) ? (self.rsvp.noturf ? "NoBeef " : "       ") : "N/A    "
+        status += (self.rsvp && !self.rsvp.wedding.nil?) ? (self.rsvp.nosurf ? "NoSurf " : "       ") : "N/A    "
         status
       else
         "no_login"
@@ -141,10 +141,10 @@ class Guest < ActiveRecord::Base
     else
       if self.invitee.registered?
         status = ""
-        status += self.rsvp ? (self.rsvp.wedding ? "Go   " : "NoGo ") : "N/A  "
-        status += self.rsvp ? (self.rsvp.tea ? "Tea   " : "NoTea ") : "N/A   "
-        status += self.rsvp ? (self.rsvp.noturf ? "NoBeef " : "       ") : "N/A    "
-        status += self.rsvp ? (self.rsvp.nosurf ? "NoSurf " : "       ") : "N/A    "
+        status += (self.rsvp && !self.rsvp.wedding.nil?) ? (self.rsvp.wedding ? "Go   " : "NoGo ") : "N/A  "
+        status += (self.rsvp && !self.rsvp.wedding.nil?) ? (self.rsvp.tea ? "Tea   " : "NoTea ") : "N/A   "
+        status += (self.rsvp && !self.rsvp.wedding.nil?) ? (self.rsvp.noturf ? "NoBeef " : "       ") : "N/A    "
+        status += (self.rsvp && !self.rsvp.wedding.nil?) ? (self.rsvp.nosurf ? "NoSurf " : "       ") : "N/A    "
         status
       else
         "no_login"

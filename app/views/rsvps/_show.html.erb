@@ -40,10 +40,10 @@
           </div>
         </div>
         <%= hidden_field_tag('guest_id[]', pm.id, id:'guest_id_'+index.to_s) %>
-        <%= hidden_field_tag('wedding[]', pm.rsvp ? pm.rsvp.wedding : "nil", id:'wedding_'+index.to_s) %> 
-        <%= hidden_field_tag('tea[]', pm.rsvp ? pm.rsvp.tea : "false", id:'tea_'+index.to_s) %> 
-        <%= hidden_field_tag('nosurf[]', pm.rsvp ? pm.rsvp.nosurf : "false", id:'nosurf_'+index.to_s) %> 
-        <%= hidden_field_tag('noturf[]', pm.rsvp ? pm.rsvp.noturf : "false", id:'noturf_'+index.to_s) %>   
+        <%= hidden_field_tag('wedding[]', (pm.rsvp && !pm.rsvp.wedding.nil?) ? pm.rsvp.wedding : "nil", id:'wedding_'+index.to_s) %> 
+        <%= hidden_field_tag('tea[]', (pm.rsvp && !pm.rsvp.wedding.nil?) ? pm.rsvp.tea : "false", id:'tea_'+index.to_s) %> 
+        <%= hidden_field_tag('nosurf[]', (pm.rsvp && !pm.rsvp.wedding.nil?) ? pm.rsvp.nosurf : "false", id:'nosurf_'+index.to_s) %> 
+        <%= hidden_field_tag('noturf[]', (pm.rsvp && !pm.rsvp.wedding.nil?) ? pm.rsvp.noturf : "false", id:'noturf_'+index.to_s) %>   
       </div>
       <% end %>
     </div>

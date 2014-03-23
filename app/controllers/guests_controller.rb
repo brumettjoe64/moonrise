@@ -20,7 +20,7 @@ class GuestsController < ApplicationController
     @tea = Rsvp.where(tea: true)
     @notea = Rsvp.where(tea: false)
     @nosurf = Rsvp.where(nosurf: true)
-    @noturf = Rsvp.where(noturf: false)
+    @noturf = Rsvp.where(noturf: true)
 
     respond_to do |format|
       format.html # index.html.erb
