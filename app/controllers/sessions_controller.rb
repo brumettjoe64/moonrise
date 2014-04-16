@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
         redirect_to home_url
       end
     else 
-      redirect_to login_url, alert: "invalid login"
+      redirect_to login_url, alert: "First time logging in? Use your invitation password"
     end
   end
 
